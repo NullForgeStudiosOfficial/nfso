@@ -1,6 +1,8 @@
 let LastTime = 0;
 let DeltaTime = 0;
 let VoidRotation = 0;
+let ScanLines = null
+let ScanLinePOS = 0;
 let Button1 = null
 let Button4 = null
 let Button5 = null
@@ -25,6 +27,7 @@ function Start()
     Button8 = document.getElementById("Button8")
     Button9 = document.getElementById("Button9")
     Button10 = document.getElementById("Button10")
+    ScanLines = document.getElementById("ScanLines")
 
     requestAnimationFrame(Update);
 }
@@ -37,11 +40,24 @@ function Update(CurrentTime)
     LastTime = CurrentTime;
 
     VoidSpin()
+    ScrollLines()
 
     requestAnimationFrame(Update);
 }
 
 Start()
+
+function ScrollLines ()
+{
+    ScanLinePOS += 5 * DeltaTime;
+
+    ScanLines.style.backgroundPosition = `0px ${ScanLinePOS}px`;
+    
+    
+}
+
+
+
 
 function VoidSpin()
 {
