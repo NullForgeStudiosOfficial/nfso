@@ -13,8 +13,6 @@ let Button9 = null
 let Button10 = null
 
 
-
-
 function Start()
 {
     Button1 = document.getElementById("Button1")
@@ -140,13 +138,13 @@ Button2.addEventListener("click", function()
     window.open("https://github.com/NullForgeStudiosOfficial/ArdronQuiz", "_blank");
 });
 
-//Discord Link
+//Wikilink
 Button3.addEventListener("click", function()
 {
     return
 });
 
-//DPIntroLink
+//Discord Link
 Button4.addEventListener("click", function()
 {
     return
