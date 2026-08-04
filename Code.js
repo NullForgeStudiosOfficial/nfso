@@ -165,7 +165,13 @@ Button7.addEventListener("click", function()
     window.open("https://github.com/NullForgeStudiosOfficial/WorkLogs", "_blank");
 });
 
+// Discord Archives
 Button8.addEventListener("click", function()
 {
     return
+});
+
+Button9.addEventListener("click", function()
+{
+    window.open("https://github.com/NullForgeStudiosOfficial/Falatur", "_blank");
 });

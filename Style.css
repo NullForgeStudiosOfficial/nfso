@@ -278,7 +278,8 @@ body
 #Button5,
 #Button6,
 #Button7,
-#Button8
+#Button8,
+#Button9
 {
     position:relative;
 
@@ -344,6 +345,10 @@ body
     background-image:url(Assets/ButtonInfoBoxYumalon.png);
 }
 
+#Button9
+{
+    background-image:url(Assets/ButtonInfoBoxSanctum.png);
+}
 
 #BottomSpacer
 {
