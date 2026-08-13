@@ -291,7 +291,7 @@ Button1.addEventListener("click", function()
 
 Button2.addEventListener("click", function()
 {
-    window.open("https://github.com/NullForgeStudiosOfficial/ArdronQuiz", "_blank");
+    window.open("https://nullforgestudiosofficial.github.io/ArdronQuiz/", "_blank");
 });
 
 //Wikilink
