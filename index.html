@@ -17,15 +17,32 @@
 <body>
 
     <div id="BackgroundContainer">
-        <img id="Background" src="Assets/Background.png">
-    </div>
+        <div id="LinksBackground">
+            <img id="Background" src="Assets/Background.png">
+        </div>
 
+        <div id="VexesBackground">
+            <img id="VexesBackgroundImage" src="Assets/VexBackground.png">
+            <canvas id ="Rain"></canvas>
+        </div>
+
+        <div id="AulisBackground">
+            <img id="AulisBackgroundImage" src="Assets/viking.png">
+        </div>
+
+        <div id="PupsBackground">
+            <img id="PupsBackgroundImage" src="Assets/VexBackground.png">
+        </div>
+
+        <div id="ExtrasBackground">
+            <!--<img id="ExtrasBackgroundImage" src="Assets/ExtrasBackground.png"> -->
+        </div>
+        
+    
+    </div>
     
 
-    <!-- Main Menu -->
-    <div id="MainPage">
-
-        <div id="TopBar">
+    <div id="TopBar">
             <img id="NFSOLogo" src="Assets/NFSMainLogoNoBack.png">
             <img id="VoidEyes" src = "Assets/VoidEyesFull.png">
 
@@ -35,139 +52,566 @@
 
         </div>
 
+    <div id="NavigationBar">
+        <button class = "NavigationButton" id = "LinksButton">
+            <div class="ButtonBackground"></div>
+
+            <div Class ="ButtonBorder"></div>
+
+            <div Class ="ButtonText"></div>
+        </button>
+        
+        <button class = "NavigationButton" id = "VexButton">
+            <div class="ButtonBackground"></div>
+
+            <div Class ="ButtonBorder"></div>
+
+            <div Class ="ButtonText"></div>
+        </button>
+        
+        <button class = "NavigationButton" id = "AuliButton">
+            <div class="ButtonBackground"></div>
+
+            <div Class ="ButtonBorder"></div>
+
+            <div Class ="ButtonText"></div>
+        </button>
+        
+        <button class = "NavigationButton" id = "PupButton">
+            <div class="ButtonBackground"></div>
+
+            <div Class ="ButtonBorder"></div>
+
+            <div Class ="ButtonText"></div>
+        </button>
+
+        <button class = "NavigationButton" id = "ExtraButton">
+            <div class="ButtonBackground"></div>
+
+            <div Class ="ButtonBorder"></div>
+
+            <div Class ="ButtonText"></div>
+        </button>
+
+        
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Main Menu -->
+    <div id="ScrollContainer">
+        
         <div id = "ScrollSpace">
-            <button class = "ArdronButton" id = "Button1">
-                <div class ="InfoBox">
-                    <div class ="ButtonTitle">
-                        Ardron Universe
-                    </div>
-
-                    <div class = "ButtonInfo">Eight games. One universe. One purchase.
-
-                        Explore a world shaped by the choices of ancient gods, where every game tells a different story and unlocks new perspectives on the same interconnected universe.
-
-                        Story-heavy. System-heavy. Built to reward curiosity.
-                    </div>
-                    
-                </div>
-            </button>
-
-            <button class = "ArdronButton" id = "Button2">
-                <div class ="InfoBox">
-                    <div class ="ButtonTitle">
-                        Ardron Quiz
-                    </div>
-
-                    <div class = "ButtonInfo">Before anyone can enter Ardron, they must first be understood.
-
-                        Stand before the Arbiter, the silent Watcher of the Void, and answer 33 carefully chosen questions.
-                        
-                        There are no right or wrong answers, only the ideals, motivations, and choices that define you.
-
-                        Once your judgment is complete, you'll be assigned to the Realm that best reflects who you are:
-                        Eimon, Elusia, Grimlowe, Sostrum, Vidulyn, or Yumalon.
-
-                        Every soul resonates with one Realm. The question is... which one resonates with yours?
-                    </div>
-                </div>
-            </button>
-
-            <button class = "ArdronButton" id = "Button3">
-                <div class ="InfoBox">
-                    <div class ="ButtonTitle">
-                        Au Wiki
-                    </div>
-
-                    <div class = "ButtonInfo">The official Wikipedia for Ardron Universe!
             
-                        Read lore, Game information, See builds, All information about the AU!
-                    </div>
-                </div>
-            </button>
+            <div id = "LinksPage">
+                
+                
+                <button class = "ArdronButton" id = "Button1">
+                    <div class ="InfoBox">
+                        <div class ="ButtonTitle">
+                            Ardron Universe
+                        </div>
 
-            <button class = "ArdronButton" id = "Button4">
-                <div class ="InfoBox">
-                    <div class ="ButtonTitle">
-                        Our Discord — [WIP]
-                    </div>
-
-                    <div class = "ButtonInfo">Daemon Protocol is the official NullForge Studios hub. 
+                        <div class = "ButtonInfo">Eight games. One universe. One purchase.  Story-heavy. System-heavy. Built to reward curiosity.
+                            
+                            Explore a world shaped by the choices of ancient gods,  where every game tells a different story and unlocks new perspectives on the same interconnected universe.
+                        </div>
                         
-                        It's where the game is played, where development is shared, and where the community comes together. 
-                        
-                        Join us to experience the game, follow its evolution, and help shape what comes next.
                     </div>
+                </button>
+
+                <div id="BottomSpacer"></div>
+
+                <button class = "ArdronButton" id = "Button2">
+                    <div class ="InfoBox">
+                        <div class ="ButtonTitle">
+                            Ardron Quiz
+                        </div>
+
+                        <div class = "ButtonInfo">Before anyone can enter Ardron, they must first be understood. Stand before the Arbiter, the silent Watcher of the Void, <br>&emsp;and answer 33 carefully chosen questions.
+                            There are no right or wrong answers, only the ideals, motivations, and choices that define you. Once your judgment is complete,<br>&emsp; you'll be assigned to the Realm that best reflects who you are
+                            
+                            Every soul resonates with one Realm. The question is... which one resonates with yours?
+                        </div>
+                    </div>
+                </button>
+
+                <div id="BottomSpacer"></div>
+
+                <button class = "ArdronButton" id = "Button3">
+                    <div class ="InfoBox">
+                        <div class ="ButtonTitle">
+                            Au Wiki - [WIP]
+                        </div>
+
+                        <div class = "ButtonInfo">The official reference for the Ardron Universe. Explore its games, characters, creatures, Realms, mechanics, items, builds,<br> &emsp; and the countless systems connecting them all.
+                            
+                            If it exists somewhere in Ardron, you'll probably find it here.
+                        </div>
+                    </div>
+                </button>
+                <div id="BottomSpacer"></div>
+
+                <button class = "ArdronButton" id = "Button4">
+                    <div class ="InfoBox">
+                        <div class ="ButtonTitle">
+                            Our Discord — [WIP]
+                        </div>
+
+                        <div class = "ButtonInfo">Daemon Protocol is the official NullForge Studios hub. 
+                            
+                            It's where the game is played, where development is shared, and where the community comes together. 
+                            
+                            Join us to experience the game, follow its evolution, and help shape what comes next.
+                        </div>
+                    </div>
+                </button>
+                <div id="BottomSpacer"></div>
+
+                <button class = "ArdronButton" id = "Button5">
+                    <div class ="InfoBox">
+                        <div class ="ButtonTitle">
+                            Our Live Streams
+                        </div>
+
+                        <div class = "ButtonInfo">No schedules. No esports.No pretending to be professionals.
+                            &emsp;Just games, game development, and a good excuse to spend time with the community.
+
+                            As a bonus, activity in the stream accounts towards the discord.
+                        </div>
+                    </div>
+                </button>
+                <div id="BottomSpacer"></div>
+
+                <button class = "ArdronButton" id = "Button6">
+                    <div class ="InfoBox">
+                        <div class ="ButtonTitle">
+                            Ko-Fi
+                        </div>
+
+                        <div class = "ButtonInfo">If you've enjoyed our content or would like to support future development?
+                            Consider becoming a Ko-fi supporter.
+
+                            Every contribution helps fund new projects, server costs, and continued updates across the Ardron universe.
+
+                            It will also give you a slight boost in Daemon Protocol!
+                        </div>
+                    </div>
+                </button>
+                <div id="BottomSpacer"></div>
+
+                <button class = "ArdronButton" id = "Button7">
+                    <div class ="InfoBox">
+                        <div class ="ButtonTitle">
+                            Work Logs
+                        </div>
+
+                        <div class = "ButtonInfo">Curious about what the hell Vex does all day building all this nonsense!? Me too. 
+                            &emsp;Every nights progress, and happenings are recorded here (with receipts).
+                            From major milestones and technical breakthroughs to random ideas that somehow survive long enough to become real features.
+
+                            Now go tell him to get back to work!
+                        </div>
+                    </div>
+                </button>
+                <div id="BottomSpacer"></div>
+
+                <button class = "ArdronButton" id = "Button8">
+                    <div class ="InfoBox">
+                        <div class ="ButtonTitle">
+                            Discord Archive — [WIP]
+                        </div>
+
+                        <div class = "ButtonInfo">You know how most Discords are locked down. A walled garden they say?
+                            None of that nonsense Here. 
+
+                            All your Suggestions, Bugs, Help requests. All that will be posted here. 
+                            
+                            (Names other than NFSO members will have their username be anonymous.)
+                        </div>
+                    </div>
+                </button>
+                <div id="BottomSpacer"></div>
+
+                <button class="ArdronButton" id="Button9">
+                    <div class="InfoBox">
+                        <div class="ButtonTitle">
+                            Falatur
+                        </div>
+
+                        <div class="ButtonInfo">A foam combat ruleset focused on honor, safety, and craftsmanship.
+
+                        Built upon decades of established foam combat while introducing a new combat model centered around realistic weapon roles and straightforward construction standards.
+
+                            
+                        </div>
+                    </div>
+                </button>
+                
+                <div id="BottomSpacer"></div>
+            </div>
+
+            <div id = "VexesPage">
+
+                
+
+                <img id = "BarTop" src = "Assets/BarTop.png">
+
+                <div id ="ActualMiddle">
+                    <div id = "BarMiddle"></div>
+
+                    <div id = "InsideMiddle">
+
+                        <div id="VexH"></div>
+                        <div id="VexF"></div>
+
+                        <div id = "VexTitle"> 
+                            Hi. I'm Vex, otherwise known as AoAlfaric. <br><br>
+
+                            I'm the CE-... Main character at NSFO 😎 <br><br>
+                            
+                            I'm not a professional in any of the sanitized ways. <br>
+                            
+                            Don't expect these answers to be :D<br><br>
+                        </div>
+
+                        <div class="Divider"></div>
+
+                            <div class = "ProfileQuestion"><i>[Who are You]</i></div>
+
+                            <div class = "ProfileAnswer">
+                            I'm Vex :v Least thats my real name, I go by AoAlfaric online though. 
+                            </div>
+
+
+                            <div class = "ProfileQuestion"><i>[What do you do at NullForge]</i></div>
+
+                            <div class = "ProfileAnswer">
+                                <img src = "Assets/IRunThisShit.png">
+                            Literally anything you see that's NSFO? Is probably because of me. 
+                            If I had a hat for everything I do? I'd have more hats than Team Fortress 2.
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[How did you become part of NullForge?]</i></div>
+                            <div class = "ProfileAnswer">... I created the damn thing :D</div>
+
+                            <div class = "ProfileQuestion"><i>[What is NullForge to you?]</i></div>
+                            <div class = "ProfileAnswer">My magnum opus 😎</div>
+
+                            <div class = "ProfileQuestion"><i>[What's your relationship with Ardron?]</i></div>
+                            <div class = "ProfileAnswer">:D It kept me from killing myself. so yaknow. PRETTY IMPORTANT</div>
+
+                            <div class = "ProfileQuestion"><i>[What's your favorite NullForge project?]</i></div>
+                            <div class = "ProfileAnswer">Ah yes, choose your favorite child. Fuck you. 
+                                Uh... Graces Lament :v </div>
+
+                            <div class = "ProfileQuestion"><i>[What are you most proud of here?]</i></div>
+                            <div class = "ProfileAnswer">Like on this website or in NSFO :v? 
+                                Website: This bitchin ass matrix-esque background. So many matrix copies get so much things wrong with it. 
+                                it is NOT random. There is a method in the madness. I studied it for hours *-* 
+
+                                In NSFO: fuck uh. Probably Daemon Protocol??? It is baseless C#...which communicates to Python, which communicates to &emsp;Unity C# and can communicate to webbrowsers and ...the back end security for the Unity game is... redic.
+                                So yeah thats probably the thing im most proud of. 
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What's something about NullForge most people don't see?]</i></div>
+                            <div class = "ProfileAnswer">Probably all the times I almost quit. I'm at 14 now.
+
+                                It gets hard. Making multiple full fledge games, multiple websites, all kinds of shit, just to make a great customer experience. 
+
+                                ... for like 3 customers. 😅 Sometimes I wake up and ask my self why I even bother.
+
+                                And then I get another systems mechanical idea, and off i go anyways 🙃 
+
+                                So it's basically this:
+                                <img src = "Assets/bb.png">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What's it like watching this stuff get made?]</i></div>
+                            <div class = "ProfileAnswer"> Fucking Psychotic. 
+                                When you have this amount of work load? Whoo boy. 
+                                I'll be mid working on the Wiki, have an idea. Break open Obsidian, write down a bitchin idea for a game or website, and back again. 
+
+                                I've coded shit i've forgotten, come back to it and gone "oh...I already did this. Thanks past me.". so yeah 🙃
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What's it like dealing with the other two?]</i></div>
+                            <div class = "ProfileAnswer">Tedious *-* 
+                                No seriously. I love them, but they can be a might unhelpful sometimes. 
+
+                                Between Auli not... knowing anything gaming (not her fault but still unhelpful when asking... gaming things.)
+                                and pup being head empty no thoughts. 
+
+                                xD sometimes it's a straight brick wall. 
+
+                                Least they remind me to take care of myself >.> 
+
+                                Sometimes I get so into working i've forgotten to eat for 12+ hours...🤷 happens
+                            </div>
+
+                            
+                            <div class = "ProfileQuestion"><i>[What do you think each of the others brings to NullForge?]</i></div>
+                            <div class = "ProfileAnswer">
+                                As much as I said that Auli not knowing anything video games is tedious...which it is. 
+                                :v it's also a very fuckin valuable skill to have around. 
+
+                                You think your UI is good? Try watching someone who doesn't have multiple years of gaming knowledge try to navigate it.
+
+                                meanwhile pup has.....30+ years of gaming knowledge. Mostly indie games too 🤔 so thats a valuable knowledge well too on the opposite side. 
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What do you think NullForge does differently?]</i></div>
+                            <div class = "ProfileAnswer">
+                                Consistency, and the ability to self reflect. 
+
+                                There is a MILLION of ideas I could throw into any game at any time. 
+
+                                but... it has to:
+                                &emsp;• Make sense to the lore.
+                                &emsp;• Mesh with the other mechanics in the game.
+                                &emsp;• Make the game objectively better. "Fun" is immeasurable.
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[Where do you want to see NullForge go?]</i></div>
+                            <div class = "ProfileAnswer">
+                                I dunno 🤷 
+                                I just want people to find it so they can have good games to play. 
+                                maybe a lil bit of that "experiencetheworld" in there. 
+                                Like. I don't want NSFO to become famous, or start making too much money, because then that starts bringingin a whole hell of a lot of problems. 
+
+                                but if it does... welp. I'll systems engineer the fuck out of that too :v 
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What's something people should know before getting into our work?]</i></div>
+                            <div class = "ProfileAnswer">
+                                Like Weird Al said "Everything you know is wrong".
+
+                                Not to be taken literally... just. 
+                                I don't do things the "correct" or "conventional" way. 
+
+                                The games reflect that :v 
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What do you do outside of NullForge?]</i></div>
+                            <div class = "ProfileAnswer">
+                                Well... I used to be able to say woodworking, drumming, archery, dagorhir,foam smithing,streaming...
+
+                                but woodworking became part of NSFO soon as I needed it for desks, and backstops and other things.
+                                Drumming became part of NSFO when I made Nullsuite...
+                                Archery,Dagorhir, and FoamSmithing became part of NSFO when Falatur was made...
+                                and Streaming was always kind of part of it, least...before NSFO existed. 
+
+                                SO YEAH. idk. it all is. 
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[How do you represent yourself online?]</i></div>
+                            <div class = "ProfileAnswer">
+                                Same way I do IRL. I'm a fuckin 1:1 genuine asshole. 
+
+                                Got my partners, Got my friends. 🤷 If you don't like me? thats your problem :D 
+
+                                ofc I say that and then I'm too nice to everyone 🙄 Can't help it. I was born to be a support class. 
+
+                                Though, i will warn you. I have some of those PINIONS that will piss off most people. 
+                                I'm slightly contrarian. Like stated above. I don't do things the "correct" or "conventional" way. 
+
+                                If you *really* wanna know... There's a button for ya.
+
+                                
+                            </div>
+
+                            <button id="HereBeDragons">⚠️Here Be Dragons⚠️</button>
+
+                                <div id="HereBeDragonsAnswers">Allllright. Don't say I didn't warn you.
+                                    you wanted a reason to hate me, you got it :D 
+
+                                    REMINDER: This was completely unnecessary c: You chose this.
+                                    ---
+
+                                    Firstly. Lets piss off the right leaning.
+
+                                    1. I am Polyamorous.(If that wasn't fuckin obvious) 
+
+                                    2. I'm Genderfluid. (🤷 idk. This seems to do it.) 
+
+                                    3. I like men.(Yes, I have a penis. Super ultra mega gay.)  
+
+                                    4. I'm Demisexual.(yay for a fake sexuality, amiright?) 
+
+                                    5. I'm not Religious(Just seems like a way to control people, or homework.)  
+                                    ---
+
+                                    Secondly. Let's piss of the left leaning.
+
+                                    1. I think neopronouns are stupid. (I aint gonna bother)
+
+                                    2. Equality means the rules apply to you too. (You're not exempt~)
+
+                                    3. Marginalization ≠ infallibility (You can be NB/Trans/POC and be a POS :D)
+
+                                    4. Sometimes someone dislikes *you*, not your demographic (Hell, refer to the previous)
+
+                                    5. Your sexuality/gender identity doesn't inherently make you interesting, special, or deserving of attention.  
+                                    ---
+
+                                    Now~ Let's piss off EVERYBODY!  
+
+                                    1. Ai is cool. Relying on it is not. (Still hate how corperations are using it though.)
+
+                                    2. There is no ethical consumption in capitalism. So shutup.  (Brb buying Nestle products)
+
+                                    3. Your trauma can explain your behavior. It doesn't automatically excuse it. (Its your responsibilty. Not mine :D)
+
+                                    4. Something being legal doesn't make it ethical. Something being illegal doesn't make it unethical.  (perfect example: Piracy)
+
+                                    5. You don't have to agree with someone to respect them. (Hitler loved dogs 🤷)
+
+                                    6. You're not special or unique. We all put our pants on one leg at a time. Except Jim. (I like jim.)
+
+                                    7. The amount of Cheating/NTR porn that exists and is consumed, is insanely high for people who claim to hate cheaters.  (Specially Smut books.)
+
+                                    8. No, taking the muffler off your vehicle won't make your penis bigger, or make women like you more. (It's fucking 3 am Stop it. Get some help.)
+
+                                    9. No one is impressed with your computer, or anything else you have that's expensive. They just covet it. (I really don't care if you have 512gb of RAM and a 5090 when all you do is play Minecraft.)
+
+                                    10. The majority of people are stupid, selfish, scared individuals that need therapy, and to actually listen and apply it.  ( :D my faith in humanity is fuckin GONE yo)
+                                    
+                                    </div>
+
+                            <div class = "ProfileQuestion"><i>[Where can people find you?]</i></div>
+                            <div class = "ProfileAnswer">
+                                UHHHH Discord. on the DP server. 
+
+                                I won't add people I havn't spoke to personally, cause that's just weird. but if you want to email me you can do so @
+                                NullForgeStudios@proton.me 
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[Anything else you want people to know?]</i></div>
+                            <div class = "ProfileAnswer">
+                                Butts are great.
+                            </div>
+                        </div>
+                    </div>
+
+                <img id = "BarBottom" src = "Assets/BarBottom.png">
+
+            </div>
+
+            <div id = "AulisPage">
+                <img id = "AuliBarTop" src = "Assets/AuliBarTop.png">
+
+                <div id ="AuliActualMiddle">
+                    <div id = "AuliBarMiddle"></div>
+
+                    <div id = "InsideMiddle">
+
+                        <div id="AuliH"></div>
+
+                        <div id = "AuliTitle"> 
+                            Auli information goes Here
+                            and Here
+
+                            and Here
+
+                            and also here 
+                        </div>
+
+                        <div id="AuliDivider"></div>
+
+                            <div class = "ProfileQuestion"><i>[Who are You]</i></div>
+
+                            <div class = "ProfileAnswer">
+                            
+                            </div>
+
+
+                            <div class = "ProfileQuestion"><i>[What do you do at NullForge]</i></div>
+
+                            <div class = "ProfileAnswer">
+                                
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[How did you become part of NullForge?]</i></div>
+                            <div class = "ProfileAnswer">.</div>
+
+                            <div class = "ProfileQuestion"><i>[What is NullForge to you?]</i></div>
+                            <div class = "ProfileAnswer"></div>
+
+                            <div class = "ProfileQuestion"><i>[What's your relationship with Ardron?]</i></div>
+                            <div class = "ProfileAnswer"></div>
+
+                            <div class = "ProfileQuestion"><i>[What's your favorite NullForge project?]</i></div>
+                            <div class = "ProfileAnswer"></div>
+
+                            <div class = "ProfileQuestion"><i>[What are you most proud of here?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What's something about NullForge most people don't see?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What's it like watching this stuff get made?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What's it like dealing with the other two?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            
+                            <div class = "ProfileQuestion"><i>[What do you think each of the others brings to NullForge?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What do you think NullForge does differently?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[Where do you want to see NullForge go?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What's something people should know before getting into our work?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[What do you do outside of NullForge?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[How do you represent yourself online?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+
+                            <div class = "ProfileQuestion"><i>[Where can people find you?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+
+                            <div class = "ProfileQuestion"><i>[Anything else you want people to know?]</i></div>
+                            <div class = "ProfileAnswer">
+                            </div>
+                        </div>
                 </div>
-            </button>
 
-            
+                <img id = "AuliBarBottom" src = "Assets/AuliBarBottom.png">
+            </div>
 
-            <button class = "ArdronButton" id = "Button5">
-                <div class ="InfoBox">
-                    <div class ="ButtonTitle">
-                        Our Live Streams
-                    </div>
+            <div id = "PupsPage">
+                
+            </div>
 
-                    <div class = "ButtonInfo">No schedules.
-                        No esports.
-                        No pretending to be professionals.
-                        Just games, game development, and a good excuse to spend time with the community.
-                    </div>
-                </div>
-            </button>
+            <div id = "ExtrasPage">
+                
+            </div>
 
-            <button class = "ArdronButton" id = "Button6">
-                <div class ="InfoBox">
-                    <div class ="ButtonTitle">
-                        Ko-Fi
-                    </div>
 
-                    <div class = "ButtonInfo">If you've enjoyed our content or would like to support   future development, consider becoming a Ko-fi supporter.
-                        Every contribution helps fund new projects, server costs, and continued updates across the Ardron universe.
-                    </div>
-                </div>
-            </button>
+        </div>
 
-            <button class = "ArdronButton" id = "Button7">
-                <div class ="InfoBox">
-                    <div class ="ButtonTitle">
-                        Work Logs
-                    </div>
-
-                    <div class = "ButtonInfo">Curious how these projects are built? Every night's progress is documented here.
-                        
-                        From major milestones and technical breakthroughs to random ideas that somehow survive long enough to become real features.
-                    </div>
-                </div>
-            </button>
-
-            <button class = "ArdronButton" id = "Button8">
-                <div class ="InfoBox">
-                    <div class ="ButtonTitle">
-                        Discord Archive — [WIP]
-                    </div>
-
-                    <div class = "ButtonInfo">Every suggestion, bug report, discussion, and question is preserved here from Discord.
-                        
-                    Browse the history of Ardron Universes development and see how the community has helped shape the game over time.
-                    </div>
-                </div>
-            </button>
-
-            <button class="ArdronButton" id="Button9">
-                <div class="InfoBox">
-                    <div class="ButtonTitle">
-                        Falatur
-                    </div>
-
-                    <div class="ButtonInfo">A foam combat ruleset focused on honor, safety, and craftsmanship.
-
-                    Built upon decades of established foam combat while introducing a new combat model centered around realistic weapon roles and straightforward construction standards.
-                    </div>
-                </div>
-            </button>
-
-            <div id="BottomSpacer"></div>
                 
         </div>
 
@@ -175,11 +619,12 @@
        
     </div>
 
-    <div id="ScanLines"></div>
-    <img id="Sanctum" src="Assets/Sanctumborder.png">
+    <!--<div id="ScanLines"></div>-->
+    <!--<img id="Sanctum" src="Assets/Sanctumborder.png"> -->
 
     <script src="Code.js"></script>
 
 </body>
 
 </html>
+

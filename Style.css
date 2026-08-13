@@ -11,13 +11,18 @@
 
 :root
 {
-    --content-width: min(95vw, 1500px);
+    --content-width: min(100vw, 1900px);
+    --box-width: min(80vw, 1600px);
     --button-width: min(95vw, 1500px);
 
-    --title-size: clamp(42px, 5vw, 100px);
-    --header-size: clamp(28px, 3vw, 55px);
-    --body-size: clamp(18px, 1.5vw, 32px);
+    --navtext-size: clamp(12px, 3vw, 35px);
+    --title-size: clamp(42px, 3vw, 100px);
+    --header-size: clamp(30px, 3vw, 90px);
+    --body-size: clamp(12px, 1.5vw, 25px);
     --textbox-size: clamp(16px, 1.3vw, 24px);
+    --scrollspace-height-size: clamp(40px, 81vh, 81vh);
+    --profilequestion-size: clamp(30px, 3vw, 40px);
+    --profileanswer-size: clamp(16px, 3vw, 20px);
 }
 
 body
@@ -53,6 +58,145 @@ body
     pointer-events:none;
 }
 
+#VexesBackground,
+#AulisBackground,
+#PupsBackground
+{
+    position:absolute;
+
+    width:100vw;
+    height:100%;
+
+    top:0%;
+    left:0%;
+
+    z-index:-5;
+    pointer-events:none;
+}
+
+#AulisBackgroundImage{
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    top:0%;
+    left:0%;
+}
+
+#ExtrasBackground
+{
+    position:absolute;
+
+    width:120%;
+    height:120%;
+
+    top:-10%;
+    left:-10%;
+    align-items: center;
+
+    z-index:-7;
+    pointer-events:none;
+    background-repeat: repeat-x;
+    background-position:center;
+    background-image: url(Assets/ExtrasBackground.png);
+    background-size: 100%;
+}
+
+#ExtrasBackgroundImage
+{
+    position:absolute;
+
+    width:105%;
+    height:auto;
+    
+
+    top:-100px;
+    left:-100px;
+
+    z-index:-10;
+    pointer-events:none;
+}
+
+#LinksButton
+{
+    left: 0%;
+}
+
+
+#VexButton
+{
+    left: 40%;
+}
+
+#AuliButton
+{
+    left: 20%;
+}
+
+#PupButton
+{
+    left: 60%;
+}
+
+#ExtraButton
+{
+    left: 80%;
+}
+
+
+.ButtonBackground
+{
+    position:absolute;
+    inset:0%;
+
+    display:flex;
+    justify-content:center;
+
+    background-repeat:repeat;
+    background-position:0;
+
+    color:#bfbfbf;
+
+    z-index:0;
+}
+
+
+.ButtonBorder
+{
+    position:absolute;
+    inset:0;
+
+    background-size:100% 100%;
+
+    pointer-events:none;
+
+    z-index:1;
+}
+
+.ButtonText
+{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    white-space:pre-line;
+    word-break:break-word;
+
+    font-family:Ardron;
+    font-size:var(--navtext-size);
+
+    color:#dfdfdf;
+
+    z-index:2;
+}
+
 #Sanctum
 {
     position:absolute;
@@ -63,7 +207,7 @@ body
     z-index:10;
 }
 
-#MainPage
+#ScrollContainer
 {
     position:absolute;
     inset:0;
@@ -80,6 +224,20 @@ body
     z-index:-1;
 }
 
+#LinksPage,
+#VexesPage,
+#AulisPage,
+#PupsPage,
+#ExtrasPage {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 2.5rem;
+}
+
 #TopBar
 {
     position:absolute;
@@ -88,7 +246,7 @@ body
     left:0;
 
     width:100%;
-    height:18vh;
+    height:10vh;
 
     display:flex;
     justify-content:center;
@@ -104,10 +262,10 @@ body
 {
     position:absolute;
 
-    left:2vw;
-    top:6vh;
+    left:1vw;
+    top:3vh;
 
-    width:min(16vw,275px);
+    width:min(10vw,275px);
     height:auto;
 
     pointer-events:none;
@@ -117,8 +275,8 @@ body
 {
     position:absolute;
 
-    left:53%;
-    top:60%;
+    left:50%;
+    top:45%;
 
     transform:translate(-50%,-50%);
 
@@ -133,9 +291,9 @@ body
     position:absolute;
 
     right:2vw;
-    top:1vh;
+    top:0.5vh;
 
-    width:min(9vw,150px);
+    width:min(4.5vw,150px);
     height:auto;
 
     pointer-events:none;
@@ -165,9 +323,9 @@ body
 {
     position:relative;
 
-    width:var(--content-width);
+    width:var(--box-width);
 
-    aspect-ratio:1500 / 288;
+    aspect-ratio:1500 / 300;
 
     background-image:url(Assets/ButtonInfoBox.png);
     background-size:100% 100%;
@@ -178,14 +336,11 @@ body
 {
     position:absolute;
 
-    inset:12% 2% 8% 2%;
 
     overflow-y:auto;
     overflow-x:hidden;
 
     white-space:pre-wrap;
-
-    padding:1rem;
 
     font-size:var(--textbox-size);
 }
@@ -194,13 +349,13 @@ body
 {
     position:absolute;
 
-    top:18vh;
+    top:19vh;
     left:50%;
 
     transform:translateX(-50%);
 
     width:var(--content-width);
-    height:78vh;
+    height:var(--scrollspace-height-size);
 
     overflow-y:auto;
     overflow-x:hidden;
@@ -241,7 +396,7 @@ body
 {
     position:absolute;
 
-    left:15px;
+    left:5px;
     right:15px;
 
     top:36%;
@@ -251,11 +406,12 @@ body
     overflow-y:auto;
     overflow-x:hidden;
 
-    padding-right:10px;
+    padding-left:10px;
 
     white-space:pre-line;
+    text-align:left;
 
-    line-height:1.35;
+    line-height:1.20;
 
     font-size:var(--body-size);
     font-family: Ardron;
@@ -271,6 +427,9 @@ body
 }
 
 
+
+
+
 #Button1,
 #Button2,
 #Button3,
@@ -283,16 +442,16 @@ body
 {
     position:relative;
 
-    width:100%;
+    width:var(--box-width);
     aspect-ratio:1500 / 288;
 
     border:none;
-    margin:0;
-    padding:0;
+    margin-bottom:0;
+    
 
     background-color:transparent;
 
-    background-position:center;
+    background-position:6px;
     background-repeat:no-repeat;
     background-size:100% 100%;
 
@@ -355,6 +514,52 @@ body
     width:100%;
     height:1rem;
     flex-shrink:0;
+}
+
+
+.NavigationButton
+{
+    position: absolute;
+    top: 10vh;
+    height:auto;
+
+    width: min(19vw, 380px);
+    aspect-ratio: 384 / 81;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    cursor: pointer;
+
+    transform:scale(0.96);
+    transition:
+        transform .15s ease,
+        filter .15s ease;
+}
+
+.NavigationButton .ButtonBackground
+{
+    filter: brightness(0.75);
+    transition:
+        transform .15s ease,
+        filter .15s ease;
+}
+
+.NavigationButton:hover .ButtonBackground {
+    filter: brightness(1);
+}
+
+.NavigationButton:hover
+{
+    transform:scale(0.98);
+    filter:brightness(1.05);
+}
+
+.NavigationButton:active
+{
+    transform:scale(.97);
 }
 
 
@@ -426,7 +631,7 @@ body
 {
     #ScrollSpace
     {
-        height:72vh;
+        height:var(--scrollspace-height-size);
     }
 
     .ButtonInfo
@@ -471,3 +676,266 @@ body
         --textbox-size:28px;
     }
 }
+
+
+
+#Rain
+{
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+#BarTop,
+#BarBottom
+{
+    display: block;
+    position: relative;
+    left:17.5%;
+    width: 65%;
+    height: auto;
+}
+
+#ActualMiddle
+{
+    position: relative;
+    width: 100%;
+    height:100.5%;
+}
+
+#BarMiddle
+{
+    position: absolute;
+    inset: 0;
+
+    background-image: url("Assets/BarMiddle.png");
+    background-size: 65%;
+    background-repeat: repeat-y;
+    background-position: center;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+#InsideMiddle
+{
+    width: 100%;
+    height:100%;
+    padding:20px;
+
+}
+
+#VexTitle
+{
+    font-size:30px;
+    position: relative;
+    padding-top: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    text-align:center;
+}
+
+
+.Divider {
+    position: relative;
+
+    width: 64.25%;
+    height: 20px;
+
+    margin: 10px auto 0;
+    
+
+    background-image: url("Assets/Divider.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#VexInfo{
+    font-size:var(--body-size);
+    white-space:pre-line;
+    text-align: left;
+    position: relative;
+    left:19%;
+}
+
+#VexH{
+    position:absolute;
+    left:19.25%;
+    top:1%;
+
+    width:225px;
+    height:225px;
+
+    background-image:url(Assets//VexH.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+#VexF{
+    position:absolute;
+    left:69%;
+    top:1%;
+
+    width:225px;
+    height:225px;
+
+    background-image:url(Assets//VexF.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
+.ProfileQuestion
+{
+    font-size:var(--profilequestion-size);
+    background-color:rgba(0, 0, 0, 0.685);
+    text-align: left;
+    position: relative;
+    align-items: center;
+    left:18%;
+    padding-left: 1%;
+    padding-top: 1%;
+    margin-top: 1%;
+    width: 63%;
+}
+
+.ProfileAnswer
+{
+    text-align: left;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    width:63%;
+    left:19%;
+    font-size:var(--profileanswer-size);
+}
+
+#HereBeDragons{
+    position: relative;
+    top:-0.5%;
+    width:63%;
+    height:0.6%;
+    left:0%;
+    font-size:var(--profileanswer-size);
+}
+
+#HereBeDragonsAnswers{
+    position: absolute;
+    display:none;
+    text-align: left;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    width:63%;
+    left:19%;
+    font-size:var(--profileanswer-size);
+}
+
+
+
+
+
+#AuliBarTop
+{
+    display: block;
+    position: relative;
+    left:12%;
+    width: 75%;
+    height: auto;
+}
+
+#AuliBarBottom
+{
+    display: block;
+    position: relative;
+    left:12%;
+    top:-6%;
+    width: 75%;
+    height: auto;
+}
+
+#AuliActualMiddle
+{
+    position: relative;
+    width: 98.5%;
+    height:100%;
+}
+
+#AuliBarMiddle
+{
+    position: absolute;
+    inset: 0;
+    left:-50px;
+    top:-44px;
+    height:96%;
+    width: 105.5%;
+
+    background-image: url("Assets/AuliBarMiddle.png");
+    background-size: 65%;
+    background-repeat: repeat-y;
+    background-position: center;
+
+    pointer-events: none;
+    z-index: -1;
+}
+
+#AuliInsideMiddle
+{
+    width: 100%;
+    height:100%;
+    padding:20px;
+
+}
+
+#AuliH{
+    position:absolute;
+    left:19.25%;
+    top:-1%;
+
+    width:225px;
+    height:225px;
+
+    background-image:url(Assets/AuliH.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#AuliTitle
+{
+    font-size:30px;
+    top: -2%;
+    position: relative;
+    display:flex;
+    justify-content: center;
+    white-space:pre-line;
+}
+
+#AuliDivider{
+    position: relative;
+    display:flex;
+    justify-content: center;
+    white-space:pre-line;
+    left:17%;
+
+    width:65%;
+    height:3%;
+
+    background-image:url(Assets/AuliDivider.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+}
+
