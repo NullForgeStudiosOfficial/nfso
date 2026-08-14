@@ -58,8 +58,7 @@ let RainHeads = [];
 let RainColumns;
 let RainRows;
 let CharacterList = "ABCDEFJHIJKLMONPQRSTUVWXYZ0123456789";
-let HereBeDragons = document.getElementById("HereBeDragons")
-let HereBeDragonsAnswers = document.getElementById("HereBeDragonsAnswers")
+
 
 
 
@@ -409,13 +408,6 @@ ExtraButton.addEventListener("click", function()
 
 });
 
-HereBeDragons.addEventListener("click", function()
-{
-    
-    HereBeDragonsAnswers.style.display = "block";
-    HereBeDragons.style.display = "none"
-
-});
 
 
 function Resize()
