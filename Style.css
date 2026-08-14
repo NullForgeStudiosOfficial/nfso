@@ -861,7 +861,7 @@ body
     display: block;
     position: relative;
     left:12%;
-    top:-6%;
+    top:-3%;
     width: 75%;
     height: auto;
 }
@@ -879,7 +879,7 @@ body
     inset: 0;
     left:-50px;
     top:-44px;
-    height:96%;
+    height:100%;
     width: 105.5%;
 
     background-image: url("Assets/AuliBarMiddle.png");
