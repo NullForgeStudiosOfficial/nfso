@@ -767,28 +767,15 @@ body
     left:19%;
 }
 
-#VexH{
-    position:absolute;
-    left:19.25%;
-    top:1%;
 
-    width:225px;
-    height:225px;
-
-    background-image:url(Assets//VexH.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-
-}
 
 #VexF{
     position:absolute;
-    left:69%;
-    top:1%;
+    left:16%;
+    top:0.1%;
 
-    width:225px;
-    height:225px;
+    width:350px;
+    height:350px;
 
     background-image:url(Assets//VexF.png);
     background-size: 100% 100%;
