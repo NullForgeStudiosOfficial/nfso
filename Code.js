@@ -334,6 +334,8 @@ Button9.addEventListener("click", function()
 
 async function pageresetter()
 {
+
+    document.getElementById("ScrollSpace").scrollTop = 0;
     SanctumBool = false
 
     LinksPage.style.display = "none";

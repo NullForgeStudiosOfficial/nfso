@@ -451,9 +451,9 @@ body
 
     background-color:transparent;
 
-    background-position:6px;
+    background-position:5px -5px;
     background-repeat:no-repeat;
-    background-size:100% 100%;
+    background-size:100% 110%;
 
     cursor:pointer;
 
@@ -759,14 +759,6 @@ body
     background-position: center;
 }
 
-#VexInfo{
-    font-size:var(--body-size);
-    white-space:pre-line;
-    text-align: left;
-    position: relative;
-    left:19%;
-}
-
 
 
 #VexF{
@@ -831,99 +823,97 @@ body
 }
 
 
-
-
-
-#AuliBarTop
-{
-    display: block;
-    position: relative;
-    left:12%;
-    width: 75%;
-    height: auto;
-}
-
+#AuliBarTop,
 #AuliBarBottom
 {
-    display: block;
-    position: relative;
-    left:12%;
-    top:-3%;
-    width: 75%;
-    height: auto;
+    display:block;
+    position:relative;
+
+    width:75%;
+    height:auto;
+
+    margin:0 auto;
 }
 
 #AuliActualMiddle
 {
-    position: relative;
-    width: 98.5%;
-    height:100%;
+    position:relative;
+
+    width:100%;
 }
 
 #AuliBarMiddle
 {
-    position: absolute;
-    inset: 0;
-    left:-50px;
-    top:-44px;
-    height:100%;
-    width: 105.5%;
+    position:absolute;
 
-    background-image: url("Assets/AuliBarMiddle.png");
-    background-size: 65%;
-    background-repeat: repeat-y;
-    background-position: center;
+    width:68.5%;
+    height:102%;
 
-    pointer-events: none;
-    z-index: -1;
+    left:50%;
+    top:-45px;
+
+    transform:translateX(-50%);
+
+    background-image:url("Assets/AuliBarMiddle.png");
+
+    background-size:100% auto;
+    background-repeat:repeat-y;
+    background-position:center top;
+
+    pointer-events:none;
+    z-index:-1;
 }
 
 #AuliInsideMiddle
 {
-    width: 100%;
-    height:100%;
+    position:relative;
+
+    width:100%;
     padding:20px;
-
 }
 
-#AuliH{
-    position:absolute;
-    left:19.25%;
-    top:-1%;
-
-    width:225px;
-    height:225px;
-
-    background-image:url(Assets/AuliH.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#AuliTitle
+#AuliBarBottom
 {
-    font-size:30px;
-    top: -2%;
-    position: relative;
-    display:flex;
-    justify-content: center;
-    white-space:pre-line;
+    margin-top:0;
 }
 
-#AuliDivider{
-    position: relative;
-    display:flex;
-    justify-content: center;
-    white-space:pre-line;
-    left:17%;
+#AuliDivider
+{
+    position:relative;
+    left:-9px;
 
     width:65%;
-    height:3%;
+    aspect-ratio:1593 / 110;
 
-    background-image:url(Assets/AuliDivider.png);
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
+    margin:1rem auto 0;
 
+    background-image:url("Assets/AuliDivider.png");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-position:center;
 }
 
+#AuliH
+{
+    position:absolute;
+
+    left:19%;
+    top:-10px;
+
+    width:clamp(150px, 12vw, 225px);
+    aspect-ratio:1 / 1;
+
+    background-image:url("Assets/AuliH.png");
+    background-size:contain;
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+.AuliTitle
+{
+    font-size:30px;
+    top: -40px;
+    position: relative;
+    justify-content: center;
+    white-space:pre-line;
+}
