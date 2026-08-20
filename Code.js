@@ -49,7 +49,6 @@ let PupBackgroundImage = document.getElementById("PupsBackgroundImage")
 let ExtraBackgroundImage = document.getElementById("ExtrasBackgroundImage")
 let extrabackgroundscroll = 0;
 
-
 let RainCanvas = document.getElementById("Rain");
 let RainContext = RainCanvas.getContext("2d");
 let RainFontSize = 15;
@@ -59,11 +58,6 @@ let RainColumns;
 let RainRows;
 let CharacterList = "ABCDEFJHIJKLMONPQRSTUVWXYZ0123456789";
 
-
-
-
-
-
 let SanctumBool = false
 let SanctumScale = 0.93;
 let SanctumDirection = 1;
@@ -71,7 +65,29 @@ const MinScale = 0.93;
 const MaxScale = 1.075;
 const ScaleSpeed = 0.0385;
 
-
+let PupSky = document.getElementById("Sky")
+let PupStatic = document.getElementById("Static")
+let PupRock = document.getElementById("Rock")
+let PupCloud1 = document.getElementById("PupCloud1")
+let PupCloud2 = document.getElementById("PupCloud2")
+let PupCoin = document.getElementById("PupCoin")
+let PupGrass = document.getElementById("PupGrass")
+let PupChannel = 0
+let PupScore = 0
+let PupCoins = 0
+let PupLives = 3
+let PupYValue = 0
+let PupSpeed = 1
+//let GroundScroll = BaseGroundSpeed * PupSpeed * DeltaTime;
+//let RunTimer = BaseAnimationSpeed * PupSpeed * DeltaTime;
+let StaticImages = [
+    "Assets/Static1.png",
+    "Assets/Static2.png",
+    "Assets/Static3.png",
+    "Assets/Static4.png",
+    "Assets/Static5.png"
+];
+let StaticBool = false
 
 
 
@@ -155,7 +171,7 @@ function Update(CurrentTime)
     // Pup things
     if (PupPage.style.display == "block")
     {
-        
+       
     }
     
 
@@ -285,6 +301,20 @@ async function SanctumBreath()
     }
 }
 
+async function RandomStatic()
+{
+
+    while(StaticBool)
+    {
+        await Sleep(25)
+        let RandomImage = Math.floor(Math.random() * StaticImages.length);
+
+        PupStatic.style.backgroundImage = `url("${StaticImages[RandomImage]}")`;
+        
+    }
+
+}
+
 
 
 Button1.addEventListener("click", function()
@@ -355,6 +385,7 @@ async function pageresetter()
     PupBackground.style.display = "none";
     ExtrasBackground.style.display = "none";
     LinksBackground.style.display = "none";
+    StaticBool = false
 }
 
 
@@ -397,6 +428,9 @@ PupButton.addEventListener("click", function()
 {
     pageresetter()
 
+    StaticBool = true
+
+    RandomStatic()
 
     PupBackground.style.display = "block";
     PupPage.style.display = "block"
