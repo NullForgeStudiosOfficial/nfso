@@ -4,6 +4,18 @@
     src: url("Assets/FontOfArdron.ttf");
 }
 
+@font-face
+{
+    font-family: Skranji;
+    src: url("Assets/Skranji.ttf");
+}
+
+@font-face
+{
+    font-family: Lexend;
+    src: url("Assets/Lexend.ttf");
+}
+
 *
 {
     box-sizing: border-box;
@@ -29,7 +41,7 @@ body
 {
     margin:0;
     overflow:hidden;
-    font-family:Ardron;
+    font-family:Lexend;
     color:white;
 }
 
@@ -189,7 +201,7 @@ body
     white-space:pre-line;
     word-break:break-word;
 
-    font-family:Ardron;
+    font-family:Lexend;
     font-size:var(--navtext-size);
 
     color:#dfdfdf;
@@ -373,7 +385,7 @@ body
     position:absolute;
 
     left:20px;
-    top:20px;
+    top:10px;
 
     width:70%;
 
@@ -382,8 +394,7 @@ body
     text-align:left;
 
     color:#dfdfdf;
-    font-family: Ardron;
-    src: url("Assets/FontOfArdron.ttf");
+    font-family: Lexend;
 
     text-shadow:
         7px 0px 5px #000,
@@ -414,8 +425,7 @@ body
     line-height:1.20;
 
     font-size:var(--body-size);
-    font-family: Ardron;
-    src: url("Assets/FontOfArdron.ttf");
+    font-family: Lexend;
 
     color:#dfdfdf;
 
@@ -733,6 +743,7 @@ body
 
 #VexTitle
 {
+    font-family: Ardron;
     font-size:30px;
     position: relative;
     padding-top: 10px;
@@ -776,7 +787,7 @@ body
 
 }
 
-.ProfileQuestion
+.VexProfileQuestion
 {
     font-size:var(--profilequestion-size);
     background-color:rgba(0, 0, 0, 0.685);
@@ -790,7 +801,7 @@ body
     width: 63%;
 }
 
-.ProfileAnswer
+.VexProfileAnswer
 {
     text-align: left;
     position: relative;
@@ -800,6 +811,8 @@ body
     left:19%;
     font-size:var(--profileanswer-size);
 }
+
+
 
 #HereBeDragons{
     position: relative;
@@ -911,9 +924,42 @@ body
 
 .AuliTitle
 {
+
+    font-family: Skranji;
     font-size:30px;
     top: -40px;
     position: relative;
     justify-content: center;
     white-space:pre-line;
+}
+
+.AuliProfileQuestion
+{
+    font-family: Skranji;
+
+
+    font-size:var(--profilequestion-size);
+    background-color:rgba(121, 0, 0, 0.685);
+    text-align: left;
+    position: relative;
+    align-items: center;
+    left:18%;
+    padding-left: 1%;
+    padding-top: 1%;
+    margin-top: 1%;
+    width: 64%;
+}
+
+.AuliProfileAnswer
+{
+    font-family: Skranji;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: left;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    width:63%;
+    left:19%;
+    font-size:var(--profileanswer-size);
 }

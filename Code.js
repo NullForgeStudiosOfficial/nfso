@@ -88,31 +88,36 @@ function Start()
     SetUpButtonTexture(
     "LinksButton",
     "ButtonVoid.png",
-    "Our Work"
+    "Our Work",
+    "Lexend"
     );
 
     SetUpButtonTexture(
         "VexButton",
         "ButtonGrimlowe.png",
-        "Vex Info"
+        "Vex Info",
+        "Ardron"
     );
 
     SetUpButtonTexture(
         "AuliButton",
         "ButtonEimon.png",
-        "Auli Info"
+        "Auli Info",
+        "Skranji"
     );
 
     SetUpButtonTexture(
         "PupButton",
         "ButtonElusia.png",
-        "Pup Info"
+        "Pup Info",
+        "Lexend"
     );
 
     SetUpButtonTexture(
         "ExtraButton",
         "ButtonVoid.png",
-        "Extras"
+        "Extras",
+        "Lexend"
     );
 
 
@@ -180,7 +185,7 @@ function ScrollButtons()
     }
 }
 
-function SetUpButtonTexture(ButtonID, Background, Text)
+function SetUpButtonTexture(ButtonID, Background, Text,FontFamily)
 {
     Button = document.getElementById(ButtonID);
     ButtonsBackground = Button.querySelector(".ButtonBackground");
@@ -190,6 +195,7 @@ function SetUpButtonTexture(ButtonID, Background, Text)
     ButtonsBorder.style.backgroundImage = `url("Assets/ButtonBase.png")`;
 
     ButtonsText = Button.querySelector(".ButtonText");
+    ButtonsText.style.fontFamily = FontFamily
     ButtonsText.textContent = Text;
     
 }
