@@ -1104,7 +1104,38 @@ function ChannelSorter()
         NumberRight.style.backgroundImage =
             `url("${ChannelNumberImages[Number(ChannelString[3])]}")`;
 
-    PupChannels[PupCurrentChannel -1].style.display = "block";
+    if (PupCurrentChannel <= 25)
+    {
+        PupChannels[PupCurrentChannel -1].style.display = "block";
+    }
+    else
+    {
+        switch(PupCurrentChannel)
+        {
+            case 69:
+                PupChannels[25].style.display = "block";
+                break;
+
+            case 100:
+                PupChannels[26].style.display = "block";
+                break;
+
+            case 333:
+                PupChannels[27].style.display = "block";
+                break;
+
+            case 1000:
+                PupChannels[28].style.display = "block";
+                break;
+
+            case 8265:
+                PupChannels[29].style.display = "block";
+                break;
+        }
+    }
+
+
+    
 
     if (PupCurrentChannel == 3)
     {
