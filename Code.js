@@ -136,7 +136,8 @@ let PupChannels = [
     document.getElementById("Channel27"),
     document.getElementById("Channel28"),
     document.getElementById("Channel29"),
-    document.getElementById("Channel30")
+    document.getElementById("Channel30"),
+    document.getElementById("Channel31")
 ];
 
 let PupPowerButton =document.getElementById("PupPowerButton");
@@ -1131,6 +1132,10 @@ function ChannelSorter()
             case 8265:
                 PupChannels[29].style.display = "block";
                 break;
+
+            case 67:
+                PupChannels[30].style.display = "block";
+                break;
         }
     }
 
@@ -1184,10 +1189,13 @@ function CleanUpLevel()
     PupRocks = [];
     PupCoins = [];
 
+    
+
     PupJumped = false;
     PupJumping = false;
     PupYVelocity = 0;
     PupY = 0;
+    PupSprite.style.transform = `translateY(${-PupY}px)`;
 }
 
 function CleanUpGame()
@@ -1218,6 +1226,7 @@ function CleanUpGame()
     InfoBarTime.innerText = Math.floor(PupGameTime);
     InfoBarCoins.innerText = PupCoinAmount
     JumpScreen.style.display = "none";
+    PupLivesScreen.innerText = "x" + PupLives;
 
     for (let Cloud of PupClouds)
     {
@@ -1228,7 +1237,7 @@ function CleanUpGame()
 }
 
 
-
+ 
 PupPowerButton.addEventListener("click", function()
 {
     ResetChannels()
@@ -1319,6 +1328,8 @@ PupChannelDownButton.addEventListener("click", function()
 
 PupStartGameButton.addEventListener("click", function()
 {
+
+    console.log("StartButtonPressed")
 
     PupWink();
 
@@ -1536,6 +1547,7 @@ async function CheckPupCollisions()
                 await Sleep(1500)
                 CleanUpGame()
                 await Sleep (500)
+                PupHeadBob()
                 ScreenGracePeriod = false
                 PupHeadScreen.style.display = "block"
 

@@ -1218,7 +1218,8 @@ body
 #Channel27,
 #Channel28,
 #Channel29,
-#Channel30
+#Channel30,
+#Channel31
 {
     background-color:rgba(0, 121, 26, 0.685);
     position:relative;
@@ -1229,6 +1230,14 @@ body
     width:95%;
     height:71%;
     z-index: 2;
+}
+
+#Channel31
+{
+    background-image: url(Assets/67.png);
+    background-size: 87%;
+    background-repeat: no-repeat;
+    background-position: 50% 0;
 }
 
 #Channel3
