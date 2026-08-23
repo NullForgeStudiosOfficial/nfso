@@ -1482,7 +1482,7 @@ function GrabCoin()
 {
     PupCoinAmount+= 1
 
-    PupAnimationSpeed -= 5
+    PupAnimationSpeed -= 3
     GrassSpeed += 4
 
     BaseRockSpawnMin -= 100;
