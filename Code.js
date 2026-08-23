@@ -67,19 +67,18 @@ const ScaleSpeed = 0.0385;
 
 let PupSky = document.getElementById("Sky")
 let PupStatic = document.getElementById("Static")
-let PupRock = document.getElementById("Rock")
-let PupCloud1 = document.getElementById("PupCloud1")
-let PupCloud2 = document.getElementById("PupCloud2")
-let PupCoin = document.getElementById("PupCoin")
 let PupGrass = document.getElementById("PupGrass")
-let PupChannel = 0
+let Rocks = document.querySelectorAll(".Rock");
+let Coins = document.querySelectorAll(".Coin");
+let Clouds = document.querySelectorAll(".Cloud");
+let PupCurrentChannel = 1
 let PupScore = 0
-let PupCoins = 0
+let PupCoinAmount = 0
+let PupGameTime = 0
 let PupLives = 3
-let PupYValue = 0
 let PupSpeed = 1
-//let GroundScroll = BaseGroundSpeed * PupSpeed * DeltaTime;
-//let RunTimer = BaseAnimationSpeed * PupSpeed * DeltaTime;
+let PupAnimationSpeed = 300
+let GrassScrollNumber = 0
 let StaticImages = [
     "Assets/Static1.png",
     "Assets/Static2.png",
@@ -87,9 +86,177 @@ let StaticImages = [
     "Assets/Static4.png",
     "Assets/Static5.png"
 ];
+
+let ChannelNumberImages =
+[
+    "Assets/Green0.png",
+    "Assets/Green1.png",
+    "Assets/Green2.png",
+    "Assets/Green3.png",
+    "Assets/Green4.png",
+    "Assets/Green5.png",
+    "Assets/Green6.png",
+    "Assets/Green7.png",
+    "Assets/Green8.png",
+    "Assets/Green9.png"
+
+]
+
+
 let StaticBool = false
+let StaticPlayBool = false
+
+let PupChannels = [
+    document.getElementById("Channel1"),
+    document.getElementById("Channel2"),
+    document.getElementById("Channel3"),
+    document.getElementById("Channel4"),
+    document.getElementById("Channel5"),
+    document.getElementById("Channel6"),
+    document.getElementById("Channel7"),
+    document.getElementById("Channel8"),
+    document.getElementById("Channel9"),
+    document.getElementById("Channel10"),
+    document.getElementById("Channel11"),
+    document.getElementById("Channel12"),
+    document.getElementById("Channel13"),
+    document.getElementById("Channel14"),
+    document.getElementById("Channel15"),
+    document.getElementById("Channel16"),
+    document.getElementById("Channel17"),
+    document.getElementById("Channel18"),
+    document.getElementById("Channel19"),
+    document.getElementById("Channel20"),
+    document.getElementById("Channel21"),
+    document.getElementById("Channel22"),
+    document.getElementById("Channel23"),
+    document.getElementById("Channel24"),
+    document.getElementById("Channel25"),
+    document.getElementById("Channel26"),
+    document.getElementById("Channel27"),
+    document.getElementById("Channel28"),
+    document.getElementById("Channel29"),
+    document.getElementById("Channel30")
+];
+
+let PupPowerButton =document.getElementById("PupPowerButton");
+let PupVolumeUpButton =document.getElementById("PupVolumeUpButton");
+let PupVolumeDownButton =document.getElementById("PupVolumeDownButton");
+let PupChannelUpButton =document.getElementById("PupChannelUpButton");
+let PupChannelDownButton =document.getElementById("PupChannelDownButton");
+
+let NumberLeft =document.getElementById("NumberLeft");
+let NumberMiddleLeft =document.getElementById("NumberMiddleLeft");
+let NumberMiddleRight =document.getElementById("NumberMiddleRight");
+let NumberRight =document.getElementById("NumberRight");
+
+let TVOn = false
+
+let OnChannel3 = false;
+let GameStarted = false;
+
+let PupPowerOn = document.getElementById("PupPowerOn");
+
+let PupVolume = 25
+
+let PupGameMusic = new Audio();
+
+let PupSoundEffects = new Audio();
+
+let ScanLines =document.getElementById("ScanLines");
+
+let ScanLinePOS = 0 
+
+let PupStartGameButton = document.getElementById("StartButton")
+let PupMenuHead = document.getElementById("PupHead")
+let PupWinking = [
+    "Assets/DogWink1.png",
+    "Assets/DogWink2.png",
+    "Assets/DogWink3.png",
+    "Assets/DogWink2.png",
+    "Assets/DogWink1.png",
+    "Assets/DogHead.png",
+]
+let PupHeadPosition = 0
+let PupDown = false
+
+let PupStartScreen = document.getElementById("StartScreen")
+let PupHeadScreen = document.getElementById("PupLivesHead")
+let PupLivesScreen = document.getElementById("PupLives")
+ 
+let GameTitle = document.getElementById("GameTitle")
+
+let GameInfoBar = document.getElementById("GameInfoBar")
+
+let InfoBarScore = document.getElementById("PupScore")
+let InfoBarCoins = document.getElementById("PupCoins")
+let InfoBarTime = document.getElementById("PupTime")
+
+let PupSprite = document.getElementById("PupSprite")
+let PupRunning = [
+    "Assets/PupRun1.png",
+    "Assets/PupRun2.png",
+    "Assets/PupRun3.png",
+]
+
+let PupRockImages = [
+    "Assets/Rock1.png",
+    "Assets/Rock2.png",
+    "Assets/Rock3.png",
+    "Assets/Rock4.png",
+    "Assets/Rock5.png",
+    "Assets/Rock6.png",
+    "Assets/Rock7.png",
+]
+
+let PupCloudImages = [
+    "Assets/Cloud1.png",
+    "Assets/Cloud2.png",
+    "Assets/Cloud3.png",
+    "Assets/Cloud4.png",
+    "Assets/Cloud5.png",
+]
+
+let ScreenGracePeriod = false
+let GrassSpeed = 150
+
+let PupHitBox = document.getElementById("PupHitBox");
+
+let PupRocks = [];
+let PupCoins = [];
+let PupClouds = [];
+
+let BaseRockSpawnMin = 3000
+let BaseRockSpawnMax = 4000
+let RockMax = 3
+
+let BaseCoinSpawnMin = 5000
+let BaseCoinSpawnMax = 10000
+let CoinMax = 2
+let CoinMaxHeight = 50
+let CoinMinHeight = 35
+let CoinRockMinDistance = 100
+let RockMinDistance = 500;
+
+let BaseCloudSpawnMin = 1000
+let BaseCloudSpawnMax = 3000
+let CloudMax = 6
+let CloudMinHeight = 60
+let CloudMaxHeight = 80
 
 
+let Jump = document.getElementById("Jump");
+let JumpScreen = document.getElementById("JumpScreen")
+let PupAirTime = 1000
+let PupJumped = false
+let PupJumping = false;
+let PupYVelocity = 0;
+let PupY = 0;
+let PupLastHighScore = 0
+let PupLastHighScoreText = document.getElementById("LastHighScore")
+
+
+//===========================================================
 
 function Start()
 {
@@ -98,6 +265,8 @@ function Start()
     SpawnHead();
 
     BlinkEyes("VoidEyes")
+
+    PupLastHighScoreText.innerText = `Last High Score: ${PupLastHighScore}`;
 
     
 
@@ -126,7 +295,7 @@ function Start()
         "PupButton",
         "ButtonElusia.png",
         "Pup Info",
-        "Lexend"
+        "Lilita"
     );
 
     SetUpButtonTexture(
@@ -140,15 +309,13 @@ function Start()
     requestAnimationFrame(Update);
 }
 
-
-
 function Update(CurrentTime)
 {
     DeltaTime = (CurrentTime - LastTime) / 1000;
     LastTime = CurrentTime;
 
     VoidSpin()
-    ScrollButtons()
+    ScrollButtons() 
 
 
 
@@ -171,16 +338,31 @@ function Update(CurrentTime)
     // Pup things
     if (PupPage.style.display == "block")
     {
-       
+       ScrollLines()
+
+       if (OnChannel3)
+       {
+            UpdateClouds();
+       }
+
+       if (GameStarted)
+       {
+            UpdatePupTimeAndScore()
+            GrassScroll()
+            CheckPupCollisions();
+            UpdateRocks();
+            
+            UpdateCoins();
+            UpdatePupJump();
+
+       }
     }
     
 
     requestAnimationFrame(Update);
 }
 
-
-
-function ScrollLines ()
+function ScrollLines()
 {
     ScanLinePOS += 5 * DeltaTime;
 
@@ -301,19 +483,7 @@ async function SanctumBreath()
     }
 }
 
-async function RandomStatic()
-{
 
-    while(StaticBool)
-    {
-        await Sleep(25)
-        let RandomImage = Math.floor(Math.random() * StaticImages.length);
-
-        PupStatic.style.backgroundImage = `url("${StaticImages[RandomImage]}")`;
-        
-    }
-
-}
 
 
 
@@ -373,6 +543,7 @@ async function pageresetter()
 
     document.getElementById("ScrollSpace").scrollTop = 0;
     SanctumBool = false
+    StaticPlayBool = false
 
     LinksPage.style.display = "none";
     VexPage.style.display = "none";
@@ -387,8 +558,6 @@ async function pageresetter()
     LinksBackground.style.display = "none";
     StaticBool = false
 }
-
-
 
 LinksButton.addEventListener("click", function()
 {
@@ -423,14 +592,9 @@ AuliButton.addEventListener("click", function()
 
 });
 
-
 PupButton.addEventListener("click", function()
 {
     pageresetter()
-
-    StaticBool = true
-
-    RandomStatic()
 
     PupBackground.style.display = "block";
     PupPage.style.display = "block"
@@ -449,7 +613,6 @@ ExtraButton.addEventListener("click", function()
     ExtraPage.style.display = "block"
 
 });
-
 
 
 function Resize()
@@ -876,6 +1039,818 @@ function ColumnHasText(Column)
 
     return false;
 }
+
+
+// ---------------------------------------------------------------------------
+
+async function RandomStatic()
+{
+
+    while(StaticPlayBool)
+    {
+        await Sleep(25)
+        let RandomImage = Math.floor(Math.random() * StaticImages.length);
+
+        PupStatic.style.backgroundImage = `url("${StaticImages[RandomImage]}")`;
+        
+    }
+
+}
+
+async function ChannelStatic()
+{
+    if (StaticBool)
+    {
+        StaticBool = false
+    }
+
+    StaticBool = true;
+    
+    while(StaticBool)
+    {
+        PupStatic.style.transition = "none";
+        PupStatic.style.opacity = "1";
+
+        RandomStatic();
+
+        await Sleep(25);
+
+        PupStatic.style.transition = "opacity 1.0s linear";
+        PupStatic.style.opacity = "0";
+
+        await Sleep(1000);
+
+        StaticBool = false;
+    }
+    
+
+    
+}
+
+
+function ChannelSorter()
+{
+    let ChannelString = PupCurrentChannel.toString().padStart(4, "0");
+
+        NumberLeft.style.backgroundImage =
+            `url("${ChannelNumberImages[Number(ChannelString[0])]}")`;
+
+        NumberMiddleLeft.style.backgroundImage =
+            `url("${ChannelNumberImages[Number(ChannelString[1])]}")`;
+
+        NumberMiddleRight.style.backgroundImage =
+            `url("${ChannelNumberImages[Number(ChannelString[2])]}")`;
+
+        NumberRight.style.backgroundImage =
+            `url("${ChannelNumberImages[Number(ChannelString[3])]}")`;
+
+    PupChannels[PupCurrentChannel -1].style.display = "block";
+
+    if (PupCurrentChannel == 3)
+    {
+
+        OnChannel3 = true
+        CleanUpGame();
+        CloudSpawner()
+        PupHeadBob()
+
+    }
+    else
+    {
+        OnChannel3 = false
+        PupHeadPosition = 0
+        CleanUpGame();
+    
+
+    }
+
+    
+
+
+
+}
+
+function ResetChannels()
+{
+    for (let i = 0; i < PupChannels.length; i++)
+    {
+        PupChannels[i].style.display = "none";
+    }
+}
+
+function CleanUpLevel()
+{
+    for (let Rock of PupRocks)
+    {
+        Rock.remove();
+    }
+
+    for (let Coin of PupCoins)
+    {
+        Coin.remove();
+    }
+
+    PupRocks = [];
+    PupCoins = [];
+
+    PupJumped = false;
+    PupJumping = false;
+    PupYVelocity = 0;
+    PupY = 0;
+}
+
+function CleanUpGame()
+{
+    CleanUpLevel()
+
+    GameStarted = false
+    GameTitle.style.display = "block"
+    PupStartScreen.style.display = "none"
+    GameInfoBar.style.display = "none"
+    PupSprite.style.display = "none"
+    PupScore = 0;
+    PupLives = 3;
+    PupCoinAmount = 0
+    PupGameTime = 0
+    PupSpeed = 1
+    PupAnimationSpeed = 300
+    BaseRockSpawnMin = 3000
+    BaseRockSpawnMax = 4000
+    RockMax = 3
+    BaseCoinSpawnMin = 5000
+    BaseCoinSpawnMax = 10000
+    PupJumped = false;
+    PupJumping = false;
+    PupYVelocity = 0;
+    PupY = 0;
+    InfoBarScore.innerText = Math.floor(PupScore);
+    InfoBarTime.innerText = Math.floor(PupGameTime);
+    InfoBarCoins.innerText = PupCoinAmount
+    JumpScreen.style.display = "none";
+
+    for (let Cloud of PupClouds)
+    {
+        Cloud.remove();
+    }
+
+    PupClouds = [];
+}
+
+
+
+PupPowerButton.addEventListener("click", function()
+{
+    ResetChannels()
+
+    if (!TVOn)
+    {
+        PupHeadPosition = 0
+        TVOn = true
+        StaticPlayBool = true
+        PupPowerOn.style.display = "block";
+        NumberLeft.style.display = "block";
+        NumberMiddleLeft.style.display = "block";
+        NumberMiddleRight.style.display = "block";
+        NumberRight.style.display = "block";
+        ChannelStatic()
+        ChannelSorter();
+    }    
+    else
+    {
+        OnChannel3 = false
+        TVOn = false
+        StaticPlayBool = false
+        PupPowerOn.style.display = "none";
+        NumberLeft.style.display = "none";
+        NumberMiddleLeft.style.display = "none";
+        NumberMiddleRight.style.display = "none";
+        NumberRight.style.display = "none";
+        CleanUpGame();
+    }
+});
+
+PupVolumeUpButton.addEventListener("click", function()
+{
+    if (PupVolume == 100 || !TVOn)
+    {
+        return;
+    }
+
+    PupVolume+= 1
+
+    PupGameMusic.volume = PupVolume / 100;
+    PupSoundEffects.volume = PupVolume / 100;
+    
+});
+
+PupVolumeDownButton.addEventListener("click", function()
+{
+    if (PupVolume == 0 || !TVOn)
+    {
+        return;
+    }
+
+    PupVolume-= 1
+
+    PupGameMusic.volume = PupVolume / 100;
+    PupSoundEffects.volume = PupVolume / 100;
+    
+});
+
+PupChannelUpButton.addEventListener("click", function()
+{
+    if (PupCurrentChannel == 9999 || !TVOn)
+    {
+        return;
+    }
+    StaticPlayBool = true
+
+    PupCurrentChannel += 1
+    ResetChannels()
+    ChannelStatic()
+    ChannelSorter()
+});
+
+PupChannelDownButton.addEventListener("click", function()
+{
+    if (PupCurrentChannel == 1 || !TVOn)
+    {
+        return;
+    }
+    StaticPlayBool = true
+
+    PupCurrentChannel -= 1
+    ResetChannels()
+    ChannelStatic()
+    ChannelSorter()
+});
+
+
+PupStartGameButton.addEventListener("click", function()
+{
+
+    PupWink();
+
+    
+});
+
+async function PupWink()
+{
+    
+
+    while(PupMenuHead.style.backgroundPositionY != 0 + "px")
+    {
+        
+        await Sleep(10)
+    }
+
+    PupWinking.forEach(ImagePath =>
+    {
+        const Img = new Image();
+        Img.src = ImagePath;
+    });
+
+    
+
+    
+    for (let i = 0; i < PupWinking.length; i++)
+    {
+        PupMenuHead.style.backgroundImage = `url("${PupWinking[i]}")`
+
+        await Sleep(75)
+    }
+
+
+
+
+    GameTitle.style.display = "none"
+
+    PupStartScreen.style.display = "block"
+    ScreenGracePeriod = true
+
+    GameStarted = true
+
+    await Sleep(2000)
+
+    GameInfoBar.style.display = "block"
+
+    PupSprite.style.display = "block"
+
+    PupStartScreen.style.display = "none"
+
+    JumpScreen.style.display = "block"
+
+    PupSpriteAnimation()
+
+    RockSpawner()
+    CoinSpawner()
+
+    
+
+    await Sleep(500)
+
+    ScreenGracePeriod = false
+
+    
+}
+
+async function PupHeadBob()
+{
+    PupDown = true
+    while(OnChannel3 && !GameStarted)
+    {
+        if (PupDown)
+        {
+            PupHeadPosition +=1
+            await Sleep(50)
+            if (PupHeadPosition >= 10)
+            { 
+                PupDown = false
+            }
+        }
+        else
+        {
+            PupHeadPosition -=1
+            await Sleep(50)
+            if (PupHeadPosition <= 0)
+            {
+                PupDown = true
+            }
+        }
+
+        PupMenuHead.style.backgroundPositionY = PupHeadPosition + "px"
+
+
+    }
+}
+
+async function PupSpriteAnimation()
+{
+    let pupframe = 0
+
+    PupRunning.forEach(ImagePath =>
+    {
+        const Img = new Image();
+        Img.src = ImagePath;
+    });
+
+
+    while(GameStarted)
+    {
+        if (pupframe == 3)
+        {
+            pupframe = 0
+        }
+
+        PupSprite.style.backgroundImage = `url("${PupRunning[pupframe]}")`
+        pupframe++
+
+        await Sleep(PupAnimationSpeed)
+    }
+}
+
+function GrassScroll()
+{
+    GrassScrollNumber -= GrassSpeed  * DeltaTime;
+
+    PupGrass.style.backgroundPositionX = GrassScrollNumber + "px";
+}
+
+function UpdatePupTimeAndScore()
+{
+    if (ScreenGracePeriod)
+    {       
+        return;
+    }
+
+    PupGameTime += DeltaTime;
+
+    let CoinMultiplier = 1 + (PupCoinAmount * 0.1);
+
+    PupScore += 100 * CoinMultiplier * DeltaTime;
+
+    InfoBarScore.innerText = Math.floor(PupScore);
+    InfoBarTime.innerText = Math.floor(PupGameTime);
+    InfoBarCoins.innerText = PupCoinAmount
+
+
+}
+
+function GrabCoin()
+{
+    PupCoinAmount+= 1
+
+    PupAnimationSpeed -= 5
+    GrassSpeed += 4
+
+    BaseRockSpawnMin -= 100;
+    BaseRockSpawnMax -= 100;
+
+    BaseCoinSpawnMin -= 50;
+    BaseCoinSpawnMax -= 50;
+
+    if (PupCoinAmount >= 25)
+    {
+        RockMax = 2
+    }
+}
+
+
+function IsColliding(Object1, Object2)
+{
+    if (!Object1 || !Object2)
+    {
+        return false;
+    }
+
+    let Box1 = Object1.getBoundingClientRect();
+    let Box2 = Object2.getBoundingClientRect();
+
+    return (
+        Box1.left < Box2.right &&
+        Box1.right > Box2.left &&
+        Box1.top < Box2.bottom &&
+        Box1.bottom > Box2.top
+    );
+}
+
+
+async function CheckPupCollisions()
+{
+    let Rocks = document.querySelectorAll(".Rock");
+
+    for (let Rock of Rocks)
+    {
+        let RockHitBox = Rock.querySelector(".RockHitBox");
+
+        if (IsColliding(PupHitBox, RockHitBox))
+        {
+            CleanUpLevel()
+            PupStartScreen.style.display = "block"
+            ScreenGracePeriod = true
+
+            PupLives -=1
+
+            if (PupLives == 0)
+            {
+                PupHeadScreen.style.display = "none"
+                PupLivesScreen.innerText = "GAME OVER"
+                if (PupScore > PupLastHighScore)
+                {
+                    PupLastHighScore = Math.floor(PupScore);
+
+
+                    PupLastHighScoreText.innerText = `Last High Score: ${PupLastHighScore}`;
+                }
+                await Sleep(1500)
+                CleanUpGame()
+                await Sleep (500)
+                ScreenGracePeriod = false
+                PupHeadScreen.style.display = "block"
+
+                
+            }
+            else
+            {
+                PupLivesScreen.innerText = "x" + PupLives;
+                await Sleep (1500)
+                PupStartScreen.style.display = "none"
+                await Sleep (500)
+                ScreenGracePeriod = false
+
+            }
+        }
+    }
+
+    for (let i = PupCoins.length - 1; i >= 0; i--)
+    {
+        let Coin = PupCoins[i];
+
+        if (IsColliding(PupHitBox, Coin))
+        {
+            GrabCoin();
+
+            Coin.remove();
+            PupCoins.splice(i, 1);
+        }
+    }
+}
+
+async function RockSpawner()
+{
+
+
+    while(GameStarted)
+    {
+        if (ScreenGracePeriod)
+        {
+            await Sleep(50)
+            continue
+        }
+
+
+        if (PupRocks.length < RockMax)
+        {
+            SpawnRock()
+
+        }
+        
+        let ThisAmount = Randomizer(BaseRockSpawnMin, BaseRockSpawnMax)
+
+        await Sleep(ThisAmount)
+        
+    }
+}
+
+async function CoinSpawner()
+{
+    while(GameStarted)
+    {
+        if (ScreenGracePeriod)
+        {
+            await Sleep(50)
+            continue
+        }
+
+        if (PupCoins.length < CoinMax)
+        {
+            SpawnCoin()
+
+        }
+        
+        let ThisAmount = Randomizer(BaseCoinSpawnMin, BaseCoinSpawnMax)
+
+        await Sleep(ThisAmount)
+        
+    }
+}
+
+async function CloudSpawner()
+{
+    while(OnChannel3)
+    {
+        if (PupClouds.length < CloudMax)
+        {
+            SpawnCloud()
+
+        }
+        
+        let ThisAmount = Randomizer(BaseCloudSpawnMin, BaseCloudSpawnMax)
+
+        await Sleep(ThisAmount)
+        
+    }
+}
+
+function SpawnRock()
+{
+    let Rock = document.createElement("div");
+
+    RandomRockImage = Randomizer(0, PupRockImages.length-1)
+
+    Rock.style.backgroundImage = `url("${PupRockImages[RandomRockImage]}")`
+
+
+
+    Rock.className = "Rock";
+    Rock.style.display = "block";
+    Rock.style.left = "100%";
+
+    let RockHitBox = document.createElement("div");
+    RockHitBox.className = "RockHitBox";
+
+    Rock.appendChild(RockHitBox);
+    Channel3.appendChild(Rock);
+
+    let NewRockBox = Rock.getBoundingClientRect();
+
+    for (let ExistingRock of PupRocks)
+    {
+        let ExistingRockBox = ExistingRock.getBoundingClientRect();
+
+        let Gap = Math.max(
+            ExistingRockBox.left - NewRockBox.right,
+            NewRockBox.left - ExistingRockBox.right
+        );
+
+        if (Gap < RockMinDistance)
+        {
+            Rock.remove();
+            return;
+        }
+    }
+
+    PupRocks.push(Rock);
+}
+
+function SpawnCoin()
+{
+    let Coin = document.createElement("div");
+
+    Coin.className = "Coin";
+    Coin.style.display = "block";
+    Coin.style.left = "100%";
+    
+
+    let CoinSpawnHeight = Randomizer(CoinMinHeight, CoinMaxHeight);
+    Coin.style.bottom = `${CoinSpawnHeight}%`;
+
+    Channel3.appendChild(Coin);
+
+    for (let Rock of PupRocks)
+    {
+        let CoinBox = Coin.getBoundingClientRect();
+        let RockBox = Rock.getBoundingClientRect();
+
+        let Distance = Math.abs(CoinBox.left - RockBox.left);
+
+        if (Distance < CoinRockMinDistance)
+        {
+            Coin.remove();
+            return;
+        }
+    }
+
+    PupCoins.push(Coin);
+}
+
+function SpawnCloud()
+{
+    let Cloud = document.createElement("div");
+    
+    RandomCloudImage = Randomizer(0, PupCloudImages.length-1)
+
+    Cloud.style.backgroundImage = `url("${PupCloudImages[RandomCloudImage]}")`
+
+
+
+    Cloud.className = "Cloud";
+    Cloud.style.display = "block";
+    Cloud.style.left = "100%";
+
+    let CloudSpawnHeight = Randomizer(CloudMinHeight, CloudMaxHeight);
+
+    Cloud.style.bottom = `${CloudSpawnHeight}%`;
+
+    Channel3.appendChild(Cloud);
+    PupClouds.push(Cloud);
+}
+
+function UpdateRocks()
+{
+    for (let i = PupRocks.length - 1; i >= 0; i--)
+    {
+        let Rock = PupRocks[i];
+
+        let CurrentLeft = Rock.offsetLeft;
+
+        Rock.style.left = `${CurrentLeft - (GrassSpeed * DeltaTime)}px`;
+
+        if (Rock.offsetLeft + Rock.offsetWidth < 0)
+        {
+            Rock.remove();
+            PupRocks.splice(i, 1);
+        }
+    }
+}
+
+function UpdateCoins()
+{
+    for (let i = PupCoins.length - 1; i >= 0; i--)
+    {
+        let Coin = PupCoins[i];
+
+        let CurrentLeft = Coin.offsetLeft;
+
+        Coin.style.left = `${CurrentLeft - (GrassSpeed * DeltaTime)}px`;
+
+        if (Coin.offsetLeft + Coin.offsetWidth < 0)
+        {
+            Coin.remove();
+            PupCoins.splice(i, 1);
+        }
+    }
+}
+
+function UpdateClouds()
+{
+    for (let i = PupClouds.length - 1; i >= 0; i--)
+    {
+        let Cloud = PupClouds[i];
+
+        let CurrentLeft = Cloud.offsetLeft;
+
+        Cloud.style.left = `${CurrentLeft - (GrassSpeed * DeltaTime)}px`;
+
+        if (Cloud.offsetLeft + Cloud.offsetWidth < 0)
+        {
+            Cloud.remove();
+            PupClouds.splice(i, 1);
+        }
+    }
+}
+
+function PupJump()
+{
+    if (PupJumping)
+    {
+        return;
+    }
+
+    PupJumping = true;
+
+    let SpeedMultiplier = GrassSpeed / 150;
+
+    PupYVelocity = 350 * SpeedMultiplier;
+}
+
+function UpdatePupJump()
+{
+    if (!PupJumping)
+    {
+        return;
+    }
+
+    let SpeedMultiplier = GrassSpeed / 150;
+
+    let Gravity = 500 * SpeedMultiplier * SpeedMultiplier;
+
+    PupYVelocity -= Gravity * DeltaTime;
+    PupY += PupYVelocity * DeltaTime;
+
+    if (PupY <= 0)
+    {
+        PupY = 0;
+        PupYVelocity = 0;
+        PupJumping = false;
+    }
+
+    PupSprite.style.transform = `translateY(${-PupY}px)`;
+}
+
+Jump.addEventListener("click", function()
+{
+    PupJump();
+
+});
+
+document.addEventListener("keydown", function(event)
+{
+    if (event.code === "Space")
+    {
+        if (GameStarted)
+        {
+            event.preventDefault();
+            PupJump();
+        }
+    }
+});
+
+
+
+function Randomizer(min,max)
+{
+    //because why the hell is JS so complicated for RNG?
+    // The actual fuck is this doing?
+    // Math.random() gives: 0.0 -> 0.99
+    // Multiply by the size of our range.
+    // (max-min+1) counts BOTH endpoints.
+    // Example:
+    // 30-100
+    // 100-30+1 = 71 possible numbers.
+    // Math.floor() removes the decimal.
+    // Now we have: 0 -> 70
+    // Finally shift the range upward.
+    // +30 turns: 0 -> 30
+    // 70 ->100
+    // Yeah. JS is so dumb i actually wrote comments. congrats. 
+    // stupid ass language can do  [] + [] but not number ranges without a custom function xD
+
+    
+    return Math.floor(Math.random() * (max - min + 1)) + min
+    
+}
+
+document.addEventListener("keydown", function(event)
+{
+    if (event.key === "F12")
+    {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener("keydown", function(event)
+{
+    if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I") ||
+        (event.ctrlKey && event.shiftKey && event.key === "J") ||
+        (event.ctrlKey && event.key === "U")
+    )
+    {
+        event.preventDefault();
+    }
+});
 
 
 Resize();

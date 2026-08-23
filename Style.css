@@ -16,6 +16,12 @@
     src: url("Assets/Lexend.ttf");
 }
 
+@font-face
+{
+    font-family: Lilita;
+    src: url("Assets/LilitaOne.ttf");
+}
+
 *
 {
     box-sizing: border-box;
@@ -33,7 +39,10 @@
     --body-size: clamp(12px, 1.5vw, 25px);
     --textbox-size: clamp(16px, 1.3vw, 24px);
     --scrollspace-height-size: clamp(40px, 81vh, 81vh);
-    --profilequestion-size: clamp(30px, 3vw, 40px);
+    --profilequestion-size: clamp(20px, 3vw, 40px);
+    --profileanswer-size: clamp(16px, 3vw, 20px);
+
+    --pupprofilequestion-size: clamp(10px, 3vw, 25px);
     --profileanswer-size: clamp(16px, 3vw, 20px);
 }
 
@@ -76,7 +85,7 @@ body
 {
     position:absolute;
 
-    width:100vw;
+    width:100%;
     height:100%;
 
     top:0%;
@@ -249,6 +258,7 @@ body
     align-items: center;
 
     gap: 2.5rem;
+    pointer-events:none;
 }
 
 #TopBar
@@ -624,19 +634,7 @@ body
     scrollbar-color:rgba(255,255,255,1) transparent;
 }
 
-#ScanLines
-{
-    position:absolute;
-    inset:0;
 
-    background-color:rgba(125,125,125,.05);
-    background-image:url(Assets/ScanLines.png);
-    background-repeat:repeat;
-
-    pointer-events:none;
-
-    z-index:-1;
-}
 
 @media (max-width:1600px)
 {
@@ -688,7 +686,7 @@ body
     }
 }
 
-
+/*----------------------------------------------------------------------------------------------------------------------*/
 
 #Rain
 {
@@ -837,6 +835,12 @@ body
 }
 
 
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
 #AuliBarTop,
 #AuliBarBottom
 {
@@ -965,61 +969,146 @@ body
     font-size:var(--profileanswer-size);
 }
 
-#PupCRT
+
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+#CRTFrame
 {
-    position:absolute;
-    image-rendering: pixelated;
+    position: absolute;
 
-    left:50%;
-    top:20%;
-    transform:translateX(-50%);
+    inset: 0;
 
-    width:clamp(700px, 12vw, 300px);
-    aspect-ratio:1 / 1;
+    background-image: url("Assets/PupCRT.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+
+    width: 100%;
+    height: 100%;
+
     z-index: 10;
 
-    background-image:url("Assets/PupCRT.png");
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center;
+    pointer-events: none;
+}
+
+
+#PupCRT
+{
+    position: absolute;
+    image-rendering: pixelated;
+
+    left: 50%;
+    top: 20%;
+
+    width: 700px;
+    aspect-ratio: 1 / 1;
+
+    transform: translateX(-50%) scale(var(--crt-scale));
+    transform-origin: top center;
+
+    z-index: 10;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+:root
+{
+    --crt-scale: 1;
+}
+
+@media (max-height: 800px)
+{
+    :root
+    {
+        --crt-scale: 0.70;
+    }
+}
+
+#CRTScreen
+{
+    position:absolute;
+    top:0;
+    left:0;
+    overflow: hidden;
+    display:block;
+    width:100%;
+    height:100%;
+    z-index: 9;
+    background-repeat: no-repeat;
+    
+   
 }
 
 #CRTImageContainer
 {
     position:absolute;
-    image-rendering: pixelated;
+    image-rendering:pixelated;
 
-    left:50%;
-    top:20%;
-    transform:translateX(-50%);
+    left:6%;
+    top:0;
 
-    width:clamp(700px, 12vw, 300px);
-    aspect-ratio:1 / 1;
-    z-index: 6;
+    width:88%;
+    height:100%;
+
+    z-index:8;
 
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
+
+    pointer-events:auto;
 }
 
 #Sky
 {
     position:absolute;
     image-rendering: pixelated;
-    display:none;
+    display:block;
 
-    left:50%;
-    top:-0%;
-    transform:translateX(-50%);
+    left:-5%;
+    top:1%;
+    width:80%;
+    height:80%;
 
-    width:clamp(612px, 12vw, 200px);
+    width:clamp(700px, 12vw, 200px);
     aspect-ratio:1 / 1;
-    z-index: 5;
+    z-index: 1;
 
     background-image:url("Assets/PupSky.png");
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
+    pointer-events:none;
+}
+
+#PupGrass
+{
+    position:absolute;
+    image-rendering: pixelated;
+    display:block;
+
+    left:-5%;
+    bottom:-22%;
+    width:110%;
+    height:100%;
+
+
+    width:clamp(680px, 12vw, 200px);
+    z-index: 2;
+
+    background-image:url("Assets/PupGrass.png");
+    background-size:100%;
+    background-repeat:repeat-x;
+    background-position:0px 315px;
+
+    pointer-events:none;
 }
 
 #Static
@@ -1028,16 +1117,745 @@ body
     image-rendering: pixelated;
     display:block;
 
-    left:50%;
-    top:-0%;
-    transform:translateX(-50%);
+    left:-5%;
+    top:1%;
+    width:110%;
+    height:80%;
 
-    width:clamp(612px, 12vw, 200px);
+    width:clamp(700px, 12vw, 200px);
     aspect-ratio:1 / 1;
-    z-index: 5;
+    z-index: 7;
 
     background-image:url("Assets/Static1.png");
     background-size:contain;
     background-repeat:no-repeat;
     background-position:center;
+
+    pointer-events:none;
+
+    opacity: 0;
+    transition: opacity 1.5s linear;
 }
+
+#ScanLines
+{
+    position: absolute;
+
+    width: 90%;
+    height: 80%;
+    left: 5%;
+    top: 1%;
+
+
+
+    background-image: url("Assets/ScanLines.png");
+
+    background-size: 5%;
+    background-repeat: repeat;
+
+    z-index: 8;
+    pointer-events: none;
+}
+
+
+.PupProfileQuestion
+{
+    font-family: Lilita;
+
+    font-size:var(--pupprofilequestion-size);
+
+    text-align: center;
+    position: relative;
+    align-items: center;
+    top:0%;
+    left:0%;
+    padding-left: 1%;
+    padding-top: 1%;
+    width: 100%;
+    background-color:rgba(0, 0, 0, 0.295);
+}
+
+.PupProfileAnswer
+{
+    font-family: Lilita;
+    padding-top: 20px;
+    text-align: left;
+    position: relative;
+    align-items: left;
+    white-space:pre-line;
+    width:100%;
+    left:2%;
+    top:-4%;
+    font-size:var(--profileanswer-size);
+}
+
+
+#Channel1,
+#Channel2,
+#Channel4,
+#Channel5,
+#Channel6,
+#Channel7,
+#Channel8,
+#Channel9,
+#Channel10,
+#Channel11,
+#Channel12,
+#Channel13,
+#Channel14,
+#Channel15,
+#Channel16,
+#Channel17,
+#Channel18,
+#Channel19,
+#Channel20,
+#Channel21,
+#Channel22,
+#Channel23,
+#Channel24,
+#Channel25,
+#Channel26,
+#Channel27,
+#Channel28,
+#Channel29,
+#Channel30
+{
+    background-color:rgba(0, 121, 26, 0.685);
+    position:relative;
+    left:3%;
+    top:6%;
+    padding-top: 10px;
+    display:none;
+    width:95%;
+    height:71%;
+    z-index: 2;
+}
+
+#Channel3
+{
+
+    position:relative;
+    display:none;
+    width:100%;
+    height:100%;
+}
+
+#PupPowerButton,
+#PupVolumeUpButton,
+#PupVolumeDownButton,
+#PupChannelUpButton,
+#PupChannelDownButton,
+#StartButton
+{
+    background: transparent;
+
+    display:block;
+
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    pointer-events:auto;
+    z-index: 17;
+}
+
+#PupPowerButton
+{
+    position: absolute;
+
+    right: 6%;
+    bottom: 6%;
+
+    width: 9%;
+    aspect-ratio: 1 / 1;
+
+}
+
+#PupVolumeUpButton
+{
+    
+
+    position: absolute;
+
+    right: 42%;
+    bottom: 7.5%;
+
+    width: 6%;
+    aspect-ratio: 1 / 1;
+
+}
+#PupVolumeDownButton
+{
+
+    position: absolute;
+
+    right: 50.5%;
+    bottom: 7.5%;
+
+    width: 6%;
+    aspect-ratio: 1 / 1;
+
+}
+#PupChannelUpButton
+{
+
+   position: absolute;
+
+    right: 70%;
+    bottom: 7.5%;
+
+    width: 6%;
+    aspect-ratio: 1 / 1;
+
+}
+
+#PupChannelDownButton
+{
+
+     position: absolute;
+
+    right: 61.5%;
+    bottom: 7.5%;
+
+    width: 6%;
+    aspect-ratio: 1 / 1;
+
+    
+
+}
+
+#PupPowerOn
+{
+    display:none;
+
+    position: absolute;
+
+    background-image:url("Assets/PupCRTON.png");
+    background-size:100%;
+    background-repeat:no-repeat;
+    background-position:center;
+
+    right: 0%;
+    bottom: 0%;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+#NumberLeft
+{
+    display:none;
+    position: absolute;
+
+    background-image:url("Assets/Green8.png");
+    background-size:100%;
+    background-repeat:no-repeat;
+
+    left: 3.90%;
+    bottom: 7%;
+
+    width: 3.25%;
+    aspect-ratio: 0.5 / 1;
+    image-rendering: pixelated;
+}
+
+#NumberMiddleLeft
+{
+    display:none;
+    position: absolute;
+
+    background-image:url("Assets/Green8.png");
+    background-size:100%;
+    background-repeat:no-repeat;
+
+    left: 7.75%;
+    bottom: 7%;
+
+    width: 3.25%;
+    aspect-ratio: 0.5 / 1;
+    image-rendering: pixelated;
+}
+
+#NumberMiddleRight
+{
+    display:none;
+    position: absolute;
+
+    background-image:url("Assets/Green8.png");
+    background-size:100%;
+    background-repeat:no-repeat;
+
+    left: 11.60%;
+    bottom: 7%;
+
+    width: 3.25%;
+    aspect-ratio: 0.5 / 1;
+    image-rendering: pixelated;
+}
+
+#NumberRight
+{
+    display:none;
+    position: absolute;
+
+    background-image:url("Assets/Green8.png");
+    background-size:100%;
+    background-repeat:no-repeat;
+
+    left: 15.45%;
+    bottom: 7%;
+
+    width: 3.25%;
+    aspect-ratio: 0.5 / 1;
+    image-rendering: pixelated;
+}
+
+
+#PupInfoImage1
+{
+    position: absolute;
+
+    width: 30%;
+    height: 30%;
+    right: -2.5%;
+    top: 2%;
+
+    background-image: url("Assets/PupNFS.png");
+
+    background-size: 85%;
+    background-repeat: no-repeat;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+#PupInfoImage2
+{
+    position: absolute;
+
+    width: 30%;
+    height: 30%;
+    left: 2%;
+    top: 2%;
+
+
+
+    background-image: url("Assets/PupNFSTilt.png");
+
+    background-size: 90%;
+    background-repeat: no-repeat;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+#PupInfo
+{
+    font-family: Lilita;
+    padding-top: 0px;
+    text-align: center;
+    position: relative;
+    white-space:pre-line;
+    width:100%;
+    left:0%;
+    top:0%;
+    font-size:var(--profileanswer-size);
+}
+
+#GameTitle
+{
+    font-family: Lilita;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    width:100%;
+    left:0%;
+    top:8%;
+    font-size:var(--title-size);
+
+    z-index: 3;
+}
+
+#PupHead
+{
+    position: absolute;
+
+    width: 50%;
+    height: 50%;
+    left: 27%;
+    top: 7%;
+
+    background-image: url("Assets/DogHead.png");
+
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position:0 0;
+
+    z-index: 6;
+    pointer-events: none;
+}
+
+#PupBody
+{
+    position: absolute;
+
+    width: 30%;
+    height: 30%;
+    left: 36%;
+    top: 24.25%;
+
+    background-image: url("Assets/DogBody.png");
+
+    background-size: 90%;
+    background-repeat: no-repeat;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+#StartButton
+{
+    position: absolute;
+
+    right: 22.5%;
+    bottom: 58%;
+
+    width: 55%;
+    height:7%;
+    aspect-ratio: 1 / 1;
+
+    background-color: rgba(121, 0, 0, 0.685);
+}
+
+#StartText
+{
+    position:absolute;
+
+    right: 0%;
+    bottom: 58%;
+    width: 100%;
+    z-index: 4;
+}
+
+#StartScreen
+{
+    position: absolute;
+    display:none;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+
+    z-index: 4;
+    pointer-events: none;
+}
+
+#PupLivesHead
+{
+    position: absolute;
+
+    width: 20%;
+    height: 20%;
+    left: 30%;
+    top: 35%;
+
+    background-image: url("Assets/DogHead.png");
+
+    background-size: 90%;
+    background-repeat: no-repeat;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+#PupLives
+{
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    left: 5%;
+    top: 10%;
+
+    z-index: 3;
+
+    font-family: Lilita;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    font-size:var(--title-size);
+}
+
+
+
+
+
+#GameInfoBar
+{
+    position: absolute;
+    display:none;
+
+    background-color: green;
+
+    width: 90%;
+    height: 7%;
+    left: 5%;
+    top: 7%;
+
+    z-index: 3;
+
+
+}
+
+#PupScore
+{
+    width: 30%;
+    height: 10%;
+    left: 1%;
+    top: 50%;
+    font-family: lilita;
+    text-align: left;
+    font-size: var(--profileanswer-size);
+    position: absolute;
+}
+
+#PupTime
+{
+    width: 30%;
+    height: 10%;
+    left: 68%;
+    top: 50%;
+    text-align:right;
+    font-family: lilita;
+    font-size: var(--profileanswer-size);
+    position: absolute;
+}
+
+#PupCoins
+{
+    width: 90%;
+    height: 10%;
+    left: 5%;
+    top: 50%;
+    text-align: center;
+    font-family: lilita;
+    font-size: var(--profileanswer-size);
+    position: absolute;
+}
+
+
+
+#PupScoreText
+{
+    width: 90%;
+    height: 10%;
+    left: -39%;
+    top: 8%;
+    font-family: lilita;
+    font-size: var(--profileanswer-size);
+    position: absolute;
+}
+
+#PupTimeText
+{   width: 90%;
+    height: 10%;
+    left: 49%;
+    top: 8%;
+    font-family: lilita;
+    font-size: var(--profileanswer-size);
+    position: absolute;
+}
+
+#PupCoinsText
+{width: 90%;
+    height: 10%;
+    left: 5%;
+    top: 8%;
+    font-family: lilita;
+    font-size: var(--profileanswer-size);
+    position: absolute;
+}
+
+#PupSprite
+{
+    position: absolute;
+    display:none;
+
+    width: 20%;
+    height: 8%;
+    left: 5%;
+    bottom: 33%;
+
+    z-index: 3;
+
+    background-image: url("Assets/PupRun1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.Cloud
+{
+    position: absolute;
+    display:none;
+    width: 20%;
+    aspect-ratio: 2 / 1;
+
+    background-image: url("Assets/Cloud1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+
+
+
+    z-index: 2;
+}
+
+.Coin
+{
+    position:absolute;
+    display:none;
+    width: 5%;
+    aspect-ratio: 1 / 1;
+
+    background-image: url("Assets/Coin.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+    background-position: 0px 0px;
+
+    bottom:50%;
+
+    z-index: 3;
+}
+
+.Rock
+{
+    display:none;
+    position: absolute;
+
+    width: 15%;
+    aspect-ratio: 1 / 1;
+
+    background-image: url("Assets/Rock1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+    left:100%;
+
+    bottom: 29%;
+
+    z-index: 3;
+}
+
+#JumpScreen
+{
+    position: absolute;
+    display:none;
+
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+
+    z-index: 4;
+    pointer-events: none;
+}
+
+#Jump
+{
+    position: absolute;
+    display:block;
+
+    background-color: transparent;
+
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+     border: none;
+    outline: none;
+
+    z-index: 4;
+    pointer-events: auto;
+}
+
+#PupHitBox
+{
+    position: absolute;
+    display:block;
+    inset: 0;
+
+    left: 30%;
+    top: 40%;
+
+    width: 50%;
+    height: 50%;
+    z-index: 3;
+}
+
+.RockHitBox
+{
+    display:block;
+    position: absolute;
+
+    width: 50%;
+    aspect-ratio: 1 / 1;
+
+    pointer-events: none;
+    left:25%;
+    top:18%;
+
+    z-index: 3;
+}
+
+#LastHighScore
+{
+    position: absolute;
+    bottom: 53%;
+    right:40%;
+
+    font-size: var(--profileanswer-size);
+}
+
+@media (max-height: 800px)
+{
+    :root
+    {
+        --crt-scale: 0.70;
+    }
+
+    #StartText
+    {
+        bottom: 53%;
+    }
+
+    #StartButton
+    {
+        bottom: 53%;
+    }
+
+    #LastHighScore
+    {
+        bottom: 35%;
+    }
+}
+
+#PupCRTBackground
+{
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background-image: url(Assets/VexBackground.png);
+}
+
