@@ -43,7 +43,7 @@
     --profileanswer-size: clamp(16px, 3vw, 20px);
 
     --pupprofilequestion-size: clamp(10px, 3vw, 25px);
-    --profileanswer-size: clamp(16px, 3vw, 20px);
+    --profileanswer-sizepup: clamp(12px, 3vw, 19px);
 }
 
 body
@@ -1046,6 +1046,24 @@ body
    
 }
 
+
+.CRTScreenMask
+{
+    position: absolute;
+
+    mask-image:url("Assets/PupStage.png");
+    -webkit-mask-image:url("Assets/PupStage.png");
+
+    -webkit-mask-repeat:no-repeat;
+    mask-repeat:no-repeat;
+
+    mask-size: 100% 100%;
+    -webkit-mask-size: 100% 100%;
+
+    mask-position: 0px;
+    -webkit-mask-position: 0px
+}
+
 #CRTImageContainer
 {
     position:absolute;
@@ -1055,7 +1073,7 @@ body
     top:0;
 
     width:88%;
-    height:100%;
+    height:95%;
 
     z-index:8;
 
@@ -1072,12 +1090,12 @@ body
     image-rendering: pixelated;
     display:block;
 
-    left:-5%;
-    top:1%;
-    width:80%;
-    height:80%;
+    left:-8%;
+    top:-155%;
+    width:100%;
+    height:80vw;
 
-    width:clamp(700px, 12vw, 200px);
+    width:clamp(700px, 120vw, 200px);
     aspect-ratio:1 / 1;
     z-index: 1;
 
@@ -1095,7 +1113,7 @@ body
     display:block;
 
     left:-5%;
-    bottom:-22%;
+    bottom:-23%;
     width:110%;
     height:100%;
 
@@ -1224,11 +1242,11 @@ body
     background-color:rgba(0, 121, 26, 0.685);
     position:relative;
     left:3%;
-    top:6%;
+    top:5.5%;
     padding-top: 10px;
     display:none;
     width:95%;
-    height:71%;
+    height:76%;
     z-index: 2;
 }
 
@@ -1468,7 +1486,7 @@ body
     width:100%;
     left:0%;
     top:0%;
-    font-size:var(--profileanswer-size);
+    font-size:var(--profileanswer-sizepup);
 }
 
 #GameTitle
@@ -1528,7 +1546,7 @@ body
     position: absolute;
 
     right: 22.5%;
-    bottom: 58%;
+    bottom: 60%;
 
     width: 55%;
     height:7%;
@@ -1540,7 +1558,7 @@ body
     position:absolute;
 
     right: 0%;
-    bottom: 58%;
+    bottom: 60.5%;
     width: 100%;
     z-index: 4;
 }
@@ -1582,7 +1600,7 @@ body
     width: 100%;
     height: 100%;
     left: 5%;
-    top: 10%;
+    top: 5%;
 
     z-index: 3;
 
@@ -1690,9 +1708,9 @@ body
     display:none;
 
     width: 20%;
-    height: 8%;
+    height: 10%;
     left: 5%;
-    bottom: 33%;
+    bottom: 28.5%;
 
     z-index: 3;
 
@@ -1758,7 +1776,7 @@ body
     pointer-events: none;
     left:100%;
 
-    bottom: 29%;
+    bottom: 26%;
 
     z-index: 3;
 }
@@ -1827,8 +1845,8 @@ body
 #LastHighScore
 {
     position: absolute;
-    bottom: 53%;
-    right:40%;
+    bottom: 56%;
+    right:35%;
 
     font-size: var(--profileanswer-size);
 }
@@ -1864,5 +1882,19 @@ body
     height:100%;
 
     background-image: url(Assets/VexBackground.png);
+}
+
+#PupWin
+{
+    position:fixed;
+    display:none;
+
+    width:86%;
+    height:80%;
+    top:15%;
+
+    background-image: url(Assets/PupWin.png);
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
 }
 

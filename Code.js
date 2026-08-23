@@ -77,7 +77,7 @@ let PupCoinAmount = 0
 let PupGameTime = 0
 let PupLives = 3
 let PupSpeed = 1
-let PupAnimationSpeed = 300
+let PupAnimationSpeed = 75
 let GrassScrollNumber = 0
 let StaticImages = [
     "Assets/Static1.png",
@@ -170,6 +170,7 @@ let ScanLinePOS = 0
 
 let PupStartGameButton = document.getElementById("StartButton")
 let PupMenuHead = document.getElementById("PupHead")
+let PupMenuBody = document.getElementById("PupBody")
 let PupWinking = [
     "Assets/DogWink1.png",
     "Assets/DogWink2.png",
@@ -227,23 +228,23 @@ let PupRocks = [];
 let PupCoins = [];
 let PupClouds = [];
 
-let BaseRockSpawnMin = 3000
-let BaseRockSpawnMax = 4000
-let RockMax = 3
+let BaseRockSpawnMin = 0
+let BaseRockSpawnMax = 0
+let RockMax = 6
 
-let BaseCoinSpawnMin = 5000
-let BaseCoinSpawnMax = 10000
+let BaseCoinSpawnMin = 0
+let BaseCoinSpawnMax = 0
 let CoinMax = 2
-let CoinMaxHeight = 50
-let CoinMinHeight = 35
+let CoinMaxHeight = 45
+let CoinMinHeight = 30
 let CoinRockMinDistance = 100
-let RockMinDistance = 500;
+let RockMinDistance = 200;
 
-let BaseCloudSpawnMin = 1000
-let BaseCloudSpawnMax = 3000
+let BaseCloudSpawnMin = 2000
+let BaseCloudSpawnMax = 4000
 let CloudMax = 6
-let CloudMinHeight = 60
-let CloudMaxHeight = 80
+let CloudMinHeight = 55
+let CloudMaxHeight = 75
 
 
 let Jump = document.getElementById("Jump");
@@ -255,6 +256,7 @@ let PupYVelocity = 0;
 let PupY = 0;
 let PupLastHighScore = 0
 let PupLastHighScoreText = document.getElementById("LastHighScore")
+let PupWin = document.getElementById("PupWin")
 
 
 //===========================================================
@@ -1212,21 +1214,25 @@ function CleanUpGame()
     PupCoinAmount = 0
     PupGameTime = 0
     PupSpeed = 1
-    PupAnimationSpeed = 300
-    BaseRockSpawnMin = 3000
-    BaseRockSpawnMax = 4000
-    RockMax = 3
-    BaseCoinSpawnMin = 5000
-    BaseCoinSpawnMax = 10000
+    PupAnimationSpeed = 100
+    GrassSpeed = 400
+    BaseRockSpawnMin = 500
+    BaseRockSpawnMax = 1500
+    RockMax = 4
+    BaseCoinSpawnMin = 500
+    BaseCoinSpawnMax = 1500
     PupJumped = false;
     PupJumping = false;
     PupYVelocity = 0;
     PupY = 0;
+    PupSky.style.top = "-" + 155 + "%";
+    PupGrass.style.filter = "brightness(100%) sepia(0%) saturate(100%)";
     InfoBarScore.innerText = Math.floor(PupScore);
     InfoBarTime.innerText = Math.floor(PupGameTime);
     InfoBarCoins.innerText = PupCoinAmount
     JumpScreen.style.display = "none";
     PupLivesScreen.innerText = "x" + PupLives;
+    
 
     for (let Cloud of PupClouds)
     {
@@ -1478,24 +1484,6 @@ function UpdatePupTimeAndScore()
 
 }
 
-function GrabCoin()
-{
-    PupCoinAmount+= 1
-
-    PupAnimationSpeed -= 3
-    GrassSpeed += 4
-
-    BaseRockSpawnMin -= 100;
-    BaseRockSpawnMax -= 100;
-
-    BaseCoinSpawnMin -= 50;
-    BaseCoinSpawnMax -= 50;
-
-    if (PupCoinAmount >= 25)
-    {
-        RockMax = 2
-    }
-}
 
 
 function IsColliding(Object1, Object2)
@@ -1533,7 +1521,7 @@ async function CheckPupCollisions()
 
             PupLives -=1
 
-            if (PupLives == 0)
+            if (PupLives == -1)
             {
                 PupHeadScreen.style.display = "none"
                 PupLivesScreen.innerText = "GAME OVER"
@@ -1571,7 +1559,26 @@ async function CheckPupCollisions()
 
         if (IsColliding(PupHitBox, Coin))
         {
-            GrabCoin();
+            PupCoinAmount+= 1
+
+            if (PupCoinAmount == 30)
+            {
+                PupSky.style.top = "-" + 71 + "%";
+                PupGrass.style.filter = "brightness(70%) sepia(100%) saturate(150%)";
+            }
+
+            if (PupCoinAmount == 60)
+            {
+                PupSky.style.top = 0 + "%";
+                PupGrass.style.filter = "brightness(50%) sepia(0%) saturate(10%)";
+            }
+
+            if (PupCoinAmount >= 100)
+            {
+                PupWin.style.display = "block";
+                PupMenuHead.style.display = "none";
+                PupMenuBody.style.display = "none";
+            }
 
             Coin.remove();
             PupCoins.splice(i, 1);
@@ -1653,11 +1660,22 @@ function SpawnRock()
 
     Rock.style.backgroundImage = `url("${PupRockImages[RandomRockImage]}")`
 
-
-
     Rock.className = "Rock";
     Rock.style.display = "block";
     Rock.style.left = "100%";
+
+    if (PupCoinAmount >= 30 && PupCoinAmount <= 60)
+    {
+        Rock.style.filter = "brightness(70%) sepia(100%) saturate(150%)";
+    }
+    else if (PupCoinAmount >= 60)
+    {
+        Rock.style.filter = "brightness(50%) sepia(0%) saturate(0%)";
+    }
+    else if (PupCoinAmount <= 30)
+    {
+        Rock.style.filter = "brightness(100%) sepia(0%) saturate(100%)";
+    }
 
     let RockHitBox = document.createElement("div");
     RockHitBox.className = "RockHitBox";
@@ -1725,7 +1743,18 @@ function SpawnCloud()
 
     Cloud.style.backgroundImage = `url("${PupCloudImages[RandomCloudImage]}")`
 
-
+    if (PupCoinAmount >= 30 && PupCoinAmount <= 60)
+    {
+        Cloud.style.filter = "brightness(70%) sepia(100%) saturate(150%)";
+    }
+    else if (PupCoinAmount >= 60)
+    {
+        Cloud.style.filter = "brightness(50%) sepia(0%) saturate(0%)";
+    }
+    else if (PupCoinAmount <= 30)
+    {
+        Cloud.style.filter = "brightness(100%) sepia(0%) saturate(100%)";
+    }
 
     Cloud.className = "Cloud";
     Cloud.style.display = "block";
@@ -1783,7 +1812,7 @@ function UpdateClouds()
 
         let CurrentLeft = Cloud.offsetLeft;
 
-        Cloud.style.left = `${CurrentLeft - (GrassSpeed * DeltaTime)}px`;
+        Cloud.style.left = `${CurrentLeft - ((GrassSpeed/3) * DeltaTime)}px`;
 
         if (Cloud.offsetLeft + Cloud.offsetWidth < 0)
         {
