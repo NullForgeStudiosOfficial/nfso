@@ -1711,26 +1711,15 @@ function SpawnCoin()
     Coin.className = "Coin";
     Coin.style.display = "block";
     Coin.style.left = "100%";
-    
 
     let CoinSpawnHeight = Randomizer(CoinMinHeight, CoinMaxHeight);
     Coin.style.bottom = `${CoinSpawnHeight}%`;
 
+    let CoinRockHitBox = document.createElement("div");
+    CoinRockHitBox.className = "CoinRockHitBox";
+
+    Coin.appendChild(CoinRockHitBox); 
     Channel3.appendChild(Coin);
-
-    for (let Rock of PupRocks)
-    {
-        let CoinBox = Coin.getBoundingClientRect();
-        let RockBox = Rock.getBoundingClientRect();
-
-        let Distance = Math.abs(CoinBox.left - RockBox.left);
-
-        if (Distance < CoinRockMinDistance)
-        {
-            Coin.remove();
-            return;
-        }
-    }
 
     PupCoins.push(Coin);
 }
@@ -1791,6 +1780,7 @@ function UpdateCoins()
     for (let i = PupCoins.length - 1; i >= 0; i--)
     {
         let Coin = PupCoins[i];
+        let CoinRockHitBox = Coin.querySelector(".CoinRockHitBox");
 
         let CurrentLeft = Coin.offsetLeft;
 
@@ -1800,6 +1790,20 @@ function UpdateCoins()
         {
             Coin.remove();
             PupCoins.splice(i, 1);
+            continue;
+        }
+
+        for (let Rock of PupRocks)
+        {
+            let RockHitBox = Rock.querySelector(".RockHitBox");
+
+            if (IsColliding(CoinRockHitBox, RockHitBox))
+            {
+
+                Coin.remove();
+                PupCoins.splice(i, 1);
+                break;
+            }
         }
     }
 }
