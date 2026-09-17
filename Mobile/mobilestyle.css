@@ -1,0 +1,504 @@
+
+@font-face
+{
+    font-family: Ardron;
+    src: url("../Assets/FontOfArdron.ttf");
+}
+
+@font-face
+{
+    font-family: Skranji;
+    src: url("../Assets/Skranji.ttf");
+}
+
+@font-face
+{
+    font-family: Lexend;
+    src: url("../Assets/Lexend.ttf");
+}
+
+@font-face
+{
+    font-family: Lilita;
+    src: url("../Assets/LilitaOne.ttf");
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+:root
+{
+    --content-width: min(100vw, 1900px);
+    --box-width: min(80vw, 1600px);
+    --button-width: min(95vw, 1500px);
+
+    --navtext-size: clamp(12px, 14px, 35px);
+    --title-size: clamp(42px, 3vw, 100px);
+    --header-size: clamp(30px, 3vw, 90px);
+    --body-size: clamp(20px, 1.5vw, 30px);
+    --textbox-size: clamp(16px, 1.3vw, 24px);
+    --scrollspace-height-size: clamp(40px, 81vh, 81vh);
+    --profilequestion-size: clamp(20px, 3vw, 40px);
+    --profileanswer-size: clamp(16px, 3vw, 20px);
+
+
+}
+
+body
+{
+    margin:0;
+    overflow:hidden;
+    font-family:Lexend;
+    color:white;
+}
+
+#BackgroundContainer
+{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    z-index:-10;
+}
+
+#ScrollContainer
+{
+    position:absolute;
+    inset:0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    z-index:-1;
+}
+
+#LinksPage,
+#VexesPage,
+#AulisPage,
+#PupsPage{
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.5rem;
+
+}
+
+
+#TopBar
+{
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:10vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.25);
+
+    z-index:1;
+}
+
+#VoidEyes
+{
+    position:absolute;
+
+    left:1vw;
+    top:3vh;
+
+    width:clamp(12vw, 25vw, 30vw);
+    height:auto;
+
+}
+
+#NFSOTitle
+{
+    position:absolute;
+    font-family: Lexend;
+
+    left:50%;
+    top:45%;
+
+    transform:translate(-50%,-50%);
+
+    font-size:var(--title-size);
+    white-space:nowrap;
+
+}
+
+#NFSOLogo
+{
+    position:absolute;
+
+    right:2vw;
+    top:0.5vh;
+
+    width: clamp(15vw, 10vw, 15vw);
+    height: clamp(15vw, 10vw, 15vw);
+
+}
+
+#ScrollSpace
+{
+    position:absolute;
+
+    top:19vh;
+    left:50%;
+
+
+    transform:translateX(-50%);
+
+    width:var(--content-width);
+    height:var(--scrollspace-height-size);
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    display:flex;
+    flex-direction:column;
+    gap:2.5rem;
+
+}
+
+#LinksBackground,
+#VexesBackground,
+#AulisBackground,
+#PupsBackground
+{
+    position: absolute;
+    display:none;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-repeat: repeat;
+
+    z-index: -5;
+}
+
+#LinksBackground
+{
+    background-image: url("MobileAssets/LinksBackground.png");
+    display:flex;
+}
+
+#VexesBackground
+{
+    background-image: url("MobileAssets/VexBackground.png");
+}
+
+#AulisBackground
+{
+    background-image: url("MobileAssets/AuliBackground.png");
+}
+
+#PupsBackground
+{
+    background-image: url("MobileAssets/PupBackground.png");
+}
+
+.ArdronButton
+{
+    width: 90%;
+    height:auto;
+    background-color: rgba(153, 0, 255, 0.5);
+}
+
+.ButtonTitle
+{
+
+    position: relative;
+
+    left:10px;
+    top:5px;
+
+
+    width:100%;
+
+    font-size:var(--header-size);
+
+    text-align:left;
+
+    color:#dfdfdf;
+    font-family: Lexend;
+
+    text-shadow:
+        7px 0px 5px #000,
+        0px 7px 5px #000,
+       -7px 0px 5px #000,
+        0px -7px 5px #000;
+}
+
+.ButtonInfo
+{
+    position: relative
+    ;
+
+    left:5px;
+    right:150px;
+
+    margin-top:25px;
+    margin-bottom: 10px;
+    padding-right: 5px;
+
+    bottom:5%;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    padding-left:10px;
+
+    white-space:pre-line;
+    text-align:left;
+
+    line-height:1.20;
+
+    font-size:var(--body-size);
+    font-family: Lexend;
+
+    color:#dfdfdf;
+
+    text-shadow:
+        3px 0px 5px #000,
+        0px 3px 5px #000,
+       -3px 0px 5px #000,
+        0px -3px 5px #000;
+}
+
+
+
+#LinksButton
+{
+    position: absolute;
+    left: 5%;
+    top:11%;
+    width:9vh;
+    height:9vh;
+    background-image: url("MobileAssets/LinksButton.png");
+    background-size: 100%;
+}
+
+
+#VexButton
+{
+    position: absolute;
+    top:11%;
+    width:9vh;
+    height:9vh;
+    background-image: url("MobileAssets/VexButton.png");
+    background-size: 100%;
+    left: 30%;
+}
+
+#AuliButton
+{
+    position: absolute;
+    top:11%;
+    width:9vh;
+    height:9vh;
+    background-image: url("MobileAssets/AuliButton.png");
+    background-size: 100%;
+    left: 57%;
+}
+
+#PupButton
+{
+    position: absolute;
+    top:11%;
+    width:9vh;
+    height:9vh;
+    background-image: url("MobileAssets/PupButton.png");
+    background-size: 100%;
+    left: 83%;
+}
+
+#BottomSpacer
+{
+    width:100%;
+    height:1rem;
+    flex-shrink:0;
+}
+
+
+#MobileWarning
+{
+    position:absolute;
+    left:1%;
+    Top:1%;
+
+    width: 98%;
+    height: 98%;
+
+    background-color: rgba(0,0,0,.96);
+    z-index: 20;
+}
+
+#CloseWarning
+{
+    position:relative;
+    left:1%;
+    top:93%;
+
+    width: 98%;
+    height: 3%;
+}
+
+
+#WarningText
+{
+    position:relative;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    white-space: pre-line;
+
+    width: 98%;
+    height: 3%;
+
+    font-size: var(--navtext-size);
+}
+
+#VexTitle
+{
+    font-family: Ardron;
+    font-size:20px;
+    position: relative;
+    padding-top: 15px;
+    display:flex;
+    justify-content: center;
+    align-items: center; 
+    text-align:center;
+    white-space:pre-line;
+}
+
+
+.VexProfileQuestion
+{
+    font-size:var(--profilequestion-size);
+    font-family: Ardron;
+    background-color:rgba(0, 0, 0, 0.685);
+    text-align: left;
+    position: relative;
+    align-items: center;
+    left:3%;
+    padding-left: 1%;
+    padding-top: 2%;
+    margin-top: 1%;
+    width: 95%;
+}
+
+.VexProfileAnswer
+{
+    text-align: left;
+    font-family: Ardron;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    width:95%;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    left:4%;
+    font-size:var(--profileanswer-size);
+}
+
+.AuliTitle
+{
+
+    font-family: Skranji;
+    font-size:20px;
+    padding-top:10px;
+    position: relative;
+    justify-content: center;
+    white-space:pre-line;
+}
+
+.AuliProfileQuestion
+{
+    font-family: Skranji;
+
+
+    font-size:var(--profilequestion-size);
+    background-color:rgba(121, 0, 0, 0.685);
+    text-align: left;
+    position: relative;
+    align-items: center;
+    left:3%;
+    padding-left: 1%;
+    padding-top: 1%;
+    margin-top: 1%;
+    width: 95%;
+}
+
+.AuliProfileAnswer
+{
+    font-family: Skranji;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: left;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    width:95%;
+    left:3%;
+    font-size:var(--profileanswer-size);
+}
+
+.PupTitle
+{
+
+    font-family: Lilita;
+    font-size:20px;
+    padding-top:10px;
+    position: relative;
+    justify-content: center;
+    white-space:pre-line;
+}
+
+.PupProfileQuestion
+{
+    font-family: Lilita;
+
+
+    font-size:var(--profilequestion-size);
+    background-color:rgba(24, 121, 0, 0.685);
+    text-align: left;
+    position: relative;
+    align-items: center;
+    left:3%;
+    padding-left: 1%;
+    padding-top: 1%;
+    margin-top: 1%;
+    width: 95%;
+}
+
+.PupProfileAnswer
+{
+    font-family: Lilita;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: left;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    width:95%;
+    left:3%;
+    font-size:var(--profileanswer-size);
+}
+
+

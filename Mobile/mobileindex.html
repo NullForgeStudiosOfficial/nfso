@@ -8,101 +8,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>NullForgeStudiosOfficial</title>
+    <title>NFSO Mobile</title>
 
     <script>
     const AspectRatio = window.innerWidth / window.innerHeight;
 
-    if (AspectRatio < 1.5)
+    if (AspectRatio > 1.5)
     {
-        window.location.replace("Mobile/mobileindex.html");
+        window.location.replace("../index.html");
     }
     </script>
 
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="mobilestyle.css">
 
 </head>
 
 <body>
 
+    <div id="MobileWarning">
+        <div id = "WarningText">Sup Fuckers!
+
+Welcome to the mobile version of
+Null Forge Studios Official.
+
+😀 I don't like smartphones.
+
+But apparently they're rather popular,
+so here we fucking are.
+
+Here's how this technological marvel works:
+
+The [] boxes at the top change pages?
+If you tap one? Something happens 😮 Incredible!
+
+The big-ass purple boxes with words in them are buttons.
+Tap those and they'll take you to the relevant source.
+
+I would assume this was self-explanatory,
+but you've already chosen to browse this site on a phone 😉 
+so ya know...
+
+            -----------------------------------------------------------
+
+            Since everyone insists on using a smartphone
+(only to use it like a worse computer with more ads and tracking)
+
+I begrudgingly made this version of the site.
+
+It has no animations.
+No games.
+No cool shit.
+
+It contains information.
+
+I gave it precisely as much effort as it deserved.
+
+Want the fancy version?
+Use a computer.
+
+            ------------------------------------------------------------
+
+            That's all carry on 😎 Enjoy.
+
+
+
+        </div>
+        <button id="CloseWarning">Close</button>
+    </div>
+
     <div id="BackgroundContainer">
+
         <div id="LinksBackground">
-            <img id="Background" src="Assets/Background.png">
         </div>
 
         <div id="VexesBackground">
-            <img id="VexesBackgroundImage" src="Assets/VexBackground.png">
-            <canvas id ="Rain"></canvas>
         </div>
 
         <div id="AulisBackground">
-            <img id="AulisBackgroundImage" src="Assets/viking.png">
         </div>
 
         <div id="PupsBackground">
-            <img id="PupsBackgroundImage" src="Assets/PupBackground.png">
         </div>
-
-        <div id="ExtrasBackground">
-            <!--<img id="ExtrasBackgroundImage" src="Assets/ExtrasBackground.png"> -->
-        </div>
-        
-    
     </div>
     
 
     <div id="TopBar">
-            <img id="NFSOLogo" src="Assets/NFSMainLogoNoBack.png">
-            <img id="VoidEyes" src = "Assets/VoidEyesFull.png">
+            <img id="NFSOLogo" src="../Assets/NFSMainLogoNoBack.png">
+            <img id="VoidEyes" src = "../Assets/VoidEyesFull.png">
 
             <div class="Text" id="NFSOTitle">
-                NullForgeStudiosOfficial
+                NFSO
             </div>
 
         </div>
 
     <div id="NavigationBar">
-        <button class = "NavigationButton" id = "LinksButton">
-            <div class="ButtonBackground"></div>
-
-            <div Class ="ButtonBorder"></div>
-
-            <div Class ="ButtonText"></div>
+        <button id = "LinksButton">
         </button>
         
-        <button class = "NavigationButton" id = "VexButton">
-            <div class="ButtonBackground"></div>
-
-            <div Class ="ButtonBorder"></div>
-
-            <div Class ="ButtonText"></div>
+        <button id = "VexButton">
         </button>
         
-        <button class = "NavigationButton" id = "AuliButton">
-            <div class="ButtonBackground"></div>
-
-            <div Class ="ButtonBorder"></div>
-
-            <div Class ="ButtonText"></div>
+        <button id = "AuliButton">
         </button>
         
-        <button class = "NavigationButton" id = "PupButton">
-            <div class="ButtonBackground"></div>
-
-            <div Class ="ButtonBorder"></div>
-
-            <div Class ="ButtonText"></div>
+        <button id = "PupButton">
         </button>
-
-        <button class = "NavigationButton" id = "ExtraButton">
-            <div class="ButtonBackground"></div>
-
-            <div Class ="ButtonBorder"></div>
-
-            <div Class ="ButtonText"></div>
-        </button>
-
-        
     
     
     
@@ -110,7 +121,8 @@
     
     </div>
 
-    <!-- Main Menu -->
+    
+
     <div id="ScrollContainer">
         
         <div id = "ScrollSpace">
@@ -140,8 +152,8 @@
                             Ardron Quiz
                         </div>
 
-                        <div class = "ButtonInfo">Before anyone can enter Ardron, they must first be understood. Stand before the Arbiter, the silent Watcher of the Void, <br>&emsp;and answer 33 carefully chosen questions.
-                            There are no right or wrong answers, only the ideals, motivations, and choices that define you. Once your judgment is complete,<br>&emsp;you'll be assigned to the Realm that best reflects who you are
+                        <div class = "ButtonInfo">Before anyone can enter Ardron, they must first be understood. Stand before the Arbiter, the silent Watcher of the Void, <br><br>&emsp;and answer 33 carefully chosen questions.
+                            There are no right or wrong answers, only the ideals, motivations, and choices that define you. Once your judgment is complete,<br><br>&emsp;you'll be assigned to the Realm that best reflects who you are
                             Every soul resonates with one Realm. The question is... which one resonates with yours?
                         </div>
                     </div>
@@ -253,8 +265,6 @@
                         <div class="ButtonInfo">A foam combat ruleset focused on honor, safety, and craftsmanship.
 
                         Built upon decades of established foam combat while introducing a new combat model centered around realistic weapon roles and straightforward construction standards.
-
-                            
                         </div>
                     </div>
                 </button>
@@ -263,16 +273,6 @@
             </div>
 
             <div id = "VexesPage">
-
-                <img id = "BarTop" src = "Assets/BarTop.png">
-
-                <div id ="ActualMiddle">
-                    <div id = "BarMiddle"></div>
-
-                    <div id = "InsideMiddle">
-
-                        <div id="VexF"></div>
-
                         <div id = "VexTitle"> Hi. I'm Vex, otherwise known as AoAlfaric. 
                             I'm the CE-... Main character at NSFO 😎 
 
@@ -285,6 +285,7 @@
                             and then some "Get to know me" questions c:
 
                             ENJOY!
+                            -----------------------------------------------------
                         </div>
 
                         <div class="Divider"></div>
@@ -312,7 +313,6 @@
                             And then through the years shit went down. I found out that making Arcane Titans was going to be hell so... Digital time. 
 
                             :V Programmer now. 
-
                         </div>
 
                         <div class = "VexProfileQuestion">What's your favorite part of making games?</div>
@@ -328,7 +328,6 @@
                             Dumb. I love it. 
 
                             But it aint even that. The journey is hella worth more than the end goal. 
-
                         </div>
 
                         <div class = "VexProfileQuestion">What's your least favorite part of making games?</div>
@@ -460,6 +459,7 @@
                         <div class = "VexProfileAnswer">*Gestures at everything*
 
                             You see that fuckin matrix spoofed background? yeah that shit was hard. Didn't half ass it. looks random. Isn't. 
+                            (HAH not on the mobile version 😎)
                         </div>
 
                         <div class = "VexProfileQuestion">What's something that seemed easy to make and turned into a fucking nightmare?</div>
@@ -474,7 +474,7 @@
                         </div>
 
                         <div class = "VexProfileQuestion">How do you decide when a mechanic is actually done?</div>
-                        <div class = "VexProfileAnswer"> <img src="Assets/YouGuys.png">
+                        <div class = "VexProfileAnswer"> <img src="../Assets/YouGuys.png">
 
                             If its good, it's never done.
                             If it is done, something somewhere else will make you touch it again. 
@@ -551,12 +551,12 @@
                             I aint afraid to try. That's how you learn, and get better. 
 
                             >:V I'm a water soul. Water doesn't stop because it hits a wall. It goes the fuck around. It finds a path. 
-
                         </div>
 
 
                         <div class="Divider"></div>
-                        <div id = "VexTitle"> ~Personal Questions~
+                        <div id = "VexTitle"> -----------------------------------------------------
+                            ~Personal Questions~
                         </div>
 
                         <div class = "VexProfileQuestion">What's something that will instantly put you in a good mood?</div>
@@ -696,22 +696,8 @@
 
                     </div>
 
-                <img id = "BarBottom" src = "Assets/BarBottom.png">
-
-            </div>
-            </div>
-
             <div id = "AulisPage">
-                <img id = "AuliBarTop" src = "Assets/AuliBarTop.png">
-
-                <div id ="AuliActualMiddle">
-                    <div id = "AuliBarMiddle"></div>
-
-                    <div id = "InsideMiddle">
-
-                        <div id="AuliH"></div>
-
-                        <div class = "AuliTitle"> 
+                <div class = "AuliTitle"> 
                             Auli is my wife 😁
 
                             She's kind of a QA tester, 
@@ -757,7 +743,7 @@
                             ~Personal Questions~</div>
 
                         <div class = "AuliProfileQuestion">What's something that will instantly put you in a good mood?</div>
-                        <div class = "AuliProfileAnswer"><img src="Assets/bakugo.png"> </div>
+                        <div class = "AuliProfileAnswer"><img src="../Assets/bakugo.png"> </div>
 
                         <div class = "AuliProfileQuestion">Are you a morning person, night person, or some forbidden third thing?</div>
                         <div class = "AuliProfileAnswer">Some forbidden third thing. I love the wee hours of the morning, when the world hasn't quite awakened yet. When the morning glories slowly open their petals and everything is still jeweled with dew. There's something peaceful about those hours, when the air is cool and quiet and it feels like you've caught the world before everyone else gets their hands on it. 
@@ -852,397 +838,185 @@
                         Hell, it's running right now.</div>
                             
                         </div>
-                </div>
 
-                <img id = "AuliBarBottom" src = "Assets/AuliBarBottom.png">
-            </div>
+            <div id = "PupsPage">
+    <div class="PupTitle">
+        Pup is my Husband 🐶💚
 
-            <div id = "ExtrasPage">
-                Idk what ima put here yet :D but itll be cool
+        He's a wonderfully encentric type of guy.
+        His Ardron Realm is Elusia.
+
+        His bark is worse than his bite.
+
+        Pup is a MASSIVE gaymer. He's always playing fuckin somethin.
+        Least when he's not working.
+
+        As far as design and help goes, there isn't much.
+        Spare for the QA he does, testing and such.
+
+        Which in that case he's *very* specific.
+        Even if not explaining it the best.
+
+        Like this page of his...
+        He said he wanted a "Platformer background"...
+
+        Welp...Here ya go, love. Enjoy.
+        (HAH not on the mobile version 😎)
+    </div>
+
+    <div id="PupDivider"></div>
+
+    <div class="PupTitle">
+        ~Dev Questions~
+    </div>
+
+    <div class="PupProfileQuestion">What makes a game good to you?
+    </div>
+    <div class="PupProfileAnswer">I want a game that grows the more you play, the more you get to play with,
+        because if I die I want to be like "I can do this instead of this".
+
+        (Yeah I have no idea wtf that means either)
+    </div>
+
+    <div class="PupProfileQuestion">What's a game mechanic or design trend you can't stand?
+    </div>
+    <div class="PupProfileAnswer">Town Sims
+
+        I want to enjoy my roup without having to think about my village.
+    </div>
+
+    <div class="PupProfileQuestion">What's a game mechanic you'll defend until the day you die?
+    </div>
+    <div class="PupProfileAnswer">Metrovanias are one of the best systems in gaming to give the thought of
+        "ooo what should be up there or behind that"
+    </div>
+
+    <div id="PupDivider"></div>
+
+    <div class="PupTitle">
+        ~Personal Questions~
+    </div>
+
+    <div class="PupProfileQuestion">What's something that will instantly put you in a good mood?
+    </div>
+    <div class="PupProfileAnswer">Completing something difficult after a decent amount of tries.
+    </div>
+
+    <div class="PupProfileQuestion">Are you a morning person, night person, or some forbidden third thing?
+    </div>
+    <div class="PupProfileAnswer">Night
+
+        which sucks for most are morning people
+    </div>
+
+    <div class="PupProfileQuestion">What's your ideal way to spend a completely free day?
+    </div>
+    <div class="PupProfileAnswer">Playing backlog games or doing literally anything with family
+    </div>
+
+    <div class="PupProfileQuestion">What's something people tend to misunderstand about you?
+    </div>
+    <div class="PupProfileAnswer">I'm not ignoring you I'm gauging how to respond to things that go on,
+        which if I do for long enough I will just forget about it
+    </div>
+
+    <div class="PupProfileQuestion">What's the fastest way to become your friend?
+    </div>
+    <div class="PupProfileAnswer">Just being communicable like just talk about something and make me feel like I'm involved.
+    </div>
+
+    <div class="PupProfileQuestion">What's something you're embarrassingly sentimental about?
+    </div>
+    <div class="PupProfileAnswer">My character
+
+        he's part of who I am and he might evolve but he won't disappear.
+    </div>
+
+    <div class="PupProfileQuestion">What's a hill you'll die on that ultimately doesn't fucking matter?
+    </div>
+    <div class="PupProfileAnswer">Nothing honestly because everything does matter in the end.
+    </div>
+
+    <div class="PupProfileQuestion">What's something popular that you just don't understand the appeal of?
+    </div>
+    <div class="PupProfileAnswer">Kinda old trend but I don't understand the human doll that look like labubu
+    </div>
+
+    <div class="PupProfileQuestion">If you could instantly master one skill, what would it be?
+    </div>
+    <div class="PupProfileAnswer">Language
+
+        I would be nice to expand my culture.
+    </div>
+
+    <div class="PupProfileQuestion">If someone wanted to understand you better, what's one thing they should know?
+    </div>
+    <div class="PupProfileAnswer">I like to play games with people
+
+        I have a few games on a do not play list but it's one of my favorite things
+    </div>
+
+    <div class="PupProfileQuestion">How would you describe yourself?
+    </div>
+    <div class="PupProfileAnswer">A dog.
+    </div>
+
+    <div class="PupProfileQuestion">What do you do for fun?
+    </div>
+    <div class="PupProfileAnswer">Games and YouTube mostly.
+    </div>
+
+    <div class="PupProfileQuestion">What kind of games do you like?
+    </div>
+    <div class="PupProfileAnswer">Metrovanias Rougelikes and platformers splash in some puzzle as well
+    </div>
+
+    <div class="PupProfileQuestion">What kind of music do you like?
+    </div>
+    <div class="PupProfileAnswer">Rock, Nightcore, Alt Rock, and Pop.
+    </div>
+
+    <div class="PupProfileQuestion">What are you weirdly passionate about?
+    </div>
+    <div class="PupProfileAnswer">Binding of Issac
+    </div>
+
+    <div class="PupProfileQuestion">What's something you absolutely can't stand?
+    </div>
+    <div class="PupProfileAnswer">Working
+
+        it messes with plans
+    </div>
+
+    <div class="PupProfileQuestion">What's a random fact about you?
+    </div>
+    <div class="PupProfileAnswer">I'm tall
+    </div>
+
+    <div class="PupProfileQuestion">What's something you're irrationally good at?
+    </div>
+    <div class="PupProfileAnswer">Dunno Honestly
+    </div>
+
+    <div class="PupProfileQuestion">What's something you're embarrassingly bad at?
+    </div>
+    <div class="PupProfileAnswer">Schedules
+    </div>
+
+    <div class="PupProfileQuestion">What's your comfort game?
+    </div>
+    <div class="PupProfileAnswer">Binding of Isaac
+    </div>
+
+</div>
             </div>
 
         </div>
 
-        <div id = "PupsPage">
-
-            <div id = "PupCRT">
-
-                <div id = "PupCRTBackground"></div>
-
-                <div id = CRTScreen>
-
-                    <div class = "CRTScreenMask" id="CRTImageContainer">
-                        <div id="Static">
-
-                        </div>
-
-                        <div id="Channel1">
-                            <div id ="PupInfoImage1"></div>
-                            <div id ="PupInfoImage2"></div>
-
-                            <div id = "PupInfo">Pup is my Husband 🐶💚
-
-                                He's a wonderfully
-                                encentric type of guy
-                                His Ardron Realm
-                                Is Elusia
-                                
-                                His bark is worse than his bite.
-
-                                Pup is a MASSIVE gaymer. He's always playing fuckin somethin.
-                                Least when he's not working.
-
-                                As far as design and help goes, there isn't much. 
-                                Spare for the QA he does, testing and such.
-
-                                Which in that case he's *very* specific.
-                                Even if not explaining it the best. 
-
-                                Like this page of his...
-                                He said he wanted a "Platformer background"...
-                                Welp...Here ya go, love. Enjoy.
-
-  
-                            </div>
-                            
-
-
-                        </div>
-                        
-                        <div id="Channel2">
-                            <div class="PupProfileQuestion">What makes a game good to you?<br></div>
-                                ------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">
-                                I want a game that grows the more you play, the more you get to play with, because if I die I want to be like "I can do this instead of this".
-
-                                (Yeah I have no idea wtf that means either)
-
-                            </div>
-                        </div>
-
-
-                        <div id="Channel3">
-                            <div id="Sky"></div>
-
-                            <div id="PupGrass"></div>
-
-                            <div class="Rock">
-                            </div>
-                            <div class="Cloud"></div>
-                            <div class="Coin"></div>
-
-                            <div id = "GameTitle">Every Dog Has His Day
-                                
-                                <div id = "PupHead"></div>
-                                <div id = "PupBody"></div>
-                                <div id = "PupWin"></div>
-
-                                <button id = "StartButton"></button>
-
-                                <div id = "StartText">CLICK START</div>
-
-                                <div id = "LastHighScore"></div>
-
-
-                                
-                                
-
-                            </div>
-
-                            <div id = "StartScreen">
-                                <br><br><br><br><br><br><br><br><br>
-                                Click or hit Space to jump!
-
-                                <div id = "PupLivesHead"></div>
-                                <div id = "PupLives">x3</div>
-                            </div>
-
-                            <div id = "GameInfoBar">
-                                <div id = "PupScoreText">Score:</div>
-                                <div id = "PupCoinsText">Coins:</div>
-                                <div id = "PupTimeText">Time:</div>
-
-                                <div id = "PupScore">0</div>
-                                <div id = "PupCoins">0</div>
-                                <div id = "PupTime">0</div>
-
-                            </div>
-
-                            <div id = "PupSprite">
-                                <div id = "PupHitBox"></div>
-                            </div>
-
-                            <div id = JumpScreen>
-                                <button id ="Jump"></button>
-                            </div>
-
-
-                        </div>
-
-                        <div id="Channel4">
-                            <div class="PupProfileQuestion">What's a game mechanic or design trend you can't stand?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Town Sims
-                                
-                                I want to enjoy my roup without having to think about my village.</div>
-                        </div>
-
-                        <div id="Channel5">
-                            <div class="PupProfileQuestion">What's a game mechanic you'll defend until the day you die?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Metrovanias are one of the best systems in gaming to give the thought of "ooo what should be up there or behind that" </div>
-                        </div>
-
-                        <div id="Channel6">
-                            <div class="PupProfileQuestion">What's something that will instantly put you in a good mood?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Completing something difficult after a decent amount of tries.</div>
-                        </div>
-
-                        <div id="Channel7">
-                            <div class="PupProfileQuestion">Are you a morning person, night person, or some forbidden third thing?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Night 
-                                
-                                which sucks for most are morning people </div>
-                        </div>
-
-                        <div id="Channel8">
-                            <div class="PupProfileQuestion">What's your ideal way to spend a completely free day?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Playing backlog games or doing literally anything with family </div>
-                        </div>
-
-                        <div id="Channel9">
-                            <div class="PupProfileQuestion">What's something people tend to misunderstand about you?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">I'm not ignoring you I'm gauging how to respond to things that go on, which if I do for long enough I will just forget about it </div>
-                        </div>
-
-                        <div id="Channel10">
-                            <div class="PupProfileQuestion">What's the fastest way to become your friend?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Just being communicable like just talk about something and make me feel like I'm involved.</div>
-                        </div>
-
-                        <div id="Channel11">
-                            <div class="PupProfileQuestion">What's something you're embarrassingly sentimental about?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">My character 
-                                
-                                he's part of who I am and he might evolve but he won't disappear.</div>
-                        </div>
-
-                        <div id="Channel12">
-                            <div class="PupProfileQuestion">What's a hill you'll die on that ultimately doesn't fucking matter?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Nothing honestly because everything does matter in the end.</div>
-                        </div>
-
-                        <div id="Channel13">
-                            <div class="PupProfileQuestion">What's something popular that you just don't understand the appeal of?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Kinda old trend but I don't understand the human doll that look like labubu</div>
-                        </div>
-
-                        <div id="Channel14">
-                            <div class="PupProfileQuestion">If you could instantly master one skill, what would it be?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer"> Language
-                                
-                                I would be nice to expand my culture.</div>
-                        </div>
-
-                        <div id="Channel15">
-                            <div class="PupProfileQuestion">If someone wanted to understand you better, what's one thing they should know?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">I like to play games with people
-                                
-                            I have a few games on a do not play list but it's one of my favorite things </div>
-                        </div>
-
-                        <div id="Channel16">
-                            <div class="PupProfileQuestion">How would you describe yourself?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">A dog.</div>
-                        </div>
-
-                        <div id="Channel17">
-                            <div class="PupProfileQuestion">What do you do for fun?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Games and YouTube mostly.</div>
-                        </div>
-
-                        <div id="Channel18">
-                            <div class="PupProfileQuestion">What kind of games do you like?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Metrovanias Rougelikes and platformers splash in some puzzle as well </div>
-                        </div>
-
-                        <div id="Channel19">
-                            <div class="PupProfileQuestion">What kind of music do you like?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer"> Rock, Nightcore, Alt Rock, and Pop.</div>
-                        </div>
-
-                        <div id="Channel20">
-                            <div class="PupProfileQuestion">What are you weirdly passionate about?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Binding of Issac</div>
-                        </div>
-
-                        <div id="Channel21">
-                            <div class="PupProfileQuestion">What's something you absolutely can't stand?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Working 
-                                it messes with plans </div>
-                        </div>
-
-                        <div id="Channel22">
-                            <div class="PupProfileQuestion">What's a random fact about you?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">I'm tall</div>
-                        </div>
-
-                        <div id="Channel23">
-                            <div class="PupProfileQuestion">What's something you're irrationally good at?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Dunno Honestly</div>
-                        </div>
-
-                        <div id="Channel24">
-                            <div class="PupProfileQuestion">What's something you're embarrassingly bad at?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Schedules</div>
-                        </div>
-
-                        <div id="Channel25">
-                            <div class="PupProfileQuestion">What's your comfort game?<br>
-                            </div>
-------------------------------------------------------------------------------------------
-                            <div class="PupProfileAnswer">Binding of Isaac</div>
-                        </div>
-
-                        <div id="Channel26">
-                            <img src ="Assets/69.png">
-
-                        </div>
-
-                        <div id="Channel27">
-                            You really went through 100 channels? <br> <br> <br> 
-
-                            Idk what you expected, but here is a cookie. <br> <br> 
-
-                            🍪
-                        </div>
-
-                        <div id="Channel28">
-
-                            Oh hey, It's my lucky number.  <br> <br> <br>
-
-                            🌒🌕🌘
-                            
-                        </div>
-
-                        <div id="Channel29">
-
-                            The fuck are you even doing here??? <br> <br>
-
-                            MOAR COOKIES!<br> <br> 
-
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-                            🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪🍪<br> 
-
-
-                            
-                        </div>
-
-                        <div id="Channel30">
-                            Well. You either stuck it out... <br>
-
-                            Or just looked at the source files >_> <br> <br> 
-
-                            Either way: <br> 
-
-                            kttrsvhtghgn <br> <br> 
-
-                            ^ You'll need that code for somethin special in the future 😉
-
-                            <!-- Or if you're a sneaky cunt who looked at the source files/repo... -->
-                            <!-- https://tinyurl.com/kttrsvhtghgn -->
-                            
-                        </div>
-
-                        <div id="Channel31">
-                            
-                            
-                        </div>
-
-                    
-                        
-                    </div>
-
-                    <div id="ScanLines"></div>
-                </div>
-
-                <div id = CRTFrame>
-                    <button id = "PupPowerButton">
-                        <div id = "PupPowerOn"></div>
-                    </button>
-                    
-                    <button id = "PupVolumeUpButton"></button>
-                    <button id = "PupVolumeDownButton"></button>
-                    <button id = "PupChannelUpButton"></button>
-                    <button id = "PupChannelDownButton"></button>
-
-                    <div id = "NumberLeft"></div>
-                    <div id = "NumberMiddleLeft"></div>
-                    <div id = "NumberMiddleRight"></div>
-                    <div id = "NumberRight"></div>
-
-                </div>
-
-            </div>
-        </div>
 
     
 
-
-    <script src="Code.js"></script>
+    <script src="mobilecode.js"></script>
 
 </body>
 
@@ -1250,4 +1024,5 @@
 
 
 </html>
+
 
