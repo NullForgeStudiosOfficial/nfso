@@ -1919,3 +1919,134 @@ body
     background-repeat: no-repeat;
 }
 
+
+
+
+
+
+
+
+
+#NESPlusButton
+{
+    position:absolute;
+    display:flex;
+    aspect-ratio: 128 / 27;
+    height: auto;
+    width:min(60vw, 60vw);
+
+    left: 20%;
+    pointer-events: auto;
+}
+
+#NESPlusPage
+{
+    font-family:Ardron;
+    font-size: var(--body-size);
+    display:none;
+    position:relative;
+    width: 100%;
+    height:auto;
+    background-color: rgba(0, 0, 0, 0.50);
+    z-index: 0;
+
+    white-space: pre-line;
+    pointer-events: auto;
+}
+
+.NESTitle
+{
+    font-family: Ardron;
+    font-size: 50px;
+    top: 0px;
+    left:2.5%;
+    width:95%;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    position: relative;
+    justify-content: center;
+    white-space: pre-line;
+
+    background-color: rgba(5, 5, 5, 0.25);
+}
+
+#Mario1
+{
+    position:absolute;
+    width: 300px;
+    height:300px;
+    left:43%;
+    background-repeat: no-repeat;
+    background-image: url(Assets/Mario1.png);
+    background-size: 90%;
+}
+
+#Mario2
+{
+    position:absolute;
+    width: 500px;
+    height:500px;
+    left:44%;
+    background-repeat: no-repeat;
+    background-image: url(Assets/Mario2.png);
+    background-size: 50%;
+}
+
+#Mario1
+{
+    position:absolute;
+    width: 300px;
+    height:300px;
+    left:43%;
+    background-repeat: no-repeat;
+    background-image: url(Assets/Mario1.png);
+    background-size: 90%;
+}
+
+
+#MarioExample1
+{
+    position:absolute;
+    width: 539px;
+    height:580px;
+    Transform: translateY(-55px);
+    left:35%;
+    background-repeat: no-repeat;
+    background-image: url(Assets/MarioExample1.png);
+    background-size: 100%;
+    z-index: 10;
+}
+
+
+
+
+#FamiStudioPic
+{
+    position:absolute;
+    width: 960px;
+    height:auto;
+    aspect-ratio: 16 /9;
+    left:25%;
+    background-repeat: no-repeat;
+    background-image: url(Assets/Famistudio.png);
+    background-size:100%;
+}
+
+#NESLimitationsButton
+{
+    position:absolute;
+    display:flex;
+    aspect-ratio: 128 / 27;
+    height: auto;
+    width:min(20vw, 40vw);
+    top:2.5%;
+    left: 40%;
+    pointer-events: auto;
+}
+
+
+
+
+
+
+

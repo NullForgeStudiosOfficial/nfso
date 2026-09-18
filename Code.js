@@ -49,6 +49,17 @@ let PupBackgroundImage = document.getElementById("PupsBackgroundImage")
 let ExtraBackgroundImage = document.getElementById("ExtrasBackgroundImage")
 let extrabackgroundscroll = 0;
 
+let MainExtrasPage = document.getElementById("MainExtrasPage")
+
+
+
+let NESPlusButton = document.getElementById("NESPlusButton")
+let NESPlusPage = document.getElementById("NESPlusPage")
+let NESLimitationsButton= document.getElementById("NESLimitationsButton")
+
+
+
+
 let RainCanvas = document.getElementById("Rain");
 let RainContext = RainCanvas.getContext("2d");
 let RainFontSize = 15;
@@ -63,7 +74,7 @@ let SanctumScale = 0.93;
 let SanctumDirection = 1;
 const MinScale = 0.93;
 const MaxScale = 1.075;
-const ScaleSpeed = 0.0385;
+const ScaleSpeed = 0.035;
 
 let PupSky = document.getElementById("Sky")
 let PupStatic = document.getElementById("Static")
@@ -308,6 +319,20 @@ function Start()
         "Lexend"
     );
 
+    SetUpButtonTexture(
+        "NESPlusButton",
+        "ButtonVoid.png",
+        "What Is NES+?",
+        "Lexend"
+    );
+
+    SetUpButtonTexture(
+        "NESLimitationsButton",
+        "ButtonVoid.png",
+        "Take Me There",
+        "Lexend"
+    );
+
 
     requestAnimationFrame(Update);
 }
@@ -319,8 +344,6 @@ function Update(CurrentTime)
 
     VoidSpin()
     ScrollButtons() 
-
-
 
     // Vex things
     if (VexPage.style.display == "block")
@@ -460,6 +483,11 @@ async function BlinkEyes(ImageID)
 
 async function SanctumBreath()
 {
+    if (SanctumProtection)
+    {
+        return
+    }
+
     while (SanctumBool)
     {
         SanctumScale += SanctumDirection * ScaleSpeed * DeltaTime;
@@ -469,7 +497,7 @@ async function SanctumBreath()
             SanctumScale = MaxScale;
             SanctumDirection = -1;
 
-            await Sleep(75);
+            await Sleep(60);
         }
 
         if (SanctumScale <= MinScale)
@@ -477,7 +505,7 @@ async function SanctumBreath()
             SanctumScale = MinScale;
             SanctumDirection = 1;
 
-            await Sleep(75);
+            await Sleep(60);
         }
 
         ExtrasBackground.style.scale = SanctumScale;
@@ -560,6 +588,10 @@ async function pageresetter()
     ExtrasBackground.style.display = "none";
     LinksBackground.style.display = "none";
     StaticBool = false
+
+    NESPlusButton.style.display = "none";
+    NESPlusPage.style.display = "none";
+    MainExtrasPage.style.display = "none"
 }
 
 LinksButton.addEventListener("click", function()
@@ -568,9 +600,7 @@ LinksButton.addEventListener("click", function()
 
     LinksBackground.style.display = "block";
     LinksPage.style.display = "block"
-
-
-    
+    SanctumProtection = false
 });
 
 VexButton.addEventListener("click", function()
@@ -582,6 +612,7 @@ VexButton.addEventListener("click", function()
     
     VexBackground.style.display = "block";
     VexPage.style.display = "block"
+    SanctumProtection = false
 
 });
 
@@ -592,6 +623,7 @@ AuliButton.addEventListener("click", function()
 
     AuliBackground.style.display = "block";
     AuliPage.style.display = "block"
+    SanctumProtection = false
 
 });
 
@@ -601,9 +633,12 @@ PupButton.addEventListener("click", function()
 
     PupBackground.style.display = "block";
     PupPage.style.display = "block"
+    SanctumProtection = false
 
 
 });
+
+let SanctumProtection = false
 
 ExtraButton.addEventListener("click", function()
 {
@@ -614,7 +649,28 @@ ExtraButton.addEventListener("click", function()
 
     ExtrasBackground.style.display = "block";
     ExtraPage.style.display = "block"
+    MainExtrasPage.style.display = "block"
+    NESPlusButton.style.display = "block";
+    SanctumProtection = true
 
+});
+
+NESPlusButton.addEventListener("click", function()
+{
+    pageresetter()
+    SanctumBool = true
+    SanctumBreath()
+
+    ExtrasBackground.style.display = "block";
+    ExtraPage.style.display = "block"
+    MainExtrasPage.style.display = "none"
+    NESPlusPage.style.display = "block"
+
+});
+
+NESLimitationsButton.addEventListener("click", function()
+{
+    document.getElementById("ScrollSpace").scrollTop = 4110;
 });
 
 
