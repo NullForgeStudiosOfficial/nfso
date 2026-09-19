@@ -524,7 +524,7 @@ Button1.addEventListener("click", function()
 });
 
 
-
+//ArdronQuiz
 Button2.addEventListener("click", function()
 {
     window.open("https://nullforgestudiosofficial.github.io/ArdronQuiz/", "_blank");
@@ -533,6 +533,7 @@ Button2.addEventListener("click", function()
 //Wikilink
 Button3.addEventListener("click", function()
 {
+    // WIKI
     return
 });
 
@@ -542,16 +543,19 @@ Button4.addEventListener("click", function()
     return
 });
 
+//Twitch
 Button5.addEventListener("click", function()
 {
     window.open("https://www.twitch.tv/nullforgestudiosofficial", "_blank");
 });
 
+//Kofi
 Button6.addEventListener("click", function()
 {
     window.open("https://ko-fi.com/nullforgestudiosofficial", "_blank");
 });
 
+//WorkLogs
 Button7.addEventListener("click", function()
 {
     window.open("https://github.com/NullForgeStudiosOfficial/WorkLogs", "_blank");
@@ -560,6 +564,7 @@ Button7.addEventListener("click", function()
 // Discord Archives
 Button8.addEventListener("click", function()
 {
+    window.open("https://github.com/NullForgeStudiosOfficial/DiscordArchives", "_blank");
     return
 });
 
