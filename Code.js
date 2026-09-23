@@ -540,7 +540,8 @@ Button3.addEventListener("click", function()
 //Discord Link
 Button4.addEventListener("click", function()
 {
-    return
+    window.open("https://discord.gg/qHRgfVNZpR", "_blank");
+
 });
 
 //Twitch
