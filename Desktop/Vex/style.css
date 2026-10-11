@@ -1,0 +1,604 @@
+
+@font-face
+{
+    font-family: Lexend;
+    src: url("../../UniversalAssets/Lexend.ttf")
+}
+
+
+
+*
+{
+    box-sizing: border-box;
+}
+
+#VoidEyes
+{
+    position:absolute;
+
+    left:-1%;
+    top:-7%;
+    aspect-ratio: 1/1;
+
+    width:clamp(5vw,10vw,10vw);
+    height:auto;
+
+    background-image: url("../../UniversalAssets/VoidEyeFull.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+#Logo
+{
+    position:absolute;
+
+    right:1%;
+    top:1%;
+    aspect-ratio: 1/1;
+
+    width:clamp(1vw,2vw,5vw);
+    height:auto;
+
+    background-image: url("../../UniversalAssets/Favicon.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+
+:root
+{
+    --door-width: clamp(10%, 90%, 90%);
+}
+
+html,
+body
+{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Lexend;
+    color:white;
+}
+
+#BackgroundContainer
+{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    width:100%;
+    height: 100%;
+    z-index:-10;
+}
+
+#VexPage
+{
+    display:block;
+    position:absolute;
+    overflow:hidden;
+    pointer-events:auto;
+    width:100%;
+    height: 100%;
+    z-index:0;
+}
+
+
+#MainBackground
+{
+    position:absolute;
+
+    width:100%;
+    height: 100%;
+
+    z-index:-9;
+    pointer-events:none;
+    background-image: url(../Assets/DesktopBackground.png);
+    background-size: 100% 100%;
+    background-repeat: repeat-x;
+    background-position: 0 (--var 0px);
+}
+
+
+#FullLeftRightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/LeftRightTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#LeftTransition
+{
+    position:absolute;
+    display:block;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:-200%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/LeftFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#RightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/RightFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#VexInfoBox
+{
+    position:absolute;
+    display:block;
+
+    top:5%;
+    left:30%;
+    aspect-ratio: 650/418;
+    width:68.50%;
+    right:0%;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    background-image: url("../Assets/InfoBox23.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+
+#VexBioInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top:3%;
+    left:1%;
+    padding-top: 10px;
+    aspect-ratio: 675/418;
+    width:97.5%;
+    right:0%;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+
+#VexPersonalInfoBox,
+#VexDevInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top:3%;
+    left:1%;
+    padding-top: 10px;
+    aspect-ratio: 675/418;
+    width:97.5%;
+    right:0%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+
+.NormalButton
+{
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+
+    width: 92%;
+    aspect-ratio: 144/40;
+
+    background-color: transparent;
+    background-image: url("../Assets/ButtonBoxButtonOutline.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border: none;
+    padding: 0;
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+
+}
+
+.NormalButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:5%;
+    width: 90%;
+    height: 90%;
+
+    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+     pointer-events: auto;
+
+     z-index: -1;
+
+    filter: brightness(50%);
+}
+
+.BackButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:5%;
+    width: 90%;
+    height: 90%;
+
+    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: -1;
+
+    filter: brightness(50%);
+}
+
+.NormalButton:hover .NormalButtonBackground
+{
+    filter: brightness(100%);
+}
+
+.NormalButton:hover .BackButtonBackground
+{
+    filter: brightness(100%);
+}
+
+.Words
+{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+    font-size: clamp(0.5vw,2.5vw,3vw);
+    font-family: Lexend;
+    color: whitesmoke;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+
+.VexProfileQuestion
+{
+    font-family: Lexend;
+    font-size: clamp(0.5vw,2vw,3vw);
+    background-color:rgba(0, 64, 125, 0.333);
+    text-align: center;
+    position: relative;
+
+    font-weight:bold;
+
+    left:1%;
+    padding-top: 1%;
+    width: 98.25%;
+}
+
+.VexProfileAnswer
+{
+    font-family: Lexend;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    padding-bottom: 30px;
+    width:90%;
+    left:4%;
+    font-size: clamp(0.5vw,1.15vw,3vw);
+}
+
+
+#VexPfp1
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Vexpfp1.png");
+
+    width: 25%;
+    left:1%;
+    top:1%;
+    aspect-ratio: 512/512;
+    background-size: 100% 100%;
+
+}
+
+#Vexpfp1credit
+{
+    position:absolute;
+    top:44%;
+    left:12.5%;
+
+    width: 25%;
+
+
+}
+
+#VexPfp2
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Vexpfp2.png");
+    right:5%;
+    top:7%;
+    width: 21%;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+}
+
+#Vexpfp2credit
+{
+    position:absolute;
+    top:50.5%;
+    left:85.5%;
+
+    width: 25%;
+
+
+}
+
+#ButtonBox
+{
+    position:absolute;
+    display:block;
+
+    top:5%;
+    left:0%;
+    aspect-ratio: 288/436;
+    width:29.5%;
+    right:0%;
+
+    image-rendering: pixelated  ;
+
+    background-image: url("../Assets/ButtonBox.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#VexInfoBoxBack
+{
+    position:absolute;
+    display:block;
+
+    top:1%;
+    left:1%;
+    aspect-ratio: 650/418;
+    width:98%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../../UniversalAssets/GrimloweButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(50%);
+
+    z-index: -1;
+}
+
+#VexButtonBoxBack
+{
+    position:absolute;
+    display:block;
+
+    top:2.10%;
+    left:3.25%;
+    aspect-ratio: 270/418;
+    width:93.5%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../../UniversalAssets/GrimloweButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+#VexExitButton
+{
+    position: absolute;
+    top:3%;
+    left:4%;
+}
+
+#VexBioButton
+{
+    position: absolute;
+    top:22%;
+    left:4%;
+}
+
+#VexPersonalButton
+{
+    position: absolute;
+    top:41%;
+    left:4%;
+}
+
+#VexDevButton
+{
+    position: absolute;
+    top:60%;
+    left:4%;
+}
+
+#VexWIP2Button
+{
+    position: absolute;
+    top:79%;
+    left:4%;
+}
+
+
+#VexRefButton
+{
+    position:absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    top: -16.5%;
+    left:-16.5%;
+    width:133%;
+    height:133%;
+    background-image: url("../../UniversalAssets/SquareButtonOutline.png");
+    background-size: 100% 100%;
+    pointer-events: auto;
+
+    z-index: 1;
+}
+
+
+@media (max-width: 1600px) {
+
+    #VexInfoBox
+    {
+        height:92%;
+    }
+
+    #VexPersonalInfoBox,
+    #VexDevInfoBox,
+    #VexBioInfoBox
+    {
+        height:94.5%;
+    }
+
+    #VexInfoBoxBack
+    {
+        height:98%;
+        
+    }
+
+    #VexButtonBoxBack
+    {
+        height:95%;
+    }
+
+    #ButtonBox
+    {
+        height:92%;
+    }
+
+    #VoidEyes
+    {
+        top:-6%;
+    }
+
+    #Logo
+    {
+        top:1%;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    #VexInfoBox
+    {
+        height:92%;
+    }
+
+    #VexPersonalInfoBox,
+    #VexDevInfoBox,
+    #VexBioInfoBox
+    {
+        height:94.5%;
+    }
+
+    #VexInfoBoxBack
+    {
+        height:98%;
+        
+    }
+
+    #VexButtonBoxBack
+    {
+        height:95%;
+    }
+
+    #ButtonBox
+    {
+        height:92%;
+    }
+
+    #VoidEyes
+    {
+        top:-4%;
+    }
+
+    #Logo
+    {
+        top:2%;
+    }
+}
+

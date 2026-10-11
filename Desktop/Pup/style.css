@@ -1,0 +1,1161 @@
+
+
+@font-face
+{
+    font-family: Lilita;
+    src: url("../../UniversalAssets/LilitaOne.ttf")
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+
+:root
+{
+    --door-width: clamp(10%, 90%, 90%);
+}
+
+html,
+body
+{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Lilita;
+    color:white;
+}
+
+#BackgroundContainer
+{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    width:100%;
+    height: 100%;
+    z-index:-10;
+}
+
+#PupPage
+{
+    display:block;
+    position:absolute;
+    overflow:hidden;
+    pointer-events:auto;
+    width:100%;
+    height: 100%;
+    z-index:0;
+}
+
+
+#MainBackground
+{
+    position:absolute;
+
+    width:100%;
+    height: 100%;
+
+    z-index:-9;
+    pointer-events:none;
+    background-image: url(../Assets/DesktopBackground.png);
+    background-size: 100% 100%;
+    background-repeat: repeat-x;
+    background-position: 0 (--var 0px);
+}
+
+
+#FullLeftRightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/LeftRightTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#LeftTransition
+{
+    position:absolute;
+    display:block;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:-200%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/LeftFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#RightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/RightFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#PupInfoBox
+{
+    position:absolute;
+    display:block;
+
+    top:5%;
+    left:30%;
+    aspect-ratio: 650/418;
+    width:68.50%;
+    right:0%;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    background-image: url("../Assets/InfoBox23.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+
+#PupBioInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top:3%;
+    left:1%;
+    padding-top: 10px;
+    aspect-ratio: 675/418;
+    width:97.5%;
+    right:0%;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+
+
+#PupPersonalInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top:3%;
+    left:1%;
+    padding-top: 10px;
+    aspect-ratio: 675/418;
+    width:97.5%;
+    right:0%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+#PupEDHHDInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top:0%;
+    left:0%;
+    padding-top: 10px;
+    aspect-ratio: 675/418;
+    width:100%;
+    right:0%;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+}
+
+
+.NormalButton
+{
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+
+    width: 92%;
+    aspect-ratio: 144/40;
+
+    background-color: transparent;
+    background-image: url("../Assets/ButtonBoxButtonOutline.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border: none;
+    padding: 0;
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+
+}
+
+.NormalButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:5%;
+    width: 90%;
+    height: 90%;
+
+    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+     pointer-events: auto;
+
+     z-index: -1;
+
+    filter: brightness(50%);
+}
+
+.BackButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:5%;
+    width: 90%;
+    height: 90%;
+
+    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: -1;
+
+    filter: brightness(50%);
+}
+
+.NormalButton:hover .NormalButtonBackground
+{
+    filter: brightness(100%);
+}
+
+.NormalButton:hover .BackButtonBackground
+{
+    filter: brightness(100%);
+}
+
+.Words
+{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+    font-size: clamp(0.5vw,2.5vw,3vw);
+    font-family: Lilita;
+    color: whitesmoke;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+
+.PupProfileQuestion
+{
+    font-family: Lilita;
+    font-size: clamp(0.5vw,2vw,3vw);
+    background-color:rgba(0, 0, 125, 0.333);
+    text-align: center;
+    position: relative;
+
+    left:1%;
+    padding-top: 1%;
+    width: 98.25%;
+}
+
+.PupProfileAnswer
+{
+    font-family: Lilita;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    padding-bottom: 30px;
+    width:90%;
+    left:4%;
+    font-size: clamp(0.5vw,1.15vw,3vw);
+}
+
+
+#PupPfp1
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Puppfp1.png");
+
+    width: 25%;
+    left:1%;
+    top:1%;
+    aspect-ratio: 512/512;
+    background-size: 100% 100%;
+
+}
+
+#Puppfp1credit
+{
+    position:absolute;
+    top:44%;
+    left:12.5%;
+
+    width: 25%;
+
+
+}
+
+#PupPfp2
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Puppfp2.png");
+    right:5%;
+    top:7%;
+    width: 21%;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+}
+
+#Puppfp2credit
+{
+    position:absolute;
+    top:50.5%;
+    left:85.5%;
+
+    width: 25%;
+
+
+}
+
+#ButtonBox
+{
+    position:absolute;
+    display:block;
+
+    top:5%;
+    left:0%;
+    aspect-ratio: 288/436;
+    width:29.5%;
+    right:0%;
+
+    image-rendering: pixelated  ;
+
+    background-image: url("../Assets/ButtonBox.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#PupInfoBoxBack
+{
+    position:absolute;
+    display:block;
+
+    top:1%;
+    left:1%;
+    aspect-ratio: 650/418;
+    width:98%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../../UniversalAssets/ElusiaButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(50%);
+
+    z-index: -1;
+}
+
+#PupButtonBoxBack
+{
+    position:absolute;
+    display:block;
+
+    top:2.10%;
+    left:3.25%;
+    aspect-ratio: 270/418;
+    width:93.5%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../../UniversalAssets/ElusiaButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+#PupExitButton
+{
+    position: absolute;
+    top:3%;
+    left:4%;
+}
+
+#PupBioButton
+{
+    position: absolute;
+    top:22%;
+    left:4%;
+}
+
+#PupPersonalButton
+{
+    position: absolute;
+    top:41%;
+    left:4%;
+}
+
+#PupEDHHDButton
+{
+    position: absolute;
+    top:60%;
+    left:4%;
+}
+
+#PupWIP2Button
+{
+    position: absolute;
+    top:79%;
+    left:4%;
+}
+
+
+#PupRefButton
+{
+    position:absolute;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    top: -16.5%;
+    left:-16.5%;
+    width:133%;
+    height:133%;
+    background-image: url("../../UniversalAssets/SquareButtonOutline.png");
+    background-size: 100% 100%;
+    pointer-events: auto;
+
+    z-index: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#GameTitle
+{
+    display:block;
+    font-family: Lilita;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    width:97.25%;
+    height:100.5%;
+    left:1.30%;
+    top:1%;
+    font-size: clamp(0.5vw,3.5vw,4vw);
+
+    z-index: 0;
+}
+
+#PupHead
+{
+    display:block;
+    position: absolute;
+
+    width: 40%;
+    height: 100%;
+    left: 32%;
+    top: 10%;
+
+    background-image: url("../../UniversalAssets/DogHead.png");
+
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position:0 0;
+
+    z-index: 6;
+    pointer-events: none;
+}
+
+#PupBody
+{
+    display:block;
+    position: absolute;
+
+    width: 23%;
+    height: 50%;
+    left: 39.75%;
+    top: 46.75%;
+
+    background-image: url("../../UniversalAssets/DogBody.png");
+
+    background-size: 90%;
+    background-repeat: no-repeat;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+#StartButton
+{
+    display:block;
+    position: absolute;
+
+    left: 40%;
+    bottom: 20%;
+
+    background-color: rgba(0, 121, 0, 0.500);
+
+    width: 20%;
+    height:10%;
+    aspect-ratio: 1 / 1;
+}
+
+#StartText
+{
+    display:block;
+    position:absolute;
+    pointer-events: none;
+
+    left:0%;
+    bottom: 23%;
+    text-align: center;
+    width: 100%;
+    z-index: 0;
+    font-size: clamp(0.5vw,2vw,3vw);
+}
+
+#LastHighScore
+{
+
+    position: absolute;
+    display:block;
+    width:100%;
+    text-align: center;
+    bottom: -22%;
+    left:-10%;
+
+    font-size: clamp(0.5vw,3.5vw,3vw);
+}
+
+
+#StartScreen
+{
+    position: absolute;
+    display:none;
+    width: 99%;
+    height: 100%;
+    background-color: #000;
+    top:1%;
+    left:0%;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+#PupLivesHead
+{
+    display:block;
+    position: absolute;
+
+    width: 20%;
+    height: 50%;
+    left: 30%;
+    top: 35%;
+
+    background-image: url("../../UniversalAssets/DogHead.png");
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    z-index: 3;
+    pointer-events: none;
+}
+
+#PupLives
+{
+    display:block;
+    position: absolute;
+
+    width: 100%;
+    height: auto;
+    left: 5%;
+    top: 45%;
+
+    z-index: 0;
+
+    font-family: Lilita;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    font-size: clamp(0.5vw,2.5vw,3vw);
+}
+
+#How2Play
+{
+    display:block;
+    position: absolute;
+    font-size: clamp(0.5vw,2.5vw,3vw);
+
+    width: 90%;
+    height: 10%;
+    left: 30%;
+    top: 25%;
+}
+
+#GameInfoBar
+{
+    display:none;
+    position: absolute;
+
+    background-color: green;
+
+    width: 94%;
+    height: 7%;
+    left: 3%;
+    top: 3%;
+
+    z-index: -2;
+
+
+}
+
+#PupScore
+{
+    display:block;
+    width: 30%;
+    height: auto;
+    left: 3%;
+    top: 50%;
+    font-family: Lilita;
+    text-align: left;
+    font-size: clamp(0.5vw,1.25vw,3vw);
+    position: absolute;
+}
+
+#PupTime
+{
+    display:block;
+    width: 30%;
+    height: 10%;
+    left: 67%;
+    top: 50%;
+    text-align:right;
+    font-family: Lilita;
+    font-size: clamp(0.5vw,1.25vw,3vw);
+    position: absolute;
+}
+
+#PupCoins
+{
+    display:block;
+    width: 90%;
+    height: 10%;
+    right: 5%;
+    top: 50%;
+    text-align: center;
+    font-family: Lilita;
+    font-size: clamp(0.5vw,1.25vw,3vw);
+    position: absolute;
+}
+
+#PupScoreText
+{
+    display:block;
+    width: 90%;
+    height: 10%;
+    left: 3%;
+    top: 8%;
+    font-family: Lilita;
+    font-size: clamp(0.5vw,1.25vw,3vw);
+    position: absolute;
+}
+
+#PupTimeText
+{   
+    display:block;
+    width: 90%;
+    height: auto;
+    right: -85%;
+    top: 8%;
+    font-family: Lilita;
+    font-size: clamp(0.5vw,1.25vw,3vw);
+    position: absolute;
+}
+
+#PupCoinsText
+{
+    display:block;
+    width: 90%;
+    height: 10%;
+    left: 48%;
+    top: 8%;
+    font-family: Lilita;
+    font-size: clamp(0.5vw,1.25vw,3vw);
+    position: absolute;
+}
+
+#PupSprite
+{
+    display:none;
+    position: absolute;
+
+    width: 15%;
+    height: 15%;
+    left: 1%;
+    bottom: 14.5%;
+
+    z-index: -2;
+
+    background-image: url("../../UniversalAssets/PupRun1.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+#PupHitBox
+{
+    position: absolute;
+    display:block;
+    inset: 0;
+
+    left: 30%;
+    top: 10%;
+
+    width: 40%;
+    height: 70%;
+    z-index: 3;
+}
+
+.Cloud
+{
+    position: absolute;
+    display:none;
+    width: 15%;
+    aspect-ratio: 2 / 1;
+
+    background-image: url("../../UniversalAssets/Cloud1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+
+
+
+    z-index: -3;
+}
+
+.Coin
+{
+    position:absolute;
+    display:none;
+    width: 5%;
+    aspect-ratio: 1 / 1;
+
+    background-image: url("../../UniversalAssets/Coin.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+    background-position: 0px 0px;
+
+    bottom:50%;
+
+    z-index: -1;
+}
+
+.Rock
+{
+    display:block;
+    position: absolute;
+
+    width: 12.5%;
+    aspect-ratio: 1 / 1;
+
+    background-image: url("../../UniversalAssets/Rock4.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+    left:100%;
+
+    bottom: 12%;
+
+    z-index: -1;
+}
+
+#JumpScreen
+{
+    display:none;
+    position: absolute;
+
+    width: 97%;
+    height: 99%;
+    left: 1.5%;
+    top: 2.25%;
+
+
+    z-index: 4;
+    pointer-events: none;
+}
+
+#Jump
+{
+    position: absolute;
+    display:block;
+
+    background-color: transparent;
+
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+     border: none;
+    outline: none;
+
+    z-index: 4;
+    pointer-events: auto;
+}
+
+.RockHitBox
+{
+    display:block;
+    position: absolute;
+
+    width: 45%;
+    aspect-ratio: 1 / 1;
+
+    
+    pointer-events: none;
+    left:30%;
+    top:30%;
+
+    z-index: 1;
+}
+
+.CoinRockHitBox
+{
+    display:none;
+    position:absolute;
+    display:block;
+    width: 400%;
+    height:400%;
+    aspect-ratio: 1 / 1;
+    top:-150%;
+    left:-150%;
+    pointer-events: none;
+    background-position: 0px 0px;
+
+
+    z-index: 3;
+}
+
+#PupWin
+{
+    display:none;
+    position:absolute;
+
+    aspect-ratio: 998/494;
+    width:75%;
+
+    top:8%;
+    left:12.5%;
+
+    background-image: url(../../UniversalAssets/PupWin.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    z-index: -1;
+}
+
+#Sky
+{
+    display:block;
+    position:absolute;
+    image-rendering: pixelated;
+    display:block;
+
+    height:auto;
+    width:98%;
+    left:1%;
+    
+    aspect-ratio:122 / 288;
+
+    background-image:url("../../UniversalAssets/PupSky.png");
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    pointer-events:none;
+    z-index: -3;
+}
+
+#PupGrass
+{
+    display:block;
+    position:absolute;
+    image-rendering: pixelated;
+    display:block;
+
+    height:20%;
+    bottom:-2%;
+    left:1%;
+
+    width:98%;
+    z-index: -1;
+
+    background-image:url("../../UniversalAssets/PupGrass.png");
+    background-size:100% 100%;
+    background-repeat:repeat-x;
+
+    pointer-events:none;
+}
+
+#ScanLines
+{
+    display:block;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    left: 0%;
+    top: 0%;
+
+    background-image: url("../../UniversalAssets/ScanLines.png");
+
+    background-size: 5%;
+    background-repeat: repeat;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1600px) {
+
+    #PupInfoBox
+    {
+        height:92%;
+    }
+
+    #PupPersonalInfoBox,
+    #PupBioInfoBox
+    {
+        height:94.5%;
+    }
+
+    #PupEDHHDInfoBox
+    {
+        height:97%;
+    }
+
+    #PupHead
+    {
+        top:15.5%;
+    }
+
+    #PupSprite
+    {
+        top:72%;
+    }
+
+    .Rock{
+        top:70%;
+    }
+
+    #PupInfoBoxBack
+    {
+        height:98%;
+        
+    }
+
+    #PupButtonBoxBack
+    {
+        height:95%;
+    }
+
+    #ButtonBox
+    {
+        height:92%;
+    }
+
+    #VoidEyes
+    {
+        top:-6%;
+    }
+
+    #Logo
+    {
+        top:1%;
+    }
+
+    #LastHighScore
+    {
+        width:100%;
+        text-align: center;
+        bottom: 6%;
+        left:-20%;
+    }
+}
+
+
+@media (max-width: 1000px) {
+
+    #PupInfoBox
+    {
+        height:92%;
+    }
+
+    #PupPersonalInfoBox,
+    #PupBioInfoBox
+    {
+        height:94.5%;
+    }
+
+
+    #PupEDHHDInfoBox
+    {
+        height:97%;
+    }
+
+    #PupHead
+    {
+        top:22.5%;
+    }
+
+    #PupSprite
+    {
+        top:75%;
+    }
+
+    .Rock{
+        top:73%;
+    }
+
+
+
+
+
+    #PupInfoBoxBack
+    {
+        height:98%;
+        
+    }
+
+    #PupButtonBoxBack
+    {
+        height:95%;
+    }
+
+    #ButtonBox
+    {
+        height:92%;
+    }
+
+    #VoidEyes
+    {
+        top:-4%;
+    }
+
+    #Logo
+    {
+        top:2%;
+    }
+
+    
+
+}
+
+

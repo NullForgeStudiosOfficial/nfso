@@ -1,0 +1,446 @@
+// ----------- whateverthefuck
+
+let LastTime = 0;
+let DeltaTime = 0;
+
+let MainBackground = document.getElementById("MainBackground")
+let MainBackgroundScroll = 0
+
+let ButtonBackgrounds = []
+let ButtonBackgroundScroll = 0;
+let InfoBoxBackgroundScroll = 0;
+
+let DoorRealm = document.getElementById("DoorRealm")
+let DoorRealmRotation = 0
+
+
+let DoorEimon = document.getElementById("DoorEimon");
+let DoorElusia = document.getElementById("DoorElusia");
+let DoorGrimlowe = document.getElementById("DoorGrimlowe");
+let DoorSostrum = document.getElementById("DoorSostrum");
+let DoorVidulyn = document.getElementById("DoorVidulyn");
+let DoorYumalon = document.getElementById("DoorYumalon");
+let DoorIcolass = document.getElementById("DoorIcolass");
+let DoorSanctum = document.getElementById("DoorSanctum");
+
+let VoidEyesImages = [
+    'url("../UniversalAssets/VoidEyeFull.png")',
+    'url("../UniversalAssets/VoidEyes66.png")',
+    'url("../UniversalAssets/VoidEyes33.png")',
+    'url("../UniversalAssets/VoidEyes0.png")',
+]
+
+let DoorPage = document.getElementById("DoorPage");
+
+let LeftRightTransition = document.getElementById("FullLeftRightTransition")
+let LeftTransition = document.getElementById("LeftTransition")
+let RightTransition = document.getElementById("RightTransition")
+let WhichTransitionWeUsing = 0;
+let TransitionX = 0;
+let TransitionRunning = false;
+
+let SiteTransitionX = 0;
+let SiteTransitionRunning = false;
+
+let ChangedPage = false;
+let ChangedSite = false;
+let PreviousPage = null
+let NextPage = null
+let ExtrasPage = document.getElementById("ExtrasPage");
+let ExtrasExitButton = document.getElementById("ExtrasExitButton");
+
+let NESPlusButton = document.getElementById("NESPlusButton");
+let RealmQuizButton = document.getElementById("RealmQuizButton");
+let StatQuizButton = document.getElementById("StatQuizButton");
+
+let ExtrasNESPlusInfoBox = document.getElementById("ExtrasNESPlusInfoBox");
+let ExtrasRealmQuizInfoBox = document.getElementById("ExtrasRealmQuizInfoBox");
+let ExtrasStatQuizInfoBox = document.getElementById("ExtrasStatQuizInfoBox");
+
+let ExtrasConfirmButton = document.getElementById("ExtrasConfirmButton");
+let ExtrasCurrentSelection = "None";
+
+
+
+function Randomizer(min,max)
+{
+    //because why the hell is JS so complicated for RNG?
+    // The actual fuck is this doing?
+    // Math.random() gives: 0.0 -> 0.99
+    // Multiply by the size of our range.
+    // (max-min+1) counts BOTH endpoints.
+    // Example:
+    // 30-100
+    // 100-30+1 = 71 possible numbers.
+    // Math.floor() removes the decimal.
+    // Now we have: 0 -> 70
+    // Finally shift the range upward.
+    // +30 turns: 0 -> 30
+    // 70 ->100
+    // Yeah. JS is so dumb i actually wrote comments. congrats. 
+    // stupid ass language can do  [] + [] but not number ranges without a custom function xD
+
+    
+    return Math.floor(Math.random() * (max - min + 1)) + min
+    
+}
+
+document.addEventListener("keydown", function(event)
+{
+    if (event.key === "F12")
+    {
+        event.preventDefault();
+    }
+});
+
+document.addEventListener("keydown", function(event)
+{
+    if (
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && event.key === "I") ||
+        (event.ctrlKey && event.shiftKey && event.key === "J") ||
+        (event.ctrlKey && event.key === "U")
+    )
+    {
+        event.preventDefault();
+    }
+});
+
+
+
+DoorSanctum.addEventListener("click", function()
+{
+    ChangePage(DoorPage,ExtrasPage)
+});
+
+ExtrasExitButton.addEventListener("click", function()
+{
+    ChangePage(ExtrasPage,DoorPage)
+});
+
+
+
+DoorYumalon.addEventListener("click", function()
+{
+    window.open("https://store.steampowered.com/app/3300520/The_Ardron_Universe/", "_blank");
+    
+});
+
+
+DoorIcolass.addEventListener("click", function()
+{
+    window.open("https://discord.gg/qHRgfVNZpR", "_blank");
+});
+
+DoorVidulyn.addEventListener("click", function()
+{
+    //COMEBACKANDFIXTHISVEX
+});
+
+
+async function ExtrasTurnOffBoxes()
+{
+    ExtrasNESPlusInfoBox.style.display = "none";
+    ExtrasRealmQuizInfoBox.style.display = "none";
+    ExtrasStatQuizInfoBox.style.display = "none";
+}
+
+
+NESPlusButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+
+    ExtrasNESPlusInfoBox.style.display = "block";
+});
+
+RealmQuizButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+
+    ExtrasRealmQuizInfoBox.style.display = "block";
+});
+
+StatQuizButton.addEventListener("click", function()
+{
+    ExtrasTurnOffBoxes()
+
+    ExtrasStatQuizInfoBox.style.display = "block";
+});
+
+
+
+
+
+
+
+
+
+function Start()
+{
+    ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SostrumButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".VidulynButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".YumalonButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".IcolassButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".SanctumButton"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
+    ButtonBackgrounds.push(...document.querySelectorAll(".NormalButtonBackground"));
+
+    BlinkEyes()
+
+    requestAnimationFrame(Update);
+
+    ChangedSite = true
+    SiteTransitionX = 0;
+    SiteTransitionRunning = true
+    LeftTransition.style.display = "block";
+    WhichTransitionWeUsing = 2
+
+
+}
+
+
+function Update(CurrentTime)
+{
+    DeltaTime = (CurrentTime - LastTime) / 1000;
+    LastTime = CurrentTime;
+
+    ScrollBackground();
+    ScrollButtonBackgrounds();
+    RotateDoorRealm();
+
+    if (TransitionRunning)
+    {
+        UpdateTransition()
+    }
+
+    if (SiteTransitionRunning)
+    {
+        UpdateSiteTransition()
+    }
+
+    requestAnimationFrame(Update);
+}
+
+async function ScrollBackground()
+{
+    MainBackgroundScroll += 100 * DeltaTime;
+
+    MainBackground.style.backgroundPositionX = MainBackgroundScroll + "px";
+}
+
+function ScrollButtonBackgrounds()
+{
+    ButtonBackgroundScroll -= 25 * DeltaTime;
+
+    for (let Button of ButtonBackgrounds)
+    {
+        Button.style.backgroundPositionY = ButtonBackgroundScroll + "px";
+    }
+}
+
+
+function RotateDoorRealm()
+{
+    DoorRealmRotation -= 500 * DeltaTime;
+    DoorRealm.style.backgroundPositionY = DoorRealmRotation + "px";
+}
+
+
+function Sleep(ms)
+{
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+
+async function BlinkEyes()
+{
+    const Eye = document.getElementById("VoidEyes");
+
+    while (true)
+    {
+        Eye.style.backgroundImage = VoidEyesImages[0];
+
+        await Sleep(Math.random() * 3000 + 3000);
+
+        Eye.style.backgroundImage = VoidEyesImages[1];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[2];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[3];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[2];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[1];
+        await Sleep(75);
+
+        Eye.style.backgroundImage = VoidEyesImages[0];
+        await Sleep(75);
+    }
+}
+
+async function ChangePage(PageID1,PageID2)
+{
+    PreviousPage = PageID1
+    NextPage = PageID2
+
+    QuizTransition = false
+    TransitionX = window.innerWidth;
+    ChangedPage = false;
+    TransitionRunning = true
+    LeftRightTransition.style.display = "block";
+}
+
+async function ChangeSite()
+{
+    ChangedSite = true
+    SiteTransitionX = window.innerWidth;
+    SiteTransitionRunning = true
+    RightTransition.style.display = "block";
+}
+
+async function StartSite()
+{
+
+}
+
+async function LoadSite(SiteString)
+{
+    while (ChangedSite)
+    {
+        await Sleep(100)
+        continue
+    }
+
+    window.location.href = SiteString
+}
+
+function UpdateTransition()
+{
+       TransitionX -= 11000 * DeltaTime;
+
+        let usingthisthingy = null;
+
+        switch(WhichTransitionWeUsing)
+        {
+            case 0:
+                usingthisthingy = LeftRightTransition
+                
+                break;
+
+                case 1:
+                    usingthisthingy = RightTransition
+                    break;
+
+                    case 2:
+                        usingthisthingy = LeftTransition
+                        break;
+        }
+
+
+        usingthisthingy.style.left = TransitionX + "px";
+
+        
+
+        if (!ChangedSite && !ChangedPage && TransitionX + usingthisthingy.offsetWidth / 2 <= window.innerWidth / 2)
+        {
+            ChangedPage = true;
+            PreviousPage.style.display = "none";
+            NextPage.style.display = "flex";
+            
+        }
+
+        if(!ChangedSite && ChangedPage && TransitionX + usingthisthingy.offsetWidth <= 0)
+        {
+            TransitionRunning = false;
+            ChangedPage = false
+            TransitionX = window.innerWidth;
+            usingthisthingy.style.left = TransitionX + "px";
+        }
+
+        
+}
+
+function UpdateSiteTransition()
+{
+    let usingthisthingy = null;
+
+    StopX = 0;
+
+    switch(WhichTransitionWeUsing)
+    {
+        case 0:
+            usingthisthingy = LeftRightTransition    
+        break;
+
+        case 1:
+            usingthisthingy = RightTransition
+            StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
+        break;
+
+        case 2:
+            usingthisthingy = LeftTransition
+            StopX = window.innerWidth - usingthisthingy.offsetWidth - 2000;
+        break;
+    }
+
+
+    if (ChangedSite && SiteTransitionX <= StopX)
+    {
+            ChangedSite = false;
+            SiteTransitionRunning = false;
+            WhichTransitionWeUsing = 0;
+            return
+    }
+
+    SiteTransitionX -= 11000 * DeltaTime;
+    usingthisthingy.style.left = SiteTransitionX + "px";
+    usingthisthingy.style.right = "auto";
+}
+
+
+// ---------------------------- Aulis Page
+
+
+
+DoorEimon.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Auli/index.html")
+});
+
+
+DoorElusia.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Pup/index.html")
+});
+
+
+
+DoorGrimlowe.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Vex/index.html")
+});
+
+
+//  --------------------------------- Extras Page
+
+DoorEimon.addEventListener("click", function()
+{
+    ChangePage(DoorPage,AuliPage)
+});
+
+
+
+Start()

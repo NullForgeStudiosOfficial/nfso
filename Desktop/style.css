@@ -1,0 +1,1190 @@
+@font-face
+{
+    font-family: Ardron;
+    src: url("../UniversalAssets/FontOfArdron.ttf");
+}
+
+@font-face
+{
+    font-family: Lexend;
+    src: url("../UniversalAssets/Lexend.ttf")
+}
+
+@font-face
+{
+    font-family: Skranji;
+    src: url("../UniversalAssets/Skranji.ttf")
+}
+
+@font-face
+{
+    font-family: Lilita;
+    src: url("../UniversalAssets/LilitaOne.ttf")
+}
+
+*
+{
+    box-sizing: border-box;
+}
+
+
+:root
+{
+    --door-width: clamp(10%, 90%, 90%);
+}
+
+html,
+body
+{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Ardron;
+    color:white;
+}
+
+
+
+#BackgroundContainer
+{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    width:100%;
+    height: 100%;
+    z-index:-10;
+}
+
+#DoorPage
+{
+    display:block;
+    position:absolute;
+    overflow:hidden;
+    pointer-events:auto;
+    width:100%;
+    height: 100%;
+    z-index:0;
+}
+
+
+#AuliPage,
+#VexPage,
+#PupPage,
+#ExtrasPage
+{
+    display:none;
+    position:absolute;
+    overflow:hidden;
+    pointer-events:auto;
+    width:100%;
+    height: 100%;
+    z-index:0;
+}
+
+#MainBackground
+{
+    position:absolute;
+
+    width:100%;
+    height: 100%;
+
+    z-index:-9;
+    pointer-events:none;
+    background-image: url(Assets/DesktopBackground.png);
+    background-size: 100% 100%;
+    background-repeat: repeat-x;
+    background-position: 0 (--var 0px);
+}
+
+#MainTitle
+{
+    position:absolute;
+    font-family: Ardron;
+    top:2%;
+    text-align: center;
+    width: 100%;
+    font-size: clamp(1vw,2.5vw,3vw);
+   
+}
+
+.DoorTitles
+{
+    position:absolute;
+    font-family: Ardron;
+    text-align: center;
+    pointer-events:none;
+    width: 25%;
+}
+
+#EimonTitle
+{
+    position:absolute;
+    font-family: Ardron;
+    top:49.5%;
+    left:28%;
+    width: 25%;
+    font-size: clamp(1vw,2.5vw,3vw);
+}
+
+#ElusiaTitle
+{
+    position:absolute;
+    font-family: Ardron;
+    top:59.5%;
+    left:28%;
+    width: 25%;
+    font-size: clamp(1vw,2.5vw,3vw);
+}
+
+#GrimloweTitle
+{
+    position:absolute;
+    font-family: Ardron;
+    top:69.5%;
+    left:28%;
+    width: 25%;
+    font-size: clamp(1vw,2.5vw,3vw);
+}
+
+#SostrumTitle
+{
+    position:absolute;
+    font-family: Ardron;
+    top:80.5%;
+    left:28%;
+    width: 25%;
+    font-size: clamp(1vw,2.5vw,3vw);
+}
+
+#VidulynTitle
+{
+    position:absolute;
+    font-family: Ardron;
+    top:49%;
+    left:66.5%;
+    width: 25%;
+    font-size: clamp(1vw,2.5vw,3vw);
+}
+
+#YumalonTitle
+{
+    position:absolute;
+    font-family: Ardron;
+    top:60%;
+    left:66.5%;
+    width: 25%;
+    font-size: clamp(1vw,2.5vw,3vw);
+}
+
+#IcolassTitle
+{
+    position:absolute;
+    font-family: Ardron;
+    top:70%;
+    left:66.5%;
+    width: 25%;
+    font-size: clamp(1vw,2.5vw,3vw);
+}
+
+#VoidTitle
+{
+    position:absolute;
+    font-family: Ardron;
+    top:81%;
+    left:66.5%;
+    width: 25%;
+    font-size: clamp(1vw,2.5vw,3vw);
+}
+
+
+#DoorFrame
+{
+    image-rendering: pixelated;
+    position: relative;
+
+    height: var(--door-width);
+    aspect-ratio: 80 / 69;
+
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-image: url("../UniversalAssets/MainDoorFrame.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+.DoorButton
+{
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+    
+    width: 100%;
+    aspect-ratio: 1 / 1;
+
+    background-color: transparent;
+    background-image: url("../UniversalAssets/SquareButtonOutline.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border: none;
+    padding: 0;
+    pointer-events:auto;
+
+}
+
+
+#DoorEimon
+{
+    position:absolute;
+    display:flex;
+    top:41.75%;
+    left:18.75%;
+    width:9%;
+    
+
+}
+
+#DoorElusia
+{
+    position:absolute;
+    display:flex;
+    top:53.25%;
+    left:18.6%;
+    width:9%;
+
+}
+
+
+#DoorGrimlowe
+{
+    position:absolute;
+    display:flex;
+    top:65%;
+    left:18.6%;
+    width:9%;
+
+}
+
+
+#DoorSostrum
+{
+    position:absolute;
+    display:flex;
+    top:76.75%;
+    left:18.6%;
+    width:9%;
+
+}
+
+
+#DoorVidulyn
+{
+    position:absolute;
+    display:flex;
+    top:41.75%;
+    left:72.25%;
+    width:9%;
+
+}
+
+
+#DoorYumalon
+{
+    position:absolute;
+    display:flex;
+    top:53.25%;
+    left:72.25%;
+    width:9%;
+
+}
+
+
+#DoorIcolass
+{
+    position:absolute;
+    display:flex;
+    top:65%;
+    left:72.25%;
+    width:9%;
+
+}
+
+
+#DoorSanctum
+{
+    position:absolute;
+    display:flex;
+    top:1.25%;
+    left:46%;
+    width:7.75%;
+
+}
+
+#DoorVoid
+{
+   position:absolute;
+    display:flex;
+    top:76.75%;
+    left:72.25%;
+    width:9%;
+
+}
+
+
+
+.EimonButton,
+.ElusiaButton,
+.GrimloweButton,
+.SostrumButton,
+.VidulynButton,
+.YumalonButton,
+.IcolassButton,
+.VoidButton,
+.SanctumButton
+{
+    display:flex;
+    position: relative;
+    width: 90%;
+    height: 90%;
+
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    z-index: -1;
+
+    filter: brightness(50%);
+}
+
+
+.DoorButton:hover .EimonButton,
+.DoorButton:hover .ElusiaButton,
+.DoorButton:hover .GrimloweButton,
+.DoorButton:hover .SostrumButton,
+.DoorButton:hover .VidulynButton,
+.DoorButton:hover .YumalonButton,
+.DoorButton:hover .IcolassButton,
+.DoorButton:hover .SanctumButton,
+.DoorButton:hover .VoidButton
+{
+    filter: brightness(100%);
+}
+
+body:has(#DoorEimon:hover) #DoorFrame
+{
+    background-image: url("../UniversalAssets/MainDoorFrameEimon.png");
+}
+
+body:has(#DoorElusia:hover) #DoorFrame
+{
+    background-image: url("../UniversalAssets/MainDoorFrameElusia.png");
+}
+
+body:has(#DoorGrimlowe:hover) #DoorFrame
+{
+    background-image: url("../UniversalAssets/MainDoorFrameGrimlowe.png");
+}
+
+body:has(#DoorSostrum:hover) #DoorFrame
+{
+    background-image: url("../UniversalAssets/MainDoorFrameSostrum.png");
+}
+
+body:has(#DoorVidulyn:hover) #DoorFrame
+{
+    background-image: url("../UniversalAssets/MainDoorFrameVidulyn.png");
+}
+
+body:has(#DoorYumalon:hover) #DoorFrame
+{
+    background-image: url("../UniversalAssets/MainDoorFrameYumalon.png");
+}
+
+body:has(#DoorIcolass:hover) #DoorFrame
+{
+    background-image: url("../UniversalAssets/MainDoorFrameIcolass.png");
+}
+
+body:has(#DoorSanctum:hover) #DoorFrame
+{
+    background-image: url("../UniversalAssets/MainDoorFrameSanctum.png");
+}
+
+body:has(#DoorVoid:hover) #DoorFrame
+{
+    background-image: url("../UniversalAssets/MainDoorFrameVoid.png");
+}
+
+body:has(#DoorSanctum:hover) #MimicClosed
+{
+    background-image: url("../UniversalAssets/MimicOpen.png");
+}
+
+
+
+body:has(#DoorEimon:hover) #DoorRealm
+{
+    background-image: url("../UniversalAssets/EimonBack.png");
+}
+
+body:has(#DoorElusia:hover) #DoorRealm
+{
+    background-image: url("../UniversalAssets/ElusiaBack.png");
+}
+
+body:has(#DoorGrimlowe:hover) #DoorRealm
+{
+    background-image: url("../UniversalAssets/GrimloweBack.png");
+}
+
+body:has(#DoorSostrum:hover) #DoorRealm
+{
+    background-image: url("../UniversalAssets/SostrumBack.png");
+}
+
+body:has(#DoorVidulyn:hover) #DoorRealm
+{
+    background-image: url("../UniversalAssets/VidulynBack.png");
+}
+
+body:has(#DoorYumalon:hover) #DoorRealm
+{
+    background-image: url("../UniversalAssets/YumalonBack.png");
+}
+
+body:has(#DoorIcolass:hover) #DoorRealm
+{
+   background-image: url("../UniversalAssets/IcolassBack.png");
+}
+
+body:has(#DoorSanctum:hover) #DoorRealm
+{
+    background-image: url("../UniversalAssets/SanctumBack.png");
+}
+
+body:has(#DoorVoid:hover) #DoorRealm
+{
+    background-image: url("../UniversalAssets/VoidBack.png");
+}
+
+
+
+
+
+
+
+
+body:has(#DoorEimon:hover) #DoorClosedOpen,
+body:has(#DoorElusia:hover) #DoorClosedOpen,
+body:has(#DoorGrimlowe:hover) #DoorClosedOpen,
+body:has(#DoorSostrum:hover) #DoorClosedOpen,
+body:has(#DoorVidulyn:hover) #DoorClosedOpen,
+body:has(#DoorYumalon:hover) #DoorClosedOpen,
+body:has(#DoorIcolass:hover) #DoorClosedOpen,
+body:has(#DoorSanctum:hover) #DoorClosedOpen,
+body:has(#DoorVoid:hover) #DoorClosedOpen
+{
+    background-image: url("../UniversalAssets/MainMenuDoorOpen.png");
+}
+
+
+
+
+#EimonSigil,
+#ElusiaSigil,
+#SostrumSigil,
+#GrimloweSigil,
+#VidulynSigil,
+#YumalonSigil,
+#IcolassSigil,
+#VoidSigil,
+#MimicClosed
+{
+    image-rendering: pixelated;
+    display:flex;
+    position: absolute;
+    width: 70%;
+    aspect-ratio: 1024/1024;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-repeat: repeat;
+    background-size: 100% 100%;
+
+}
+
+#IcolassSigil
+{
+    background-image: url("../UniversalAssets/Iccolas.png");
+}
+
+#EimonSigil
+{
+    background-image: url("../UniversalAssets/Eimon.png");
+}
+
+#ElusiaSigil
+{
+    background-image: url("../UniversalAssets/Elusia.png");
+}
+
+#GrimloweSigil
+{
+    background-image: url("../UniversalAssets/Grimlowe.png");
+}
+
+#SostrumSigil
+{
+    background-image: url("../UniversalAssets/Sostrum.png");
+}
+
+#VidulynSigil
+{
+    background-image: url("../UniversalAssets/Vidulyn.png");
+}
+
+#YumalonSigil
+{
+    background-image: url("../UniversalAssets/Yumalon.png");
+}
+
+#VoidSigil
+{
+    background-image: url("../UniversalAssets/Void.png");
+}
+
+#MimicClosed
+{
+    background-image: url("../UniversalAssets/MimicClosed.png");
+}
+
+
+
+.EimonButton
+{
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+}
+
+.ElusiaButton
+{
+    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
+}
+
+.GrimloweButton
+{
+    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
+}
+
+.SostrumButton
+{
+    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
+
+}
+
+.VidulynButton
+{
+    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
+
+}
+
+.YumalonButton
+{
+    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
+
+}
+
+.IcolassButton
+{
+    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
+
+}
+
+.SanctumButton
+{
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+}
+
+.VoidButton
+{
+    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+}
+
+#DoorClosedOpen
+{
+    image-rendering: pixelated;
+    position: absolute;
+
+    height: var(--door-width);
+    aspect-ratio: 64 / 64;
+
+    top: 45.10%;
+    left: 48.50%;
+    transform: translate(-50%, -50%);
+
+    background-image: url("../UniversalAssets/MainDoorClosed.png");
+    background-size: 103% 103%;
+    background-repeat: no-repeat;
+}
+
+#RealmWindow
+{
+    image-rendering: pixelated;
+    position: absolute;
+    width:50%;
+    aspect-ratio: 1/1;
+    top:-0%;
+    left:25%;
+
+    -webkit-mask-image: url("../UniversalAssets/MainMenuDoorOpenMASK.png");
+    mask-image: url("../UniversalAssets/MainMenuDoorOpenMASK.png");
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+}
+
+#DoorRealm
+{
+    image-rendering: pixelated;
+    position: absolute;
+
+    height: 100%;
+    aspect-ratio: 1 /1;
+
+    top: -10%;
+    left: -10%;
+    
+    background-size: 25% 25%;
+    background-repeat: repeat;
+
+}
+
+#VoidEyes
+{
+    position:absolute;
+
+    left:-1%;
+    top:-7%;
+    aspect-ratio: 1/1;
+
+    width:clamp(5vw,10vw,10vw);
+    height:auto;
+
+    background-image: url("../UniversalAssets/VoidEyeFull.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+#Logo
+{
+    position:absolute;
+
+    right:1%;
+    top:1%;
+    aspect-ratio: 1/1;
+
+    width:clamp(1vw,2vw,5vw);
+    height:auto;
+
+    background-image: url("../UniversalAssets/Favicon.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+#FullLeftRightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../UniversalAssets/LeftRightTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#LeftTransition
+{
+    position:absolute;
+    display:block;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:-200%;
+
+    pointer-events: none;
+
+    background-image: url("../UniversalAssets/LeftFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#RightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../UniversalAssets/RightFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+
+
+
+#ButtonBox
+{
+    position:absolute;
+    display:block;
+
+    top:5%;
+    left:0%;
+    aspect-ratio: 288/436;
+    width:29.5%;
+    right:0%;
+
+    image-rendering: pixelated  ;
+
+    background-image: url("Assets/ButtonBox.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#ExtrasInfoBox
+{
+    position:absolute;
+    display:block;
+
+    top:5%;
+    left:30%;
+    aspect-ratio: 650/418;
+    width:68.50%;
+    right:0%;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    background-image: url("Assets/InfoBox23.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+
+
+
+#ExtrasNESPlusInfoBox,
+#ExtrasRealmQuizInfoBox,
+#ExtrasStatQuizInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top:3%;
+    left:1%;
+    padding-top: 10px;
+    aspect-ratio: 675/418;
+    width:97.5%;
+    right:0%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.NormalButton
+{
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+
+    width: 92%;
+    aspect-ratio: 144/40;
+
+    background-color: transparent;
+    background-image: url("Assets/ButtonBoxButtonOutline.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border: none;
+    padding: 0;
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+
+}
+
+.NormalButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:5%;
+    width: 90%;
+    height: 90%;
+
+    background-image: url("../UniversalAssets/NoneButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+     pointer-events: auto;
+
+     z-index: -1;
+
+    filter: brightness(50%);
+}
+
+.BackButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:5%;
+    width: 90%;
+    height: 90%;
+
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: -1;
+
+    filter: brightness(50%);
+}
+
+.NormalButton:hover .NormalButtonBackground
+{
+    filter: brightness(100%);
+}
+
+.NormalButton:hover .BackButtonBackground
+{
+    filter: brightness(100%);
+}
+
+.Words
+{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+    font-size: clamp(1vw,2.5vw,3vw);
+    font-family: Ardron;
+    color: whitesmoke;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+#ExtrasButtonBox > button
+{
+    position: relative;
+    inset: auto;
+    flex-shrink: 0;
+    max-width: 100%;
+    z-index: auto;
+}
+
+
+#ExtrasInfoBoxBack
+{
+    position:absolute;
+    display:block;
+
+    top:1%;
+    left:1%;
+    aspect-ratio: 650/418;
+    width:98%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(50%);
+
+    z-index: -1;
+}
+
+
+#ExtrasButtonBoxBack
+{
+    position:absolute;
+    display:flex;
+
+    top:2.10%;
+    left:3.25%;
+    height:95%;
+    width: 97%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
+
+#ExtrasButtonBox
+{
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 5% 0%;
+    margin-bottom: 3%;
+    box-sizing: border-box;
+    width: calc(100% - 20px);
+}
+
+#ExtrasButtonBoxFrame
+{
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    width: 29.5%;
+    aspect-ratio: 288 / 436;
+}
+
+#ExtrasButtonBoxFrame::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("Assets/ButtonBox.png");
+    background-size: 100% 98.75%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 10;
+
+}
+
+
+#ExtrasConfirmButton
+{
+    position:absolute;
+    display:flex;
+
+    top:90%;
+    left:2%;
+    width: 15%;
+
+    aspect-ratio: 144/40;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+}
+#extrasconfirmbuttonwords
+{
+    position: absolute;
+
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+    font-size: clamp(0.5vw,1.5vw,3vw);
+    font-family: Ardron;
+    color: whitesmoke;
+
+    z-index: 1;
+    pointer-events: none;
+
+}
+
+
+
+
+
+
+@media (max-width: 1600px) {
+    #EimonTitle,
+    #ElusiaTitle,
+    #GrimloweTitle,
+    #SostrumTitle
+    {
+        left: 25%;
+    }
+    #VidulynTitle,
+    #YumalonTitle,
+    #VoidTitle,
+    #IcolassTitle
+    {
+        left: 70%;
+    }
+
+    #RealmWindow
+    {
+        width:70%;
+        aspect-ratio: 1/1;
+        top:4%;
+        left:14%;
+    }
+
+    #ExtrasInfoBox
+    {
+        height:92%;
+    }
+
+    #ExtrasInfoBoxBack
+    {
+        height:98%;
+        
+    }
+
+    #ExtrasButtonBoxBack
+    {
+        height:95%;
+    }
+
+    #ExtrasButtonBoxFrame::after
+    {
+        height:99%
+    }
+
+    #ExtrasButtonBoxFrame
+    {
+        height:95%
+    }
+
+    #ExtrasButtonBox > button
+    {
+        top:1%;
+    }
+
+
+
+
+
+    
+}
+
+@media (max-width: 1000px) {
+    #EimonTitle,
+    #ElusiaTitle,
+    #GrimloweTitle,
+    #SostrumTitle
+    {
+        left: 18%;
+    }
+    #VidulynTitle,
+    #YumalonTitle,
+    #VoidTitle,
+    #IcolassTitle
+    {
+        left: 76%;
+    }
+
+    #VoidEyes
+    {
+        top:-2%;
+    }
+
+    #Logo
+    {
+        top:2%;
+    }
+
+    #RealmWindow
+    {
+        width:70%;
+        aspect-ratio: 1/1;
+        top:4%;
+        left:14%;
+    }
+
+    #ExtrasInfoBox
+    {
+        height:92%;
+    }
+
+    #ExtrasInfoBoxBack
+    {
+        height:98%;
+        
+    }
+
+    #ExtrasButtonBoxBack
+    {
+        height:95%;
+    }
+
+    #ExtrasButtonBoxFrame::after
+    {
+        height:99%
+    }
+
+    #ExtrasButtonBoxFrame
+    {
+        height:95%
+    }
+
+    #ExtrasButtonBox > button
+    {
+        top:1%;
+    }
+
+
+}
