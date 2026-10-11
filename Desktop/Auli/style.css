@@ -478,6 +478,43 @@ body
 }
 
 
+#VoidEyes
+{
+    position:absolute;
+
+    left:-1%;
+    top:-7%;
+    aspect-ratio: 1/1;
+
+    width:clamp(5vw,10vw,10vw);
+    height:auto;
+
+    background-image: url("../../UniversalAssets/VoidEyeFull.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+#Logo
+{
+    position:absolute;
+
+    right:1%;
+    top:1%;
+    aspect-ratio: 1/1;
+
+    width:clamp(1vw,2vw,5vw);
+    height:auto;
+
+    background-image: url("../../UniversalAssets/Favicon.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+
 
 @media (max-width: 1600px) {
 
