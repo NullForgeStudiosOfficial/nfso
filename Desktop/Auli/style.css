@@ -10,6 +10,14 @@
     box-sizing: border-box;
 }
 
+#StartupBlack
+{
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 99999;
+    pointer-events: none;
+}
 
 :root
 {

@@ -63,7 +63,7 @@ function Randomizer(min,max)
 
 
 
-function Start()
+async function Start()
 {
 
     ButtonBackgrounds.push(...document.querySelectorAll(".BackButtonBackground"));
@@ -71,6 +71,9 @@ function Start()
 
     BlinkEyes()
 
+    await Sleep(250);
+    document.getElementById("StartupBlack").remove();
+    LastTime = performance.now();
     requestAnimationFrame(Update);
 
     ChangedSite = true

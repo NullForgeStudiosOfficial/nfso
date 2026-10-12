@@ -2,6 +2,7 @@
 
 let LastTime = 0;
 let DeltaTime = 0;
+let TimeStamp = 0;
 
 let MainBackground = document.getElementById("MainBackground")
 let MainBackgroundScroll = 0
@@ -44,6 +45,10 @@ let SiteTransitionRunning = false;
 
 let ChangedPage = false;
 let ChangedSite = false;
+let StartSiteT = true;
+let StartTransitionX = 0;
+
+
 let PreviousPage = null
 let NextPage = null
 let ExtrasPage = document.getElementById("ExtrasPage");
@@ -59,7 +64,6 @@ let ExtrasStatQuizInfoBox = document.getElementById("ExtrasStatQuizInfoBox");
 
 let ExtrasConfirmButton = document.getElementById("ExtrasConfirmButton");
 let ExtrasCurrentSelection = "None";
-
 
 
 function Randomizer(min,max)
@@ -118,8 +122,6 @@ ExtrasExitButton.addEventListener("click", function()
     ChangePage(ExtrasPage,DoorPage)
 });
 
-
-
 DoorYumalon.addEventListener("click", function()
 {
     window.open("https://store.steampowered.com/app/3300520/The_Ardron_Universe/", "_blank");
@@ -135,6 +137,39 @@ DoorIcolass.addEventListener("click", function()
 DoorVidulyn.addEventListener("click", function()
 {
     //COMEBACKANDFIXTHISVEX
+});
+
+DoorVoid.addEventListener("click", function()
+{
+    window.open("https://www.twitch.tv/nullforgestudiosofficial", "_blank");
+});
+
+DoorEimon.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Auli/index.html")
+});
+
+DoorElusia.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Pup/index.html")
+});
+
+DoorGrimlowe.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Vex/index.html")
+});
+
+DoorSostrum.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    LoadSite("Special/index.html")
 });
 
 
@@ -172,11 +207,10 @@ StatQuizButton.addEventListener("click", function()
 
 
 
-
-
-
-function Start()
+async function Start()
 {
+    
+    LeftTransition.style.left = 0 + "px"
     ButtonBackgrounds.push(...document.querySelectorAll(".EimonButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".ElusiaButton"));
     ButtonBackgrounds.push(...document.querySelectorAll(".GrimloweButton"));
@@ -190,14 +224,10 @@ function Start()
 
     BlinkEyes()
 
+    await Sleep(250);
+    document.getElementById("StartupBlack").remove();
+    LastTime = performance.now();
     requestAnimationFrame(Update);
-
-    ChangedSite = true
-    SiteTransitionX = 0;
-    SiteTransitionRunning = true
-    LeftTransition.style.display = "block";
-    WhichTransitionWeUsing = 2
-
 
 }
 
@@ -219,6 +249,11 @@ function Update(CurrentTime)
     if (SiteTransitionRunning)
     {
         UpdateSiteTransition()
+    }
+    
+    if (StartSiteT)
+    {
+        StartSite()
     }
 
     requestAnimationFrame(Update);
@@ -307,7 +342,20 @@ async function ChangeSite()
 
 async function StartSite()
 {
+    LeftTransition.style.display = "block";
+    StopX = window.innerWidth - LeftTransition.offsetWidth - 2000;
 
+    StartTransitionX -= 10000 * DeltaTime;
+    LeftTransition.style.left = StartTransitionX + "px";
+    LeftTransition.style.right = "auto";
+
+    if (StartSiteT && StartTransitionX <= StopX)
+    {
+            StartSiteT = false;
+            StartSiteT = false;
+            LeftTransition.style.display = "none";
+            return
+    }
 }
 
 async function LoadSite(SiteString)
@@ -371,25 +419,8 @@ function UpdateSiteTransition()
 {
     let usingthisthingy = null;
 
-    StopX = 0;
-
-    switch(WhichTransitionWeUsing)
-    {
-        case 0:
-            usingthisthingy = LeftRightTransition    
-        break;
-
-        case 1:
-            usingthisthingy = RightTransition
-            StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
-        break;
-
-        case 2:
-            usingthisthingy = LeftTransition
-            StopX = window.innerWidth - usingthisthingy.offsetWidth - 2000;
-        break;
-    }
-
+    usingthisthingy = RightTransition
+    StopX = window.innerWidth - usingthisthingy.offsetWidth + 200;
 
     if (ChangedSite && SiteTransitionX <= StopX)
     {
@@ -402,44 +433,9 @@ function UpdateSiteTransition()
     SiteTransitionX -= 11000 * DeltaTime;
     usingthisthingy.style.left = SiteTransitionX + "px";
     usingthisthingy.style.right = "auto";
+
 }
 
-
-// ---------------------------- Aulis Page
-
-
-
-DoorEimon.addEventListener("click", function()
-{
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("Auli/index.html")
-});
-
-
-DoorElusia.addEventListener("click", function()
-{
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("Pup/index.html")
-});
-
-
-
-DoorGrimlowe.addEventListener("click", function()
-{
-    WhichTransitionWeUsing = 1
-    ChangeSite()
-    LoadSite("Vex/index.html")
-});
-
-
-//  --------------------------------- Extras Page
-
-DoorEimon.addEventListener("click", function()
-{
-    ChangePage(DoorPage,AuliPage)
-});
 
 
 

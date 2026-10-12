@@ -27,10 +27,22 @@
     box-sizing: border-box;
 }
 
+#StartupBlack
+{
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 99999;
+    pointer-events: none;
+}
 
 :root
 {
     --door-width: clamp(10%, 90%, 90%);
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 html,
@@ -41,8 +53,10 @@ body
     overflow:hidden;
     font-family:Ardron;
     color:white;
-}
+    background-color: black;
+    
 
+}
 
 
 #BackgroundContainer
@@ -53,7 +67,7 @@ body
     pointer-events:none;
     width:100%;
     height: 100%;
-    z-index:-10;
+    z-index:0;
 }
 
 #DoorPage
@@ -64,13 +78,9 @@ body
     pointer-events:auto;
     width:100%;
     height: 100%;
-    z-index:0;
 }
 
 
-#AuliPage,
-#VexPage,
-#PupPage,
 #ExtrasPage
 {
     display:none;
@@ -152,7 +162,7 @@ body
     position:absolute;
     font-family: Ardron;
     top:80.5%;
-    left:28%;
+    left:24%;
     width: 25%;
     font-size: clamp(1vw,2.5vw,3vw);
 }
@@ -754,7 +764,12 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 }
 
 
-
+#LeftTransition,
+#RightTransition,
+#FullLeftRightTransition
+{
+    z-index: 1000;
+}
 
 
 #ButtonBox
@@ -1062,11 +1077,15 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 @media (max-width: 1600px) {
     #EimonTitle,
     #ElusiaTitle,
-    #GrimloweTitle,
-    #SostrumTitle
+    #GrimloweTitle
     {
         left: 25%;
     }
+    #SostrumTitle
+    {
+        left: 21%;
+    }
+    
     #VidulynTitle,
     #YumalonTitle,
     #VoidTitle,
@@ -1124,11 +1143,17 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 @media (max-width: 1000px) {
     #EimonTitle,
     #ElusiaTitle,
-    #GrimloweTitle,
-    #SostrumTitle
+    #GrimloweTitle
     {
         left: 18%;
     }
+
+    #SostrumTitle
+    {
+        left: 15%;
+    }
+
+
     #VidulynTitle,
     #YumalonTitle,
     #VoidTitle,

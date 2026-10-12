@@ -12,6 +12,15 @@
     box-sizing: border-box;
 }
 
+#StartupBlack
+{
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 99999;
+    pointer-events: none;
+}
+
 #VoidEyes
 {
     position:absolute;
@@ -191,7 +200,7 @@ body
     width:97.5%;
     right:0%;
 
-    overflow-y: hidden;
+    overflow-y: auto;
     overflow-x: hidden;
 
     pointer-events: auto;
@@ -371,10 +380,11 @@ body
 #Vexpfp1credit
 {
     position:absolute;
-    top:44%;
-    left:12.5%;
+    top:48%;
+    left:13.5%;
+    width: 20%;
 
-    width: 25%;
+    font-size:clamp(0.5vw,1.5vw,3vw);
 
 
 }
@@ -394,10 +404,37 @@ body
 #Vexpfp2credit
 {
     position:absolute;
-    top:50.5%;
+    top:49%;
     left:85.5%;
 
     width: 25%;
+
+    font-size:clamp(0.5vw,1.5vw,3vw);
+
+
+}
+
+#VexPfp3
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Vexpfp3.png");
+    left:33%;
+    top:2%;
+    width: 25%;
+    aspect-ratio: 254/264;
+    background-size: 100% 100%;
+}
+
+#Vexpfp3credit
+{
+    position:absolute;
+    top:49%;
+    left:45%;
+
+    width: 25%;
+
+    font-size:clamp(0.5vw,1.5vw,3vw);
 
 
 }
@@ -600,5 +637,14 @@ body
     {
         top:2%;
     }
+}
+
+#VexBioInfo
+{
+    position:absolute;
+    left:0%;
+    top:52%;
+    width:99%;
+    padding-left: 10px;
 }
 
