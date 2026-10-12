@@ -317,6 +317,7 @@ let SpecialInfoBoxBack = document.getElementById("SpecialInfoBoxBack");
 let SpecialButtonBoxBack = document.getElementById("SpecialButtonBoxBack");
 let SpecialRefButton = document.getElementById("SpecialRefButton");
 
+let FoxRefButton = document.getElementById("FoxRefButton");
 
 async function SpecialTurnOffBoxes()
 {
@@ -350,6 +351,11 @@ SpecialBDMButton.addEventListener("click", function()
     SpecialTurnOffBoxes()
     BDMInfoBox.style.display = "block";
 
+});
+
+FoxRefButton.addEventListener("click", function()
+{
+    window.open("../../UniversalAssets/Foxpfp3.png", "_blank");
 });
 
 Start()

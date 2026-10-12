@@ -166,8 +166,10 @@ body
     width:97.5%;
     right:0%;
 
-    overflow-y: auto;
+    overflow-y: scroll;
     overflow-x: hidden;
+    scrollbar-width: auto;
+    scrollbar-color: white #222;
 
     pointer-events: auto;
     image-rendering: pixelated;
@@ -752,20 +754,47 @@ body
 #Foxpfp1credit
 {
     position:absolute;
-    top:48%;
+    top:45%;
     left:13.5%;
-    width: 20%;
+    width: 25%;
 
     font-size:clamp(0.5vw,1.5vw,3vw);
 
 
 }
 
+
 #FoxPfp2
 {
     position:absolute;
 
     background-image: url("../../UniversalAssets/Foxpfp2.png");
+    left:35%;
+    top:2%;
+    width: 25%;
+    aspect-ratio: 254/264;
+    background-size: 100% 100%;
+}
+
+#Foxpfp2credit
+{
+    position:absolute;
+    top:47%;
+    left:48%;
+
+    width: 25%;
+
+    font-size:clamp(0.5vw,1.5vw,3vw);
+
+
+}
+
+
+#FoxPfp3
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Foxpfp3.png");
     right:5%;
     top:7%;
     width: 21%;
@@ -773,7 +802,7 @@ body
     background-size: 100% 100%;
 }
 
-#Foxpfp2credit
+#Foxpfp3credit
 {
     position:absolute;
     top:49%;
@@ -782,33 +811,31 @@ body
     width: 25%;
 
     font-size:clamp(0.5vw,1.5vw,3vw);
-
-
 }
 
-#FoxPfp3
+#FoxRefButton
 {
     position:absolute;
-
-    background-image: url("../../UniversalAssets/Foxpfp3.png");
-    left:33%;
-    top:2%;
-    width: 25%;
-    aspect-ratio: 254/264;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    top: -16.5%;
+    left:-16.5%;
+    width:133%;
+    height:133%;
+    background-image: url("../../UniversalAssets/SquareButtonOutline.png");
     background-size: 100% 100%;
+    pointer-events: auto;
+
+    z-index: 1;
 }
 
-#Foxpfp3credit
+
+#FoxBioInfo
 {
-    position:absolute;
-    top:49%;
-    left:45%;
-
-    width: 25%;
-
-    font-size:clamp(0.5vw,1.5vw,3vw);
-
-
+    top:53%
 }
 
 
