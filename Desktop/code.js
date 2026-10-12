@@ -136,7 +136,7 @@ DoorIcolass.addEventListener("click", function()
 
 DoorVidulyn.addEventListener("click", function()
 {
-    //COMEBACKANDFIXTHISVEX
+    window.open("https://nullforgestudiosofficial.github.io/Wiki/");
 });
 
 DoorVoid.addEventListener("click", function()
