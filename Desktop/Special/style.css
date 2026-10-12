@@ -735,6 +735,83 @@ body
 
 
 
+#FoxPfp1
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Foxpfp1.png");
+
+    width: 25%;
+    left:1%;
+    top:1%;
+    aspect-ratio: 512/512;
+    background-size: 100% 100%;
+
+}
+
+#Foxpfp1credit
+{
+    position:absolute;
+    top:48%;
+    left:13.5%;
+    width: 20%;
+
+    font-size:clamp(0.5vw,1.5vw,3vw);
+
+
+}
+
+#FoxPfp2
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Foxpfp2.png");
+    right:5%;
+    top:7%;
+    width: 21%;
+    aspect-ratio: 1/1;
+    background-size: 100% 100%;
+}
+
+#Foxpfp2credit
+{
+    position:absolute;
+    top:49%;
+    left:85.5%;
+
+    width: 25%;
+
+    font-size:clamp(0.5vw,1.5vw,3vw);
+
+
+}
+
+#FoxPfp3
+{
+    position:absolute;
+
+    background-image: url("../../UniversalAssets/Foxpfp3.png");
+    left:33%;
+    top:2%;
+    width: 25%;
+    aspect-ratio: 254/264;
+    background-size: 100% 100%;
+}
+
+#Foxpfp3credit
+{
+    position:absolute;
+    top:49%;
+    left:45%;
+
+    width: 25%;
+
+    font-size:clamp(0.5vw,1.5vw,3vw);
+
+
+}
+
+
 @media (max-width: 1600px) {
 
     #SpecialInfoBox
