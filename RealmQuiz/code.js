@@ -232,7 +232,7 @@ async function ChangePage(PageID1,PageID2)
                 break;
         }
         
-        RealmResultText.textContent = QuizData.ResultsStrings[highestresultindex]
+        RealmResultText.textContent = ResultStrings[highestresultindex]
 
     }
 
@@ -761,8 +761,8 @@ CopyCodeButton.addEventListener("click", async function()
 
 StartQuizButton.addEventListener("click", function()
 {
-    ChangePage(StartingPage,QuizPage)
-    //ChangePage(StartingPage,TieBreakerPage)
+    //ChangePage(StartingPage,QuizPage)
+    ChangePage(StartingPage,ResultsPage)
 });
 
 

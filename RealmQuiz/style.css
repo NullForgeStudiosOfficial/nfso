@@ -90,7 +90,7 @@ body
     overflow:hidden;
     top:-0.1%;
     left:-0.1%;
-    pointer-events:auto;
+    pointer-events:none;
     width:100%;
     height: 100%;
 }
@@ -244,6 +244,7 @@ body
     border: none;
     padding: 0;
     image-rendering: pixelated;
+    pointer-events: auto;
     isolation: isolate;
 }
 
@@ -257,7 +258,7 @@ body
     background-repeat: no-repeat;
 
     image-rendering: pixelated;
-    pointer-events: none;
+    pointer-events: auto;
     z-index: 1;
 }
 
@@ -324,6 +325,7 @@ body
     color:white;
     z-index: 1;
     word-wrap: break-word;
+    pointer-events:none;
 }
 
 .Words
@@ -335,6 +337,7 @@ body
     position: relative;
     align-items: center;
     white-space:pre-line;
+    pointer-events: none;
     padding-bottom: 30px;
     width:90%;
     left:4%;
@@ -595,6 +598,8 @@ body
     height: auto;
     aspect-ratio:  144/40;
     z-index: 0;
+    pointer-events: auto;
+    z-index: 0;
 }
 
 #TB1Button
@@ -654,7 +659,7 @@ body
 
     background-repeat: repeat;
     background-size: 6px 6px;
-    pointer-events: auto;
+    pointer-events: none;
 
     z-index: 0;
 
@@ -691,4 +696,119 @@ body
 }
 
 
+#LeftBanner
+{
+    position:absolute;
+    left:-2%;
+    width: 15%;
+    height:auto;
+    aspect-ratio: 285/900;
 
+    background-image: url(../UniversalAssets/EimonBanner.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#RightBanner
+{
+    position:absolute;
+    left:87%;
+    width: 15%;
+    height:auto;
+    aspect-ratio: 285/900;
+
+    background-image: url(../UniversalAssets/EimonBanner.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#ResultsInfoBox
+{
+    position:absolute;
+    display:flex;
+    width: 73%;
+    aspect-ratio: 670/436;
+    min-height: 0;
+    left:13.5%;
+}
+
+#ResultsInfoBoxBack
+{
+    display: flex;
+    position: relative;
+
+    left:0%;
+    top:0%;
+    width: 99%;
+    height: 98%;
+
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: -1;
+
+    filter: brightness(50%);
+}
+
+#ResultsInfoBox::after
+{
+    content:"";
+    position:absolute;
+    display:flex;
+    inset: 0;
+    
+    
+    height:auto;
+    
+
+    background-image: url(../UniversalAssets/DesktopInfoBox.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    pointer-events: none;
+    z-index: 0;
+}
+
+#RealmResultText
+{
+    position: absolute;
+    display: block;
+    top: 3%;
+    padding-left: 1%;
+    padding-right: 1%;
+    left: 2%;
+    width: 95%;
+    height: 95%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    pointer-events:auto;
+    z-index: 1;
+}
+
+#CopyCodeButton
+{
+    position:absolute;
+    display:block;
+    top:3%;
+    left:2%;
+    width: 20%;
+    height: auto;
+    aspect-ratio:  144/40;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+#BackQuizEnd
+{
+    position:absolute;
+    display:block;
+    top:3%;
+    right:2%;
+    width: 20%;
+    height: auto;
+    aspect-ratio:  144/40;
+    z-index: 1;
+    pointer-events: auto;
+}
