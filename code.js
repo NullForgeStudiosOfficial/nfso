@@ -2,7 +2,6 @@
 
 let LastTime = 0;
 let DeltaTime = 0;
-let TimeStamp = 0;
 
 let MainBackground = document.getElementById("MainBackground")
 let MainBackgroundScroll = 0
@@ -186,6 +185,7 @@ NESPlusButton.addEventListener("click", function()
     ExtrasTurnOffBoxes()
 
     ExtrasNESPlusInfoBox.style.display = "block";
+    ExtrasCurrentSelection = "NESPlus";
 });
 
 RealmQuizButton.addEventListener("click", function()
@@ -193,6 +193,7 @@ RealmQuizButton.addEventListener("click", function()
     ExtrasTurnOffBoxes()
 
     ExtrasRealmQuizInfoBox.style.display = "block";
+    ExtrasCurrentSelection = "RealmQuiz";
 });
 
 StatQuizButton.addEventListener("click", function()
@@ -200,6 +201,28 @@ StatQuizButton.addEventListener("click", function()
     ExtrasTurnOffBoxes()
 
     ExtrasStatQuizInfoBox.style.display = "block";
+    ExtrasCurrentSelection = "StatQuiz";
+});
+
+ExtrasConfirmButton.addEventListener("click", function()
+{
+    WhichTransitionWeUsing = 1
+    ChangeSite()
+    
+    switch(ExtrasCurrentSelection)
+    {
+        case "NESPlus":
+            LoadSite("NESPlus/index.html")
+            break;
+
+        case "RealmQuiz":
+            LoadSite("RealmQuiz/index.html")
+            break;
+
+        case "StatQuiz":
+            LoadSite("StatQuiz/index.html")
+            break;
+    }
 });
 
 

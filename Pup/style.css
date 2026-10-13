@@ -33,6 +33,7 @@ body
     overflow:hidden;
     font-family:Lilita;
     color:white;
+    image-rendering: pixelated;
 }
 
 #BackgroundContainer
@@ -512,6 +513,7 @@ body
     aspect-ratio: 1/1;
 
     width:clamp(5vw,10vw,10vw);
+    image-rendering: pixelated;
     height:auto;
 
     background-image: url("../UniversalAssets/VoidEyeFull.png");

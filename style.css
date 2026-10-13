@@ -54,7 +54,7 @@ body
     font-family:Ardron;
     color:white;
     background-color: black;
-    
+        image-rendering: pixelated;
 
 }
 
@@ -1045,7 +1045,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     aspect-ratio: 144/40;
     right:0%;
 
-    pointer-events: none;
+    pointer-events: auto;
     image-rendering: pixelated  ;
 
 }

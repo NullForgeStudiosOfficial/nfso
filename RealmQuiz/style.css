@@ -1,1 +1,694 @@
+@font-face
+{
+    font-family: Ardron;
+    src: url("../UniversalAssets/FontOfArdron.ttf");
+}
+
+@font-face
+{
+    font-family: Lexend;
+    src: url("../UniversalAssets/Lexend.ttf")
+}
+
+
+
+*
+{
+    box-sizing: border-box;
+}
+
+#StartupBlack
+{
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 99999;
+    pointer-events: none;
+}
+
+:root
+{
+    --door-width: clamp(10%, 90%, 90%);
+    padding-bottom: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+html,
+body
+{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Ardron;
+    color:white;
+    background-color: black;
+    image-rendering: pixelated;
+    
+
+}
+
+
+#BackgroundContainer
+{
+    position:fixed;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    width:100%;
+    height: 100%;
+    z-index:0;
+}
+
+
+#MainBackground
+{
+    position:absolute;
+
+    width:150%;
+    aspect-ratio: 1/1;
+    left:-25%;
+    top:-100%;
+
+    z-index:-9;
+    pointer-events:none;
+    background-image: url(../UniversalAssets/VoidLarge.png);
+    background-size: 100% 100%;
+    background-repeat: repeat-x;
+    background-position: 0 (--var 0px);
+}
+
+
+#StartingPage,
+#QuizPage,
+#TieBreakerPage,
+#ResultsPage
+{
+    display:none;
+    position:fixed;
+    overflow:hidden;
+    top:-0.1%;
+    left:-0.1%;
+    pointer-events:auto;
+    width:100%;
+    height: 100%;
+}
+
+#StartingPage
+{
+    display:block;
+}
+
+
+.EimonButton
+{
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+}
+
+.ElusiaButton
+{
+    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
+}
+
+.GrimloweButton
+{
+    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
+}
+
+.SostrumButton
+{
+    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
+
+}
+
+.VidulynButton
+{
+    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
+
+}
+
+.YumalonButton
+{
+    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
+
+}
+
+.IcolassButton
+{
+    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
+
+}
+
+.SanctumButton
+{
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+}
+
+.VoidButton
+{
+    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+}
+
+.VoidEyes
+{
+    position:absolute;
+
+   
+    aspect-ratio: 1/1;
+
+    
+    background-image: url("../UniversalAssets/VoidEyeFull.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+#VoidEyes1
+{
+    width:clamp(5vw,30vw,50vw);
+    height:auto;
+    left:35.30%;
+    top:-23%;
+}
+
+
+#FullLeftRightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../UniversalAssets/LeftRightTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#LeftTransition
+{
+    position:absolute;
+    display:block;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:-200%;
+
+    pointer-events: none;
+
+    background-image: url("../UniversalAssets/LeftFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#RightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:300%;
+    height: 110%;
+    right:0%;
+
+    pointer-events: none;
+
+    background-image: url("../UniversalAssets/RightFade.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#LeftTransition,
+#RightTransition,
+#FullLeftRightTransition
+{
+    z-index: 10;
+}
+
+
+.NormalButton {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+
+    background: transparent;
+    border: none;
+    padding: 0;
+    image-rendering: pixelated;
+    isolation: isolate;
+}
+
+.NormalButton::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../UniversalAssets/DesktopButton.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.NormalButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:5%;
+    top:5%;
+    width: 92%;
+    height: 95%;
+
+    background-image: url("../UniversalAssets/NoneButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+     pointer-events: auto;
+
+    z-index: 0;
+
+    filter: brightness(50%);
+}
+
+.BackButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:5%;
+    width: 90%;
+    height: 90%;
+
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: -1;
+
+    filter: brightness(50%);
+}
+
+
+.NormalButton:hover .NormalButtonBackground
+{
+    filter: brightness(100%);
+}
+
+.NormalButton:hover .BackButtonBackground
+{
+    filter: brightness(100%);
+}
+
+.ButtonText
+{
+    font-family: Ardron;
+    position: absolute;
+    text-align: center;
+    width:100%;
+    padding-left: 2%;
+    padding-right: 2%;
+    top:30%;
+    font-size: clamp(0.25vw,1.75vw,5vw);
+    color:white;
+    z-index: 1;
+    word-wrap: break-word;
+}
+
+.Words
+{
+    font-family: Ardron;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    position: relative;
+    align-items: center;
+    white-space:pre-line;
+    padding-bottom: 30px;
+    width:90%;
+    left:4%;
+    font-size: clamp(0.5vw,1.5vw,3vw);
+    color:white
+}
+
+#StartingPageText
+{
+    position: absolute;
+    top:12%;
+    left:5%;
+}
+
+#vertline
+{
+    position:absolute;
+    display:block;
+    left:50%;
+    top:-0%;
+    background-color: white;
+    width: 10px;
+    height:100%;
+}
+
+#horiline
+{
+    position:absolute;
+    display:block;
+    left:00%;
+    top:50%;
+    background-color: white;
+    height: 10px;
+    width:100%;
+}
+
+#StartQuizButton {
+    position: absolute;
+    width: 15%;
+    left:55%;
+    top:85%;
+    height: auto;
+    aspect-ratio: 144 / 40;
+    min-height: 0;
+}
+
+#BackQuizStart {
+    position: absolute;
+    width: 15%;
+    left:31%;
+    top:85%;
+    height: auto;
+    aspect-ratio: 144 / 40;
+    min-height: 0;
+}
+
+#BackDuringQuiz {
+    position: absolute;
+    width: 15%;
+    left:8%;
+    top:88%;
+    height: auto;
+    aspect-ratio: 144 / 40;
+    min-height: 0;
+}
+
+#QuestionBox
+{
+    position:absolute;
+    display:block;
+
+    top:0%;
+    left:0%;
+    aspect-ratio: 288/436;
+    width:31.75%;
+    right:0%;
+
+    image-rendering: pixelated ;
+
+    background-image: url("../UniversalAssets/DesktopButtonBox.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#QuestionBoxText
+{
+    position:absolute;
+    display:block;
+
+    top:3%;
+    left:3%;
+}
+
+
+#QuestionBoxBack
+{
+    position:absolute;
+    display:flex;
+
+    top:2.10%;
+    left:3.25%;
+    height:97%;
+    width: 97%;
+    right:0%;
+
+    pointer-events: none;
+    image-rendering: pixelated  ;
+
+    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    filter: brightness(100%);
+    z-index: -1;
+}
+
+
+.QuizButtonBackground
+{
+    display: flex;
+    position: relative;
+
+    left:0%;
+    top:0%;
+    width: 100%;
+    height: 95%;
+
+    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+     pointer-events: auto;
+
+    z-index: 0;
+
+    filter: brightness(50%);
+}
+
+#AnswerButton1,
+#AnswerButton2,
+#AnswerButton3
+{
+    position:absolute;
+    pointer-events: auto;
+    width:66%;
+    min-height: 0;
+
+    left:33%;
+
+    aspect-ratio: 670/134;
+    
+
+    background-image: url("../UniversalAssets/QuizAnswerButton.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    filter: brightness(75%);
+    z-index: -1;
+
+}
+
+#AnswerButton1::after,
+#AnswerButton2::after,
+#AnswerButton3::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../UniversalAssets/QuizAnswerButton.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    image-rendering: pixelated;
+    pointer-events: none;
+    z-index: 1;
+
+}
+
+#AnswerButton1:hover .QuizButtonBackground,
+#AnswerButton2:hover .QuizButtonBackground,
+#AnswerButton3:hover .QuizButtonBackground
+{
+    filter: brightness(100%);
+}
+
+
+#RemainingText
+{
+    position:absolute;
+    top:82.5%;
+    left:1%;
+    width:30%;
+}
+
+#AnswerButton1
+{
+    top:3%;
+}
+
+#AnswerButton2
+{
+    top:37%;
+}
+
+#AnswerButton3
+{
+    top:70%;
+}
+
+
+#AnswerButton1Text,
+#AnswerButton2Text,
+#AnswerButton3Text
+{
+    top:42%;
+}
+
+#ArbiterTransitionEyes
+{
+    position:absolute;
+    display:block;
+    top:20%;
+    left:47.5%;
+    z-index: 11;
+    aspect-ratio: 1/1;
+    background-image: url(../UniversalAssets/VoidEyesBlack.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width:clamp(5vw,30vw,50vw);
+    height:auto;
+
+}
+
+#ArbiterTransitionText
+{
+    display:block;
+    top:55%;
+    left:7.5%;
+    height: 25%;
+    z-index: auto;
+}
+
+#QuizEyes {
+    width:clamp(5vw,20vw,50vw);
+    height:auto;
+    left:5.5%;
+    top:58%;
+}
+
+#TB1Button,
+#TB2Button,
+#TB3Button,
+#TB4Button,
+#TB5Button,
+#TB6Button
+{
+    position:absolute;
+    display:block;
+    width: 20%;
+    height: auto;
+    aspect-ratio:  144/40;
+    z-index: 0;
+}
+
+#TB1Button
+{
+    left:25%;
+    top:20%;
+}
+
+#TB3Button
+{
+    left:25%;
+    top:45%;
+}
+
+#TB5Button
+{
+    left:25%;
+    top:70%;
+}
+
+
+#TB4Button
+{
+    left:55%;
+    top:45%;
+}
+
+#TB2Button
+{
+    left:55%;
+    top:20%;
+}
+
+#TB6Button
+{
+    left:55%;
+    top:70%;
+}
+
+    
+
+#TB1ButtonGraphics,
+#TB2ButtonGraphics,
+#TB3ButtonGraphics,
+#TB4ButtonGraphics,
+#TB5ButtonGraphics,
+#TB6ButtonGraphics
+{
+    position:absolute;
+
+    width: 90%;
+    top:0%;
+    left:5%;
+    height: auto;
+    aspect-ratio:  144/40;
+
+
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: 0;
+
+    filter: brightness(50%);
+}
+
+#TB1ButtonGraphics
+{
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+}
+
+#TB2ButtonGraphics
+{
+    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
+}
+
+#TB3ButtonGraphics
+{
+    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
+}
+#TB4ButtonGraphics
+{
+    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
+}
+
+#TB5ButtonGraphics
+{
+    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
+}
+
+#TB6ButtonGraphics
+{
+    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
+}
+
+
 

@@ -21,6 +21,24 @@
     pointer-events: none;
 }
 
+
+:root
+{
+    --door-width: clamp(10%, 90%, 90%);
+}
+
+html,
+body
+{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:Lexend;
+    color:white;
+    image-rendering: pixelated;
+}
+
+
 #VoidEyes
 {
     position:absolute;
@@ -30,6 +48,7 @@
     aspect-ratio: 1/1;
 
     width:clamp(5vw,10vw,10vw);
+    image-rendering: pixelated;
     height:auto;
 
     background-image: url("../UniversalAssets/VoidEyeFull.png");
@@ -57,21 +76,6 @@
     pointer-events:none;
 }
 
-
-:root
-{
-    --door-width: clamp(10%, 90%, 90%);
-}
-
-html,
-body
-{
-    width:100%;
-    height:100%;
-    overflow:hidden;
-    font-family:Lexend;
-    color:white;
-}
 
 #BackgroundContainer
 {

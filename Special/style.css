@@ -36,6 +36,7 @@ body
     overflow:hidden;
     font-family:Ardron;
     color:white;
+    image-rendering: pixelated;
 }
 
 #BackgroundContainer
@@ -682,6 +683,7 @@ body
 
     width:clamp(5vw,10vw,10vw);
     height:auto;
+    image-rendering: pixelated;
 
     background-image: url("../UniversalAssets/VoidEyeFull.png");
     background-repeat: no-repeat;
