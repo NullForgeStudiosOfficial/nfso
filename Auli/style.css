@@ -2,7 +2,7 @@
 @font-face
 {
     font-family: Skranji;
-    src: url("../../UniversalAssets/Skranji.ttf")
+    src: url("../UniversalAssets/Skranji.ttf")
 }
 
 *
@@ -66,7 +66,7 @@ body
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(../Assets/DesktopBackground.png);
+    background-image: url(../UniversalAssets/DesktopBackground.png);
     background-size: 100% 100%;
     background-repeat: repeat-x;
     background-position: 0 (--var 0px);
@@ -85,7 +85,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../UniversalAssets/LeftRightTransition.png");
+    background-image: url("../UniversalAssets/LeftRightTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -102,7 +102,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../UniversalAssets/LeftFade.png");
+    background-image: url("../UniversalAssets/LeftFade.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -120,7 +120,7 @@ body
 
     pointer-events: none;
 
-    background-image: url("../../UniversalAssets/RightFade.png");
+    background-image: url("../UniversalAssets/RightFade.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -142,7 +142,7 @@ body
     pointer-events: auto;
     image-rendering: pixelated;
 
-    background-image: url("../Assets/InfoBox23.png");
+    background-image: url("../UniversalAssets/DesktopInfoBox.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -210,7 +210,7 @@ body
     aspect-ratio: 144/40;
 
     background-color: transparent;
-    background-image: url("../Assets/ButtonBoxButtonOutline.png");
+    background-image: url("../UniversalAssets/DesktopButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -231,7 +231,7 @@ body
     width: 90%;
     height: 90%;
 
-    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
+    background-image: url("../UniversalAssets/NoneButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
      pointer-events: auto;
@@ -250,7 +250,7 @@ body
     width: 90%;
     height: 90%;
 
-    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     pointer-events: auto;
@@ -325,7 +325,7 @@ body
 {
     position:absolute;
 
-    background-image: url("../../UniversalAssets/Aulipfp1.png");
+    background-image: url("../UniversalAssets/Aulipfp1.png");
 
     width: 25%;
     left:1%;
@@ -350,7 +350,7 @@ body
 {
     position:absolute;
 
-    background-image: url("../../UniversalAssets/Aulipfp2.png");
+    background-image: url("../UniversalAssets/Aulipfp2.png");
     right:4%;
     top:7%;
     width: 21%;
@@ -382,7 +382,7 @@ body
 
     image-rendering: pixelated  ;
 
-    background-image: url("../Assets/ButtonBox.png");
+    background-image: url("../UniversalAssets/DesktopButtonBox.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -401,7 +401,7 @@ body
     pointer-events: none;
     image-rendering: pixelated  ;
 
-    background-image: url("../../UniversalAssets/EimonButtonBackground.png");
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(50%);
@@ -423,7 +423,7 @@ body
     pointer-events: none;
     image-rendering: pixelated  ;
 
-    background-image: url("../../UniversalAssets/EimonButtonBackground.png");
+    background-image: url("../UniversalAssets/EimonButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(50%);
@@ -478,7 +478,7 @@ body
     left:-16.5%;
     width:133%;
     height:133%;
-    background-image: url("../../UniversalAssets/SquareButtonOutline.png");
+    background-image: url("../UniversalAssets/SquareButtonOutline.png");
     background-size: 100% 100%;
     pointer-events: auto;
 
@@ -497,7 +497,7 @@ body
     width:clamp(5vw,10vw,10vw);
     height:auto;
 
-    background-image: url("../../UniversalAssets/VoidEyeFull.png");
+    background-image: url("../UniversalAssets/VoidEyeFull.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -515,7 +515,7 @@ body
     width:clamp(1vw,2vw,5vw);
     height:auto;
 
-    background-image: url("../../UniversalAssets/Favicon.png");
+    background-image: url("../UniversalAssets/Favicon.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 

@@ -1,25 +1,25 @@
 @font-face
 {
     font-family: Ardron;
-    src: url("../UniversalAssets/FontOfArdron.ttf");
+    src: url("UniversalAssets/FontOfArdron.ttf");
 }
 
 @font-face
 {
     font-family: Lexend;
-    src: url("../UniversalAssets/Lexend.ttf")
+    src: url("UniversalAssets/Lexend.ttf")
 }
 
 @font-face
 {
     font-family: Skranji;
-    src: url("../UniversalAssets/Skranji.ttf")
+    src: url("UniversalAssets/Skranji.ttf")
 }
 
 @font-face
 {
     font-family: Lilita;
-    src: url("../UniversalAssets/LilitaOne.ttf")
+    src: url("UniversalAssets/LilitaOne.ttf")
 }
 
 *
@@ -101,7 +101,7 @@ body
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(Assets/DesktopBackground.png);
+    background-image: url(UniversalAssets/DesktopBackground.png);
     background-size: 100% 100%;
     background-repeat: repeat-x;
     background-position: 0 (--var 0px);
@@ -220,7 +220,7 @@ body
     left: 50%;
     transform: translate(-50%, -50%);
 
-    background-image: url("../UniversalAssets/MainDoorFrame.png");
+    background-image: url("UniversalAssets/MainDoorFrame.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -237,7 +237,7 @@ body
     aspect-ratio: 1 / 1;
 
     background-color: transparent;
-    background-image: url("../UniversalAssets/SquareButtonOutline.png");
+    background-image: url("UniversalAssets/SquareButtonOutline.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -385,99 +385,99 @@ body
 
 body:has(#DoorEimon:hover) #DoorFrame
 {
-    background-image: url("../UniversalAssets/MainDoorFrameEimon.png");
+    background-image: url("UniversalAssets/MainDoorFrameEimon.png");
 }
 
 body:has(#DoorElusia:hover) #DoorFrame
 {
-    background-image: url("../UniversalAssets/MainDoorFrameElusia.png");
+    background-image: url("UniversalAssets/MainDoorFrameElusia.png");
 }
 
 body:has(#DoorGrimlowe:hover) #DoorFrame
 {
-    background-image: url("../UniversalAssets/MainDoorFrameGrimlowe.png");
+    background-image: url("UniversalAssets/MainDoorFrameGrimlowe.png");
 }
 
 body:has(#DoorSostrum:hover) #DoorFrame
 {
-    background-image: url("../UniversalAssets/MainDoorFrameSostrum.png");
+    background-image: url("UniversalAssets/MainDoorFrameSostrum.png");
 }
 
 body:has(#DoorVidulyn:hover) #DoorFrame
 {
-    background-image: url("../UniversalAssets/MainDoorFrameVidulyn.png");
+    background-image: url("UniversalAssets/MainDoorFrameVidulyn.png");
 }
 
 body:has(#DoorYumalon:hover) #DoorFrame
 {
-    background-image: url("../UniversalAssets/MainDoorFrameYumalon.png");
+    background-image: url("UniversalAssets/MainDoorFrameYumalon.png");
 }
 
 body:has(#DoorIcolass:hover) #DoorFrame
 {
-    background-image: url("../UniversalAssets/MainDoorFrameIcolass.png");
+    background-image: url("UniversalAssets/MainDoorFrameIcolass.png");
 }
 
 body:has(#DoorSanctum:hover) #DoorFrame
 {
-    background-image: url("../UniversalAssets/MainDoorFrameSanctum.png");
+    background-image: url("UniversalAssets/MainDoorFrameSanctum.png");
 }
 
 body:has(#DoorVoid:hover) #DoorFrame
 {
-    background-image: url("../UniversalAssets/MainDoorFrameVoid.png");
+    background-image: url("UniversalAssets/MainDoorFrameVoid.png");
 }
 
 body:has(#DoorSanctum:hover) #MimicClosed
 {
-    background-image: url("../UniversalAssets/MimicOpen.png");
+    background-image: url("UniversalAssets/MimicOpen.png");
 }
 
 
 
 body:has(#DoorEimon:hover) #DoorRealm
 {
-    background-image: url("../UniversalAssets/EimonBack.png");
+    background-image: url("UniversalAssets/EimonBack.png");
 }
 
 body:has(#DoorElusia:hover) #DoorRealm
 {
-    background-image: url("../UniversalAssets/ElusiaBack.png");
+    background-image: url("UniversalAssets/ElusiaBack.png");
 }
 
 body:has(#DoorGrimlowe:hover) #DoorRealm
 {
-    background-image: url("../UniversalAssets/GrimloweBack.png");
+    background-image: url("UniversalAssets/GrimloweBack.png");
 }
 
 body:has(#DoorSostrum:hover) #DoorRealm
 {
-    background-image: url("../UniversalAssets/SostrumBack.png");
+    background-image: url("UniversalAssets/SostrumBack.png");
 }
 
 body:has(#DoorVidulyn:hover) #DoorRealm
 {
-    background-image: url("../UniversalAssets/VidulynBack.png");
+    background-image: url("UniversalAssets/VidulynBack.png");
 }
 
 body:has(#DoorYumalon:hover) #DoorRealm
 {
-    background-image: url("../UniversalAssets/YumalonBack.png");
+    background-image: url("UniversalAssets/YumalonBack.png");
 }
 
 body:has(#DoorIcolass:hover) #DoorRealm
 {
-   background-image: url("../UniversalAssets/IcolassBack.png");
+   background-image: url("UniversalAssets/IcolassBack.png");
 }
 
 body:has(#DoorSanctum:hover) #DoorRealm
 {
-    background-image: url("../UniversalAssets/SanctumBack.png");
+    background-image: url("UniversalAssets/SanctumBack.png");
 }
 
 body:has(#DoorVoid:hover) #DoorRealm
 {
-    background-image: url("../UniversalAssets/VoidBack.png");
+    background-image: url("UniversalAssets/VoidBack.png");
 }
 
 
@@ -497,7 +497,7 @@ body:has(#DoorIcolass:hover) #DoorClosedOpen,
 body:has(#DoorSanctum:hover) #DoorClosedOpen,
 body:has(#DoorVoid:hover) #DoorClosedOpen
 {
-    background-image: url("../UniversalAssets/MainMenuDoorOpen.png");
+    background-image: url("UniversalAssets/MainMenuDoorOpen.png");
 }
 
 
@@ -528,98 +528,98 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
 #IcolassSigil
 {
-    background-image: url("../UniversalAssets/Iccolas.png");
+    background-image: url("UniversalAssets/Iccolas.png");
 }
 
 #EimonSigil
 {
-    background-image: url("../UniversalAssets/Eimon.png");
+    background-image: url("UniversalAssets/Eimon.png");
 }
 
 #ElusiaSigil
 {
-    background-image: url("../UniversalAssets/Elusia.png");
+    background-image: url("UniversalAssets/Elusia.png");
 }
 
 #GrimloweSigil
 {
-    background-image: url("../UniversalAssets/Grimlowe.png");
+    background-image: url("UniversalAssets/Grimlowe.png");
 }
 
 #SostrumSigil
 {
-    background-image: url("../UniversalAssets/Sostrum.png");
+    background-image: url("UniversalAssets/Sostrum.png");
 }
 
 #VidulynSigil
 {
-    background-image: url("../UniversalAssets/Vidulyn.png");
+    background-image: url("UniversalAssets/Vidulyn.png");
 }
 
 #YumalonSigil
 {
-    background-image: url("../UniversalAssets/Yumalon.png");
+    background-image: url("UniversalAssets/Yumalon.png");
 }
 
 #VoidSigil
 {
-    background-image: url("../UniversalAssets/Void.png");
+    background-image: url("UniversalAssets/Void.png");
 }
 
 #MimicClosed
 {
-    background-image: url("../UniversalAssets/MimicClosed.png");
+    background-image: url("UniversalAssets/MimicClosed.png");
 }
 
 
 
 .EimonButton
 {
-    background-image: url("../UniversalAssets/EimonButtonBackground.png");
+    background-image: url("UniversalAssets/EimonButtonBackground.png");
 }
 
 .ElusiaButton
 {
-    background-image: url("../UniversalAssets/ElusiaButtonBackground.png");
+    background-image: url("UniversalAssets/ElusiaButtonBackground.png");
 }
 
 .GrimloweButton
 {
-    background-image: url("../UniversalAssets/GrimloweButtonBackground.png");
+    background-image: url("UniversalAssets/GrimloweButtonBackground.png");
 }
 
 .SostrumButton
 {
-    background-image: url("../UniversalAssets/SostrumButtonBackground.png");
+    background-image: url("UniversalAssets/SostrumButtonBackground.png");
 
 }
 
 .VidulynButton
 {
-    background-image: url("../UniversalAssets/VidulynButtonBackground.png");
+    background-image: url("UniversalAssets/VidulynButtonBackground.png");
 
 }
 
 .YumalonButton
 {
-    background-image: url("../UniversalAssets/YumalonButtonBackground.png");
+    background-image: url("UniversalAssets/YumalonButtonBackground.png");
 
 }
 
 .IcolassButton
 {
-    background-image: url("../UniversalAssets/IcolassButtonBackground.png");
+    background-image: url("UniversalAssets/IcolassButtonBackground.png");
 
 }
 
 .SanctumButton
 {
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("UniversalAssets/SanctumButtonBackground.png");
 }
 
 .VoidButton
 {
-    background-image: url("../UniversalAssets/VoidButtonBackground.png");
+    background-image: url("UniversalAssets/VoidButtonBackground.png");
 }
 
 #DoorClosedOpen
@@ -634,7 +634,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     left: 48.50%;
     transform: translate(-50%, -50%);
 
-    background-image: url("../UniversalAssets/MainDoorClosed.png");
+    background-image: url("UniversalAssets/MainDoorClosed.png");
     background-size: 103% 103%;
     background-repeat: no-repeat;
 }
@@ -648,8 +648,8 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     top:-0%;
     left:25%;
 
-    -webkit-mask-image: url("../UniversalAssets/MainMenuDoorOpenMASK.png");
-    mask-image: url("../UniversalAssets/MainMenuDoorOpenMASK.png");
+    -webkit-mask-image: url("UniversalAssets/MainMenuDoorOpenMASK.png");
+    mask-image: url("UniversalAssets/MainMenuDoorOpenMASK.png");
 
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
@@ -686,7 +686,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     width:clamp(5vw,10vw,10vw);
     height:auto;
 
-    background-image: url("../UniversalAssets/VoidEyeFull.png");
+    background-image: url("UniversalAssets/VoidEyeFull.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -704,7 +704,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     width:clamp(1vw,2vw,5vw);
     height:auto;
 
-    background-image: url("../UniversalAssets/Favicon.png");
+    background-image: url("UniversalAssets/Favicon.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -723,7 +723,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
     pointer-events: none;
 
-    background-image: url("../UniversalAssets/LeftRightTransition.png");
+    background-image: url("UniversalAssets/LeftRightTransition.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -740,7 +740,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
     pointer-events: none;
 
-    background-image: url("../UniversalAssets/LeftFade.png");
+    background-image: url("UniversalAssets/LeftFade.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -758,7 +758,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
     pointer-events: none;
 
-    background-image: url("../UniversalAssets/RightFade.png");
+    background-image: url("UniversalAssets/RightFade.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -785,7 +785,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
 
     image-rendering: pixelated  ;
 
-    background-image: url("Assets/ButtonBox.png");
+    background-image: url("UniversalAssets/DesktopButtonBox.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 }
@@ -808,7 +808,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     pointer-events: auto;
     image-rendering: pixelated;
 
-    background-image: url("Assets/InfoBox23.png");
+    background-image: url("UniversalAssets/DesktopInfoBox.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
@@ -853,7 +853,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     aspect-ratio: 144/40;
 
     background-color: transparent;
-    background-image: url("Assets/ButtonBoxButtonOutline.png");
+    background-image: url("UniversalAssets/DesktopButton.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
 
@@ -874,7 +874,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     width: 90%;
     height: 90%;
 
-    background-image: url("../UniversalAssets/NoneButtonBackground.png");
+    background-image: url("UniversalAssets/NoneButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
      pointer-events: auto;
@@ -893,7 +893,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     width: 90%;
     height: 90%;
 
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     pointer-events: auto;
@@ -958,7 +958,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     pointer-events: none;
     image-rendering: pixelated  ;
 
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(50%);
@@ -981,7 +981,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     pointer-events: none;
     image-rendering: pixelated  ;
 
-    background-image: url("../UniversalAssets/SanctumButtonBackground.png");
+    background-image: url("UniversalAssets/SanctumButtonBackground.png");
     background-repeat: repeat;
     background-size: 6px 6px;
     filter: brightness(50%);
@@ -1023,7 +1023,7 @@ body:has(#DoorVoid:hover) #DoorClosedOpen
     position: absolute;
     inset: 0;
 
-    background-image: url("Assets/ButtonBox.png");
+    background-image: url("UniversalAssets/DesktopButtonBox.png");
     background-size: 100% 98.75%;
     background-repeat: no-repeat;
 
