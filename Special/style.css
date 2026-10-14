@@ -623,47 +623,6 @@ body
 }
 
 
-#SpecialConfirmButton
-{
-    position:absolute;
-    display:flex;
-
-    top:90%;
-    left:2%;
-    width: 15%;
-
-    aspect-ratio: 144/40;
-    right:0%;
-
-    pointer-events: none;
-    image-rendering: pixelated  ;
-
-}
-#Specialconfirmbuttonwords
-{
-    position: absolute;
-
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 100%;
-
-    text-align: center;
-    font-size: clamp(0.5vw,1.5vw,3vw);
-    font-family: Ardron;
-    color: whitesmoke;
-
-    z-index: 1;
-    pointer-events: none;
-
-}
-
-
-
-
-
-
 
 
 
@@ -842,109 +801,128 @@ body
 
 
 @media (max-width: 1600px) {
-
+    #SpecialButtonBoxFrame
+    {
+        width:29.5;
+        height:94%;
+    }
     #SpecialInfoBox
     {
-        height:92%;
+        height:93%;
     }
-
-    #SpecialPersonalInfoBox,
-    #SpecialBioInfoBox
+    #GSFInfoBox,
+    #KoFiInfoBox,
+    #BDMInfoBox
     {
-        height:94.5%;
+        height:93%
     }
-
     #SpecialInfoBoxBack
     {
         height:98%;
-        
     }
-
-    #SpecialButtonBoxBack
+    #ElusiaSupporters,
+    #IcolassSupporters,
+    #VidulynSupporters
     {
-        height:95%;
+        top:59%;
     }
-
-    #ButtonBox
+    #GrimloweSupporters,
+    #YumalonSupporters
     {
-        height:92%;
+        top:105%;
     }
+    #SpecialButtonBox > button
+{
+    top:2%;
+}
+#Foxpfp1credit
+{
+    top:38%;
+}
 
-    #VoidEyes
-    {
-        top:-6%;
-    }
+#Foxpfp2credit
+{
+    top:40%;
+}
 
-    #Logo
-    {
-        top:1%;
-    }
 
-    #SpecialPfp2
-    {
-        top:5%;
-        right:4.25%;
-    }
+#Foxpfp3credit
+{
+    top:45%;
+}
 
-    #Specialpfp2credit
-    {
-        top:45%;
-    }
+#FoxBioInfo
+{
+    top:43%
+}
+
+#VoidEyes
+{
+    top:-6%;
+}
+
 }
 
 
 @media (max-width: 1000px) {
-
+    #SpecialButtonBoxFrame
+    {
+        width:29.5;
+        height:94%;
+    }
     #SpecialInfoBox
     {
-        height:92%;
+        height:93%;
     }
-
-    #SpecialPersonalInfoBox,
-    #SpecialBioInfoBox
+    #GSFInfoBox,
+    #KoFiInfoBox,
+    #BDMInfoBox
     {
-        height:94.5%;
+        height:93%
     }
-
     #SpecialInfoBoxBack
     {
         height:98%;
-        
     }
-
-    #SpecialButtonBoxBack
+    #ElusiaSupporters,
+    #IcolassSupporters,
+    #VidulynSupporters
     {
-        height:95%;
+        top:50%;
     }
-
-    #ButtonBox
+    #GrimloweSupporters,
+    #YumalonSupporters
     {
-        height:92%;
+        top:85%;
     }
+    #SpecialButtonBox > button
+{
+    top:2%;
+}
+#Foxpfp1credit
+{
+    top:30%;
+}
 
-    #VoidEyes
-    {
-        top:-4%;
-    }
+#Foxpfp2credit
+{
+    top:32%;
+}
 
-    #Logo
-    {
-        top:2%;
-    }
 
-    #SpecialPfp2
-    {
-        top:5%;
-        right:2%;
-    }
+#Foxpfp3credit
+{
+    top:35%;
+}
 
-    #Specialpfp2credit
-    {
-        top:35%;
-    }
+#FoxBioInfo
+{
+    top:33%
+}
 
-    #Specialpfp1credit
-    {
-        top:33%;
-    }
+#VoidEyes
+{
+    top:-4%;
+}
+    
 }

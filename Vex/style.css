@@ -560,6 +560,15 @@ body
 }
 
 
+#VexBioInfo
+{
+    position:absolute;
+    left:0%;
+    top:52%;
+    width:99%;
+    padding-left: 10px;
+}
+
 @media (max-width: 1600px) {
 
     #VexInfoBox
@@ -643,12 +652,5 @@ body
     }
 }
 
-#VexBioInfo
-{
-    position:absolute;
-    left:0%;
-    top:52%;
-    width:99%;
-    padding-left: 10px;
-}
+
 

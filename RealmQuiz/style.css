@@ -784,6 +784,10 @@ body
     overflow-x: hidden;
     box-sizing: border-box;
     pointer-events:auto;
+    white-space: pre-line;
+    line-height: 1.5;
+    padding: 20px 50px;
+    text-align: center;
     z-index: 1;
 }
 
@@ -812,3 +816,78 @@ body
     z-index: 1;
     pointer-events: auto;
 }
+
+
+@media (max-width: 1600px) {
+    #VoidEyes1
+    {
+        top:-19%;
+    }
+    #QuestionBox
+    {
+        top:0;
+
+        width:32%;
+        height:100%
+    }
+
+    
+}
+
+@media (max-width: 1000px) {
+    #VoidEyes1
+    {
+        top:-10%;
+    }
+
+    #MainBackground
+    {
+        top:-50%;
+    }
+
+    #QuizEyes
+    {
+        top:65%;
+    }
+
+    #AnswerButton3
+    {
+        top:80%;
+    }
+
+     #AnswerButton2
+    {
+        top:42%;
+    }
+
+    #ResultsInfoBox
+    {
+        width: 73%;
+        height:98%;
+        min-height: 0;
+        left:13.5%;
+    }
+
+    #LeftBanner
+{
+    width: 19%;
+    height:99%;
+    left:-2.75%;
+
+
+}
+
+#RightBanner
+{
+
+    width: 19%;
+    height:99%;
+    left:84%;
+
+
+}
+
+
+}
+
+
