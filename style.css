@@ -54,7 +54,8 @@ body
     font-family:Ardron;
     color:white;
     background-color: black;
-        image-rendering: pixelated;
+    image-rendering: pixelated;
+    margin: 0px;
 
 }
 

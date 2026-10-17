@@ -1,7 +1,7 @@
 @font-face
 {
     font-family: Ardron;
-    src: url("../../../UniversalAssets/FontOfArdron.ttf");
+    src: url("../../UniversalAssets/FontOfArdron.ttf")
 }
 
 
@@ -17,6 +17,7 @@
     --door-width: clamp(10%, 90%, 90%);
 }
 
+
 html,
 body
 {
@@ -25,9 +26,20 @@ body
     overflow:hidden;
     font-family:Ardron;
     color:white;
+    background-color: black;
+    image-rendering: pixelated;
+    margin: 0px;
+
 }
 
-
+#StartupBlack
+{
+    position: fixed;
+    inset: 0;
+    background: black;
+    z-index: 99999;
+    pointer-events: none;
+}
 
 #BackgroundContainer
 {
@@ -37,20 +49,340 @@ body
     pointer-events:none;
     width:100%;
     height: 100%;
-    z-index:-10;
+    z-index:0;
 }
+
+#VoidEyes
+{
+    position:absolute;
+
+    left:0%;
+    top:-4.5%;
+    aspect-ratio: 1/1;
+
+    width:clamp(5vw,30vw,30vw);
+    height:auto;
+
+    background-image: url("../../UniversalAssets/VoidEyeFull.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
+#Logo
+{
+    position:absolute;
+
+    right:1%;
+    top:0%;
+    aspect-ratio: 1/1;
+
+    width:clamp(1vw,10vw,15vw);
+    height:auto;
+
+    background-image: url("../../UniversalAssets/Favicon.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+    pointer-events:none;
+}
+
 
 #MainBackground
 {
     position:absolute;
-
-    width:100%;
     height: 100%;
+
+    aspect-ratio: 16/9;
+    left:-107%;
 
     z-index:-9;
     pointer-events:none;
-    background-image: url(../../../UniversalAssets/MobileBackground.png);
-    background-size: 100% 100%;
+    background-image: url(../UniversalAssets/DesktopBackground.png);
+    background-size: 100%;
     background-repeat: repeat-x;
     background-position: 0 (--var 0px);
 }
+
+
+#AuliPage
+{
+    display:block;
+    position:absolute;
+    overflow:hidden;
+    pointer-events:auto;
+    width:100%;
+    height: 100%;
+    z-index:0;
+}
+
+
+#FullLeftRightTransition
+{
+    position:absolute;
+    display:none;
+
+    top:-10%;
+    width:110%;
+    height: 300%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/MobileTopDownTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#LeftTransition
+{
+    position:absolute;
+    display:block;
+
+    top:-10%;
+    width:110%;
+    height: 300%;
+
+    pointer-events: none;
+
+    background-image: url("../../UniversalAssets/MobileTopTransition.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
+#LeftTransition,
+#FullLeftRightTransition
+{
+    z-index: 1000;
+}
+
+
+
+
+#ExtrasInfoBox
+{
+    position:absolute;
+    display:block;
+
+    top:27%;
+    left:1%;
+    height:72%;
+    width:98%;
+    right:0%;
+
+    overflow-y: hidden;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    background-image: url("../../UniversalAssets/MobileButtonInfoBox.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+
+
+
+
+#ExtrasNESPlusInfoBox,
+#ExtrasRealmQuizInfoBox,
+#ExtrasStatQuizInfoBox
+{
+    position:absolute;
+    display:none;
+
+    top: 2%;
+    left:5%;
+    height:90%;
+    width:90%;
+    right:0%;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.WideButton
+{
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+
+    width: 92%;
+    aspect-ratio: 440/65;
+
+    background-color: transparent;
+    background-image: url("../../UniversalAssets/WideMobileButton.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border: none;
+    padding: 0;
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+
+}
+
+.WideButton::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../../UniversalAssets/WideMobileButton.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 0;
+
+
+}
+
+.ThinButton
+{
+    appearance: none;
+    -webkit-appearance: none;
+
+    position: relative;
+
+    width: 92%;
+    aspect-ratio: 440/43;
+
+    background-color: transparent;
+    background-image: url("../../UniversalAssets/ThinMobileButton.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    border: none;
+    padding: 0;
+    pointer-events: auto;
+    image-rendering: pixelated;
+
+
+}
+
+.ThinButton::after
+{
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../../UniversalAssets/ThinMobileButton.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+    pointer-events: none;
+    z-index: 0;
+
+
+}
+
+
+
+
+.WideButtonBackground
+{
+    display: flex;
+    position: absolute;
+
+    left:1%;
+    top:4%;
+    width: 98%;
+    height: 90%;
+
+    background-image: url("../../UniversalAssets/NoneButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: 0;
+
+    filter: brightness(75%);
+}
+
+
+
+.BackButtonBackground
+{
+    display: flex;
+    position: absolute;
+
+    left:1%;
+    top:4%;
+    width: 98%;
+    height: 90%;
+
+    background-image: url("../../UniversalAssets/SanctumButtonBackground.png");
+    background-repeat: repeat;
+    background-size: 6px 6px;
+    pointer-events: auto;
+
+    z-index: 0;
+
+    filter: brightness(75%);
+}
+
+
+.Words
+{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 100%;
+
+    text-align: center;
+    font-size: clamp(1vw,6.125vw,10vw);
+    font-family: Ardron;
+    color: whitesmoke;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+.ButtonText
+{
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 90%;
+    left:50%;
+
+    text-align: center;
+    font-size: clamp(1vw,6vw,10vw);
+    font-family: Ardron;
+    color: whitesmoke;
+
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+@media (min-aspect-ratio: 9/17) and (max-aspect-ratio: 9/16)
+{
+
+   
+
+    .ButtonText
+    {
+        top: 55%;
+        font-size: clamp(1vw,5vw,10vw);
+    }
+}
+

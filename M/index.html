@@ -14,7 +14,7 @@
     <script>
     const AspectRatio = window.innerWidth / window.innerHeight;
 
-    if (AspectRatio > 1.5)
+    if (AspectRatio >= 1.2)
     {
         window.location.replace("../index.html");
     }
@@ -26,14 +26,197 @@
 
 <body>
 
+    <div id = StartupBlack></div>
+
     <div id="BackgroundContainer">
         <div id="MainBackground"></div>
 
     </div>
 
-    The mobile site is not ready yet... Sorry.<br> <br>
-    Blame phone manufactururs for making phones fucking dumb.
+    <div id="VoidEyes"></div>
 
+    <div id = "Logo"></div>
+
+
+    <div id = DoorPage>
+
+        <div id="MainTitle">Welcome to the Nexus of Ardron</div>
+
+        <div id = RealmWindow><div id = DoorRealm></div></div>
+
+        <div class="DoorTitle" id="EimonTitle">Auli's Info</div>
+        <div class="DoorTitle" id="ElusiaTitle">Pup's Info</div>
+        <div class="DoorTitle" id="GrimloweTitle">Vex's Info</div>
+        <div class="DoorTitle" id="SostrumTitle">Special Info</div>
+        <div class="DoorTitle" id="VidulynTitle">AU Wiki</div>
+        <div class="DoorTitle" id="YumalonTitle">AU Games</div>
+        <div class="DoorTitle" id="IcolassTitle">NFSO Discord</div>
+        <div class="DoorTitle" id="VoidTitle">NFSO Twitch</div>
+        <div class="DoorTitle" id="SanctumTitle">Extra<br>Fun<br>Things</div>
+        <button class="WideButton" id="EnterDoor">
+                <div class="WideButtonBackground" >
+                
+                </div>
+
+                <div class = "ButtonText">Enter Realm</div>
+            
+            </button>
+
+        <div id ="DoorFrame">
+
+            <div id = DoorClosedOpen></div>
+
+            <button class="DoorButton" id="DoorEimon">
+                <div class="EimonButton" >
+                
+                </div>
+
+                <div id = EimonSigil></div>
+            
+            </button>
+
+            <button class="DoorButton" id="DoorElusia">
+                <div class="ElusiaButton" ></div>
+
+                <div id = ElusiaSigil></div>
+            </button>
+
+            <button class="DoorButton" id="DoorGrimlowe">
+                <div class="GrimloweButton" ></div>
+
+                <div id = GrimloweSigil></div>
+            </button>
+
+            <button class="DoorButton" id="DoorSostrum">
+                <div class="SostrumButton" ></div>
+
+                <div id = SostrumSigil></div>
+            </button>
+
+            <button class="DoorButton" id="DoorVidulyn">
+                <div class="VidulynButton" ></div>
+
+                <div id = VidulynSigil></div>
+            </button>
+
+            <button class="DoorButton" id="DoorYumalon">
+                <div class="YumalonButton" ></div>
+
+                <div id = YumalonSigil></div>
+            </button>
+
+            <button class="DoorButton" id="DoorIcolass">
+                <div class="IcolassButton" ></div>
+
+                <div id = IcolassSigil></div>
+            </button>
+
+            <button class="DoorButton" id="DoorSanctum">
+                <div class="SanctumButton"></div>
+
+                <div id = MimicClosed></div>
+            </button>
+
+            <button class="DoorButton" id="DoorVoid">
+                <div class="VoidButton"></div>
+
+                <div id = VoidSigil></div>
+            </button>
+
+        </div>
+
+    </div>
+    
+
+    <div id = ExtrasPage>
+        <div id = ExtrasNavigationPage>
+            <div id="ExtrasButtonBoxFrame">
+                <div id = "ExtrasButtonBoxBack"></div>
+                <div id="ExtrasButtonBox">
+                    
+
+                    <button class="ThinButton" id = ExtrasExitButton>
+                            <div class="BackButtonBackground" >
+                            </div>
+
+                            <div class ="ButtonText">Back 2 Nexus</div>
+                    </button>
+
+                    <button class="ThinButton" id = NESPlusButton>
+                            <div class="WideButtonBackground" >
+                            </div>
+
+                            <div class ="ButtonText">NES+</div>
+                    </button>
+
+                    <button class="ThinButton" id = RealmQuizButton>
+                            <div class="WideButtonBackground" >
+                            </div>
+
+                            <div class ="ButtonText">Realm Quiz</div>
+                    </button>
+
+                    <button class="ThinButton" id = StatQuizButton>
+                            <div class="WideButtonBackground" >
+                            </div>
+
+                            <div class ="ButtonText">Stat Quiz</div>
+                    </button>
+                </div>
+            </div>
+
+            <div id="ExtrasInfoBox">
+                <div id ="ExtrasInfoBoxBack"></div>
+
+                <div id = "ExtrasNESPlusInfoBox">
+                    <div class = Words>
+                        NES + is a system I devised to honor the NES console. <br> <br>
+
+                        It is the bridge between the 8bit NES system, and the 16 bit SNES system. <br> <br>
+
+                        Taking the limitations of the NES, and doubling their capabilities, while still being true to the system.<br> <br>
+
+                        To give a modernized style of video game(s)
+                    </div>
+                </div>
+
+                <div id = "ExtrasRealmQuizInfoBox">
+                    <div class = Words>
+                    The realm quiz is essential to being sorted into your Ardron Realm. <br> <br>
+
+                    You will answer 33 questions, while the arbiter watches over your<br> <br>
+                    
+                    and judges your fate, based on your choices.</div>
+                </div>
+
+                <div id = "ExtrasStatQuizInfoBox">
+                    <div class = Words>
+                        A fun quiz mostly created due to how Daemon Protocol functions. <br> <br>
+
+                        You will answer a series of questions based on the six stats of Ardron. <br> <br>
+
+                        Strength, Dexterity, Vitality, Intelligence, Wisdom, and Psyche. <br> <br>
+
+                        Through your choices, these stats will be rated between -100 to +100. 
+
+                    </div>
+                </div>
+
+                <button class="WideButton" id = ExtrasConfirmButton>
+                            <div class="WideButtonBackground" >
+                            </div>
+
+                            <div class = "ButtonText">Confirm</div>
+                </button>
+                
+            </div>
+        </div>
+    </div>
+        
+
+    <div id ="FullLeftRightTransition"></div>
+    <div id ="LeftTransition"></div>
+    <div id ="RightTransition"></div>
 
     <script src="code.js"></script>
 
